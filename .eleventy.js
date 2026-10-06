@@ -26,7 +26,7 @@ export default function (eleventyConfig) {
   // CSS, JS and images are copied to the output unchanged.
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
   eleventyConfig.addPassthroughCopy({ "src/favicon.svg": "favicon.svg" });
-  // Public résumé: the phone number is removed (see PLAN.md checklist before replacing it).
+  // Public résumé (phone number removed). Check any replacement the same way before adding it.
   eleventyConfig.addPassthroughCopy({ "src/resume.pdf": "resume.pdf" });
 
   // Site content lives in src/content/ and is read by src/_data/desk.js.
