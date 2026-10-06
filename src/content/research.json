@@ -17,7 +17,9 @@
       "Transformers",
       "PyTorch",
       "Fraud Detection"
-    ]
+    ],
+    "short": "HAD-Stack",
+    "image": "/assets/img/research/eagle.png"
   },
   {
     "slug": "hamiltonian-qhnet",
@@ -32,7 +34,9 @@
       "Numerical Methods",
       "GNNs",
       "PyTorch"
-    ]
+    ],
+    "short": "Hamiltonian Solvers & QHNet",
+    "image": "/assets/img/research/pegasus.png"
   },
   {
     "slug": "mnist-pgd",
@@ -46,6 +50,8 @@
       "Adversarial ML",
       "CNNs",
       "PyTorch"
-    ]
+    ],
+    "short": "Targeted Attacks on MNIST",
+    "image": "/assets/img/research/leopard.png"
   }
 ]

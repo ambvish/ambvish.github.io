@@ -46,17 +46,24 @@
   --note-text: #23200f;
   --note-link: #1646b0;
 
-  /* Project covers and certificate posters: one muted family of dark tones */
+  /* Project covers: deep, muted tones (one per first tag) */
   --cover-text: #f2f2f5;
-  --cover-muted: #b4b7be;
-  --cover-ai: #2b3242;
-  --cover-vision: #26332f;
-  --cover-web: #34302b;
-  --cover-backend: #2b3038;
-  --cover-hardware: #35312b;
-  --cover-research: #283436;
-  --cover-health: #2e3330;
-  --cover-neutral: #2d2f33;
+  --cover-muted: #b9bcc3;
+  --cover-ai: #24324f;
+  --cover-vision: #1b3a3a;
+  --cover-web: #45292b;
+  --cover-backend: #2d3b4d;
+  --cover-hardware: #463620;
+  --cover-research: #2a3b26;
+  --cover-health: #3d2b26;
+  --cover-neutral: #2f3036;
+
+  /* Certificate posters: quieter near-neutrals */
+  --poster-1: #2b3242;
+  --poster-2: #26332f;
+  --poster-3: #35312b;
+  --poster-4: #2b3038;
+  --poster-5: #283436;
 
   /* Photo on the sticky note */
   --photo-frame: #ffffff;

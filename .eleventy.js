@@ -25,7 +25,7 @@ async function builtTextFiles(dir) {
 export default function (eleventyConfig) {
   // CSS, JS and images are copied to the output unchanged.
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
-  eleventyConfig.addPassthroughCopy({ "src/favicon.svg": "favicon.svg" });
+  eleventyConfig.addPassthroughCopy({ "src/favicon.png": "favicon.png" });
   // Public résumé (phone number removed). Check any replacement the same way before adding it.
   eleventyConfig.addPassthroughCopy({ "src/resume.pdf": "resume.pdf" });
 

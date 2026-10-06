@@ -91,6 +91,23 @@
       ]
     },
     {
+      "slug": "research-fellow",
+      "org": "BITS Pilani",
+      "role": "Undergraduate Research Fellow",
+      "dates": "Nov 2025 – Present",
+      "location": "BITS Pilani, Hyderabad",
+      "headline": "Where Physics Meets Adversarial ML",
+      "lede": "Undergraduate research with Prof. Aneesh S. Chivukula on adversarial machine learning and physics-guided models.",
+      "details": [
+        "Prof. Chivukula advised HAD-Stack, a physics-guided adversarial training framework for fraud detection (co-authored; under review at IEEE DSAA 2026), and supervised my Hamiltonian solvers & QHNet study project."
+      ],
+      "tags": [
+        "Adversarial ML",
+        "Research",
+        "PyTorch"
+      ]
+    },
+    {
       "slug": "uzox",
       "org": "Uzox",
       "role": "Software Engineering Intern",
@@ -107,26 +124,6 @@
         "Kubernetes",
         "WebSockets"
       ]
-    }
-  ],
-  "more": [
-    {
-      "slug": "research-fellow",
-      "role": "Undergraduate Research Fellow",
-      "org": "BITS Pilani (with Prof. Aneesh Chivukula)",
-      "dates": "Nov 2025 – Present"
-    },
-    {
-      "slug": "ieee",
-      "role": "Machine Learning Specialist",
-      "org": "IEEE Student Branch, BITS Pilani Hyderabad",
-      "dates": "Apr 2026 – Sep 2026"
-    },
-    {
-      "slug": "innovation-cell",
-      "role": "Tech Team Member",
-      "org": "Innovation Cell, BITS Pilani Hyderabad",
-      "dates": "Jul 2025 – Jan 2026"
     }
   ]
 }

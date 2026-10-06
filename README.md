@@ -1,6 +1,6 @@
 # Vishnuteja Ambati
 
-I'm Vishnu, a Computer Engineering student at Iowa State University, where I'll also minor in AI.
+I'm Vishnu, a Computer Engineering student at Iowa State University, where I'll be pursuing a minor in AI.
 I transferred from BITS Pilani after two years of Computer Science.
 
 I'm a Founding Engineer at [Hivemind](https://hivemind.inc), building Iris, an AI portfolio-intelligence

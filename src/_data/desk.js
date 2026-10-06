@@ -44,7 +44,6 @@ export default function () {
     isDev,
     intro: drafts.intro ? { ...drafts.intro, draft: true } : null,
     roles,
-    moreRoles: merge(experience.more, drafts.experience),
     research,
     projectFilters: projects.filters,
     projects: merge(projects.items, drafts.projects),

@@ -18,21 +18,4 @@
     {%- endfor %}
   </ul>
   <p class="list__empty" data-filter-empty hidden>Nothing with that tag.</p>
-  <h3 class="list__label">Also</h3>
-  <ul class="list list--compact">
-    {%- for more in desk.moreRoles %}
-    <li class="row" data-search="{{ more.role }}" data-kind="Experience" data-detail="{{ more.org }}">
-      <div class="row__link row__link--static">
-        {% include "icons/dot.njk" %}
-        <span class="row__main">
-          <span class="row__head">
-            <span class="row__title">{{ more.role }}</span>
-            {%- if more.dates %}<span class="row__date">{{ more.dates }}{{ badge(more, "dates") }}</span>{% endif %}
-          </span>
-          <span class="row__excerpt">{{ more.org }}</span>
-        </span>
-      </div>
-    </li>
-    {%- endfor %}
-  </ul>
 {% endcall %}
