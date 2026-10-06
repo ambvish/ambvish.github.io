@@ -3,6 +3,8 @@
     {
       "slug": "keypoints-to-behavior",
       "title": "From Keypoints to Understanding Human Behavior",
+      "date": "10/6/2026",
+      "dateISO": "2026-10-06",
       "summary": "Detecting a person is rarely the hard part of action recognition. The real challenge is interpreting what their movement means over time.",
       "notes": {
         "1": "For a <a href=\"/experience/drdo-har/\" data-open-article=\"experience-drdo-har\">DRDO-funded activity-recognition project</a> at BITS Pilani, I trained a Temporal Convolutional Network on NTU RGB+D: 10K+ 3D-skeleton sequences across 24 action classes.",
