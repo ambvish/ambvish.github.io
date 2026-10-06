@@ -1,42 +1,136 @@
 {
-  "wanted": "WANTED: HARD PROBLEMS.",
-  "lead": "Applicant offers:",
   "groups": [
     {
       "name": "Languages",
-      "items": ["Python", "C++", "C", "Java", "JavaScript", "TypeScript", "Go", "Rust", "SQL", "Verilog"]
+      "items": [
+        "Python",
+        "C++",
+        "C",
+        "Java",
+        "JavaScript",
+        "TypeScript",
+        "Go",
+        "Rust",
+        "SQL",
+        "Verilog"
+      ]
     },
     {
       "name": "AI / ML",
-      "items": ["Machine learning", "Deep learning", "Generative AI", "Large language models (LLMs)", "AI agents", "Agentic AI", "RAG", "Prompt engineering", "Knowledge graphs", "Computer vision", "YOLO", "OpenCV", "PyTorch", "TensorFlow", "ONNX", "scikit-learn", "PyTorch Geometric", "GNNs", "CNNs", "TCNs", "ST-GCN", "Adversarial ML", "Quantization", "Responsible AI"]
+      "items": [
+        "Machine learning",
+        "Deep learning",
+        "Generative AI",
+        "Large language models (LLMs)",
+        "AI agents",
+        "Agentic AI",
+        "RAG",
+        "Prompt engineering",
+        "Knowledge graphs",
+        "Computer vision",
+        "YOLO",
+        "OpenCV",
+        "PyTorch",
+        "TensorFlow",
+        "ONNX",
+        "scikit-learn",
+        "PyTorch Geometric",
+        "GNNs",
+        "CNNs",
+        "TCNs",
+        "ST-GCN",
+        "Adversarial ML",
+        "Quantization",
+        "Responsible AI"
+      ]
     },
     {
       "name": "Backend & Systems",
-      "items": ["Distributed & real-time systems", "Full-stack development", "Microservices", "REST APIs", "WebSockets", "Message queues", "Node.js", "Express", "FastAPI", "Spring Framework", "Docker", "Kubernetes", "PostgreSQL", "MongoDB", "Supabase", "Event sourcing", "Caching", "Load balancing", "CI/CD", "Build tools"]
+      "items": [
+        "Distributed & real-time systems",
+        "Full-stack development",
+        "Microservices",
+        "REST APIs",
+        "WebSockets",
+        "Message queues",
+        "Node.js",
+        "Express",
+        "FastAPI",
+        "Spring Framework",
+        "Docker",
+        "Kubernetes",
+        "PostgreSQL",
+        "MongoDB",
+        "Supabase",
+        "Event sourcing",
+        "Caching",
+        "Load balancing",
+        "CI/CD",
+        "Build tools"
+      ]
     },
     {
       "name": "Hardware & Embedded",
-      "items": ["Embedded systems", "CyBot (Iowa State's embedded robotics platform)", "Verilog/SystemVerilog", "FPGA (Zynq-7020)", "INT8 inference", "Microprocessors", "AutoCAD"]
+      "items": [
+        "Embedded systems",
+        "CyBot (Iowa State's embedded robotics platform)",
+        "Verilog/SystemVerilog",
+        "FPGA (Zynq-7020)",
+        "INT8 inference",
+        "Microprocessors",
+        "AutoCAD"
+      ]
     },
     {
       "name": "CS Foundations",
-      "items": ["Data structures", "Algorithms", "Theory of computation", "Database management systems", "Object-oriented programming"]
+      "items": [
+        "Data structures",
+        "Algorithms",
+        "Theory of computation",
+        "Database management systems",
+        "Object-oriented programming"
+      ]
     },
     {
       "name": "Data & Cloud",
-      "items": ["ETL pipelines", "Feature engineering", "Prometheus", "Grafana", "AWS", "Google Cloud", "Git", "Linux", "CUDA"]
+      "items": [
+        "ETL pipelines",
+        "Feature engineering",
+        "Prometheus",
+        "Grafana",
+        "AWS",
+        "Google Cloud",
+        "Git",
+        "Linux",
+        "CUDA"
+      ]
     },
     {
       "name": "Domains",
-      "items": ["Financial systems", "Healthcare IT", "Clinical decision support systems"]
+      "items": [
+        "Financial systems",
+        "Healthcare IT",
+        "Clinical decision support systems"
+      ]
     },
     {
       "name": "Product & People",
-      "items": ["AI product strategy", "AI literacy", "Problem solving", "Entrepreneurship", "Business leadership", "Effective public speaking", "Report writing", "Community service & volunteering"]
+      "items": [
+        "AI product strategy",
+        "AI literacy",
+        "Problem solving",
+        "Entrepreneurship",
+        "Business leadership",
+        "Effective public speaking",
+        "Report writing",
+        "Community service & volunteering"
+      ]
     },
     {
       "name": "Also",
-      "items": ["Graphic design & VFX (BITSMUN, Esports Club)"]
+      "items": [
+        "Graphic design & VFX (BITSMUN, Esports Club)"
+      ]
     }
   ]
 }

@@ -1,6 +1,5 @@
 {% from "macros/window.njk" import window with context %}
 {% call window({ id: "skills", title: "Skills", tools: "skills" }) %}
-  <p class="wanted"><strong>{{ desk.skills.wanted }}</strong> {{ desk.skills.lead }}</p>
   <div class="tree" id="skills-list">
     {%- for group in desk.skills.groups %}
     <details class="folder" open data-filter-group>

@@ -13,8 +13,9 @@
   },
   "intro": {
     "paragraphs": [
-      "I'm Vishnu, an AI and systems engineer. I'm a Founding Engineer at <a href=\"https://hivemind.inc\" target=\"_blank\" rel=\"noopener noreferrer\">Hivemind<span aria-hidden=\"true\"> ↗</span><span class=\"visually-hidden\"> (opens in a new tab)</span></a>, building Iris, an AI portfolio-intelligence platform.",
-      "I study Computer Engineering at Iowa State, where I'll also minor in AI, after two years of Computer Science at BITS Pilani. I build AI that holds up in production: LLM pipelines, knowledge graphs, real-time vision, and the systems underneath them."
+      "I'm Vishnu, a Computer Engineering student at Iowa State University, where I'll also minor in AI. I transferred from BITS Pilani after two years of Computer Science.",
+      "I'm a Founding Engineer at <a href=\"https://hivemind.inc\" target=\"_blank\" rel=\"noopener noreferrer\">Hivemind<span aria-hidden=\"true\"> ↗</span><span class=\"visually-hidden\"> (opens in a new tab)</span></a>, building Iris, an AI portfolio-intelligence platform.",
+      "As an AI and systems engineer, I build AI that holds up in production: LLM pipelines, knowledge graphs, real-time vision, and the systems underneath them."
     ]
   }
 }
