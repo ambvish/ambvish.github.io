@@ -3,6 +3,7 @@
   <p class="article__kicker">{{ item.title }} · {{ item.subtitle }}</p>
   <h3 class="article__title">{{ item.headline }}</h3>
   <p class="article__meta"><span>{{ item.context }}</span></p>
+  {% if item.paper %}<p><strong>Paper:</strong> <cite>{{ item.paper }}</cite></p>{% endif %}
   {% if item.status %}<p><strong>Status:</strong> {{ item.status }}{{ badge(item, "status") }}</p>{% endif %}
   <p class="article__lede">{{ item.summary }}</p>
   {% if item.result %}<p><strong>Result:</strong> {{ item.result }}</p>{% endif %}

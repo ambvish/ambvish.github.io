@@ -1199,6 +1199,8 @@ a.row__link:focus-visible {
   }
 
   .has-js .note {
+    max-height: 94%;
+    overflow-y: auto;
     cursor: grab;
     touch-action: none;
     user-select: none;
@@ -1230,14 +1232,26 @@ a.row__link:focus-visible {
   }
 
   /* Starting layout. Dragging overrides these positions. */
-  .has-js #note { top: 3%; left: 2.2%; width: clamp(17rem, 24%, 24rem); z-index: 1; }
-  .has-js #experience { top: 4%; left: 27.5%; width: clamp(26rem, 41%, 42rem); height: 58%; z-index: 2; }
-  .has-js #skills { top: 49%; left: 2.2%; width: clamp(22rem, 33%, 34rem); height: 47%; z-index: 3; }
+  .has-js #note { top: 3%; left: 2.2%; width: clamp(18rem, 26.5%, 26rem); font-size: var(--text-base); z-index: 1; }
+  .has-js #experience { top: 4%; left: max(29.5%, calc(2.2% + clamp(18rem, 26.5%, 26rem) + 1rem)); width: clamp(26rem, 40%, 42rem); height: 58%; z-index: 2; }
+  /* desktop.js moves Skills below the note if the note's text runs long. */
+  .has-js #skills { top: 58%; left: 2.2%; width: clamp(22rem, 33%, 34rem); height: 38%; z-index: 3; }
   .has-js #projects { top: 33%; left: 36%; width: clamp(24rem, 37%, 40rem); height: 63%; z-index: 4; }
   .has-js #education { top: 56%; right: 2%; width: clamp(22rem, 31%, 34rem); height: 41%; z-index: 5; }
   .has-js #research { top: 5%; right: 2%; width: clamp(22rem, 29%, 32rem); height: 47%; z-index: 6; }
   .has-js #writing { top: 14%; left: 30%; width: clamp(22rem, 34%, 34rem); height: 40%; z-index: 7; }
   .has-js #letters { top: 18%; left: 16%; width: clamp(24rem, 42%, 42rem); height: 56%; z-index: 7; }
+
+  /* Short desktop screens: a slightly smaller note so it fits. */
+  @media (max-height: 820px) {
+    .has-js #note {
+      font-size: var(--text-md);
+    }
+
+    .has-js .note__title {
+      font-size: var(--text-lg);
+    }
+  }
 
   .has-js .desk--single > .window {
     top: 4%;

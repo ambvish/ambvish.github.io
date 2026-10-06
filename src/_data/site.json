@@ -5,6 +5,7 @@
   "location": "Ames, Iowa",
   "url": "https://ambvish.github.io",
   "email": "ambativishnuteja@gmail.com",
+  "resume": "/resume.pdf",
   "links": {
     "github": "https://github.com/ambvish",
     "linkedin": "https://www.linkedin.com/in/vishnutejaambati/"
@@ -12,7 +13,9 @@
   "intro": {
     "headline": "Engineer. Researcher. Professional problem-hunter.",
     "paragraphs": [
+      "Hi, I'm Vishnu. I'm a Computer Engineering student at Iowa State University, having started at BITS Pilani, Hyderabad, and I build AI systems that have to work outside the notebook: knowledge graphs for investors, behavior recognition that runs on a laptop CPU, and adversarial-ML research where physics keeps the attacker honest.",
       "I like hard problems, honest numbers, and software that survives contact with reality."
-    ]
+    ],
+    "currently": "building Iris at Hivemind."
   }
 }

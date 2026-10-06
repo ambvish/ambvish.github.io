@@ -18,6 +18,11 @@ export function initDesktop() {
   for (const win of desk.querySelectorAll("[data-window]")) setUp(win);
   applyMode();
   WIDE.addEventListener("change", applyMode);
+  let resizeTimer;
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(makeRoomForNote, 150);
+  });
   document.addEventListener("click", onClick);
   document.addEventListener("keydown", onKeydown);
 
@@ -32,6 +37,32 @@ export function initDesktop() {
   // Switch between the desktop (wide screens) and the stacked phone layout.
   function applyMode() {
     for (const win of desk.querySelectorAll("[data-window]")) prepare(win);
+    makeRoomForNote();
+  }
+
+  // The sticky note grows with its text. Keep the window below it (Skills) from covering the
+  // note's links: move that window down if there's room, otherwise put the note on top.
+  // Once a visitor drags that window, it stays where they put it.
+  function makeRoomForNote() {
+    const note = document.getElementById("note");
+    const below = document.getElementById("skills");
+    if (!WIDE.matches || !note || !below || "moved" in below.dataset) return;
+    below.style.removeProperty("top");
+    below.style.removeProperty("height");
+    if ("lifted" in note.dataset) {
+      note.style.removeProperty("z-index");
+      delete note.dataset.lifted;
+    }
+    const clearance = note.offsetTop + note.offsetHeight + 16;
+    if (below.offsetTop >= clearance) return;
+    const room = desk.clientHeight - clearance - 16;
+    if (room >= 220) {
+      below.style.top = `${clearance}px`;
+      below.style.height = `${room}px`;
+    } else if (!note.style.zIndex) {
+      note.style.zIndex = String((Number(getComputedStyle(below).zIndex) || 0) + 1);
+      note.dataset.lifted = "";
+    }
   }
 
   function prepare(win) {
@@ -92,6 +123,7 @@ export function initDesktop() {
       const startLeft = win.offsetLeft;
       const startTop = win.offsetTop;
       place(win, startLeft, startTop);
+      win.dataset.moved = "";
       handle.setPointerCapture(event.pointerId);
       win.classList.add("is-dragging");
       event.preventDefault();

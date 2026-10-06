@@ -6,9 +6,11 @@
     "title": "HAD-Stack",
     "subtitle": "Physics as a referee in an adversarial game",
     "context": "Advisor: Prof. Aneesh S. Chivukula, BITS Pilani",
+    "paper": "HAD-Stack: Hamiltonian Stackelberg Game for Robust Fraud Detection",
+    "status": "Co-authored; under review at IEEE DSAA 2026.",
     "headline": "Fraudsters Adapt. So Should the Detector.",
     "summary": "Fraud detectors get attacked by people who learn their blind spots. Usually \"how strong is the attacker?\" is a number someone hand-picks. In HAD-Stack, the attacker and defender play a leader-follower (Stackelberg) game, and the knobs come from physics instead: one quantum-inspired Hamiltonian sets the attacker's budget, another sets how hard the defender regularizes, and a third decides when the game has settled into equilibrium.",
-    "result": "On the clean test set, false-positive fraud alerts dropped by half compared with a strong Transformer baseline (36 → 18), while false negatives also fell (79 → 62).",
+    "result": "0.9948 clean AUC-ROC on 26,393 real UPI transactions, with false positives halved compared with a strong Transformer baseline (42 → 21), and still robust (AUC 0.9988) under an FGSM evasion attack.",
     "note": "Found and removed data leakage. Features that secretly encoded the label were inflating results, and they were removed before reporting.",
     "tags": ["Adversarial ML", "Game Theory", "Transformers", "PyTorch", "Fraud Detection"]
   },

@@ -5,7 +5,7 @@
 const LIMIT = 12;
 
 // When two results match equally well, prefer the one that opens the most useful view.
-const KIND_WEIGHT = { Window: 0.6, Experience: 0.5, Research: 0.5, Project: 0.4, Education: 0.3, Certification: 0.2, Skill: 0.1 };
+const KIND_WEIGHT = { Window: 0.6, PDF: 0.55, Link: 0.55, Experience: 0.5, Research: 0.5, Project: 0.4, Education: 0.3, Certification: 0.2, Skill: 0.1 };
 
 export function initPalette(desktop) {
   const dialog = document.querySelector("[data-palette]");
@@ -143,10 +143,15 @@ export function initPalette(desktop) {
     entry.run();
   }
 
-  // Go to a search result: open its article, or bring up its window and point at it.
+  // Go to a search result: open its article, follow its link, or bring up its window and point at it.
   function reveal(element) {
     if (element.dataset.openArticle) {
       if (desktop?.isWide()) desktop.openArticle(element.dataset.openArticle);
+      else location.href = element.href;
+      return;
+    }
+    if (element.matches("a[href]")) {
+      if (element.target === "_blank") window.open(element.href, "_blank", "noopener,noreferrer");
       else location.href = element.href;
       return;
     }

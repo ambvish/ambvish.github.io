@@ -5,12 +5,14 @@
       "name": "Iowa State University",
       "degree": "B.S. Computer Engineering",
       "note": "Transfer student (2+2 pathway)",
+      "dates": "Aug 2026 – Expected 2028",
       "activities": ["IEEE at Iowa State", "Computer Science & Software Engineering Club", "Data Science Club"]
     },
     {
       "slug": "bits",
       "name": "BITS Pilani, Hyderabad Campus",
       "degree": "B.E. (Hons.) Computer Science, first two years",
+      "dates": "Jul 2024 – May 2026",
       "activities": ["E-Cell (Collaborations)", "Department of Technical Arts (Crew)", "Research Chronicles (Outreach)", "BITSMUN Hyderabad (Graphic Designer)", "Esports Club (VFX & Design)", "Traders@BPHC"]
     }
   ],

@@ -4,6 +4,8 @@
       "slug": "hivemind",
       "org": "Hivemind",
       "product": "Iris, portfolio intelligence",
+      "role": "Founding Engineer",
+      "dates": "2026 – Present",
       "location": "Bengaluru, India (hybrid)",
       "link": "https://hivemind.inc",
       "linkLabel": "hivemind.inc",
@@ -13,7 +15,21 @@
       "details": [
         "LLM-powered research pipelines (retrieval-augmented generation with traceable, source-cited outputs) and the knowledge graph mapping relationships between companies: supply chains, ownership, policy, earnings, and macro events."
       ],
+      "scale": "11,000+ companies, 27,000+ links; 96+ sources and 1.2M+ data points per day feeding daily briefs.",
       "tags": ["Python", "LLMs", "RAG", "Knowledge Graphs", "Data Pipelines"]
+    },
+    {
+      "slug": "apexflo",
+      "org": "ApexFlo Labs",
+      "role": "Software Engineering Intern",
+      "dates": "May 2026 – Jul 2026",
+      "location": "Bengaluru, India",
+      "headline": "Teaching a Laptop to Notice a Fall",
+      "bullets": [
+        { "name": "Hermathena", "text": "an AI-powered IT service management platform. A natural-language, LLM-driven intake assistant replaces static ticket forms, then requests flow through classification, SLA tracking, and closure on an append-only, event-sourced Python/FastAPI + PostgreSQL backend. Role-based React + TypeScript (Vite) app with server-enforced permissions across four roles." },
+        { "name": "Behavior engine", "text": "a privacy-first, real-time human-behavior recognition engine running at 18.6 FPS on a laptop CPU (no GPU). Skeleton-based: fall detection via an ST-GCN (F1 0.78 on the URFD dataset), plus rule-based person-down and loitering detection on one shared backbone; exported to ONNX with 100% prediction agreement." }
+      ],
+      "tags": ["Python", "FastAPI", "PostgreSQL", "React", "TypeScript", "PyTorch", "ONNX", "Computer Vision"]
     },
     {
       "slug": "icmr-prism",
