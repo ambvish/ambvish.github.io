@@ -1,14 +1,15 @@
 ---
 layout: layouts/base.njk
-title: "Vishnuteja Ambati: coming soon"
-description: "Vishnuteja Ambati: coming soon"
 ---
-<main class="placeholder">
-  <h1 class="placeholder__name">{{ site.name }}</h1>
-  <p class="placeholder__status">coming soon</p>
-  <ul class="placeholder__links">
-    <li><a href="{{ site.links.github }}" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-    <li><a href="{{ site.links.linkedin }}" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-    <li><a href="mailto:{{ site.email }}">Email</a></li>
-  </ul>
+<main class="desk" id="desk" data-desk>
+  <h1 class="visually-hidden">{{ site.name }}</h1>
+  {% include "windows/note.njk" %}
+  {% include "windows/experience.njk" %}
+  {% include "windows/projects.njk" %}
+  {% include "windows/research.njk" %}
+  {% include "windows/skills.njk" %}
+  {% include "windows/education.njk" %}
+  {% include "windows/writing.njk" %}
+  {% include "windows/letters.njk" %}
 </main>
+{% include "partials/window-frame.njk" %}

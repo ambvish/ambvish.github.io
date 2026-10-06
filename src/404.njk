@@ -1,0 +1,17 @@
+---
+layout: layouts/base.njk
+permalink: /404.html
+title: "Page not found · Vishnuteja Ambati"
+eleventyExcludeFromCollections: true
+---
+{% from "macros/window.njk" import window with context %}
+<main class="desk desk--single" id="desk" data-desk>
+  <h1 class="visually-hidden">Page not found</h1>
+  {% call window({ id: "not-found", title: "404", active: true }) %}
+    <div class="empty">
+      <p class="empty__title">STOP THE PRESSES.</p>
+      <p>This page didn't make the edition.</p>
+      <p><a href="/">→ Return to the front page</a></p>
+    </div>
+  {% endcall %}
+</main>

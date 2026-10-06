@@ -1,0 +1,11 @@
+{#
+  Label for unconfirmed content. Draft items and fields only exist on the local dev server
+  (see src/_data/desk.js), so this never renders in a production build.
+  badge(item)         -> shown when the whole item is a draft
+  badge(item, field)  -> also shown when that one field came from drafts.json
+#}
+{% macro badge(item, field) -%}
+{%- if item.draft or (field and item.draftFields and field in item.draftFields) -%}
+<span class="draft-badge">DRAFT{% if item.pending %} · needs: {{ item.pending }}{% endif %}</span>
+{%- endif -%}
+{%- endmacro %}

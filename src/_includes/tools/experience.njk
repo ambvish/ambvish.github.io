@@ -1,0 +1,7 @@
+<label class="visually-hidden" for="experience-filter">Filter experience by tag</label>
+<span class="select"><select id="experience-filter" data-filter="experience-list" data-filter-mode="tag">
+  <option value="">All tags</option>
+  {%- for tag in desk.roleTags %}
+  <option value="{{ tag }}">{{ tag }}</option>
+  {%- endfor %}
+</select></span>

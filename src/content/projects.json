@@ -1,0 +1,34 @@
+{
+  "filters": ["AI/ML", "Computer Vision", "Web", "Backend", "Hardware", "Research", "Healthcare"],
+  "items": [
+    {
+      "slug": "had-stack",
+      "name": "HAD-Stack",
+      "summary": "Physics-guided adversarial training for fraud detection.",
+      "tags": ["Research", "AI/ML"],
+      "credit": "With Prof. Chivukula"
+    },
+    {
+      "slug": "prism",
+      "name": "PRISM",
+      "summary": "Maternal-health clinical decision support for an ICMR project.",
+      "tags": ["Web", "Healthcare"],
+      "credit": "Team project"
+    },
+    {
+      "slug": "agri",
+      "name": "Multimodal Agricultural Intelligence",
+      "summary": "Multilingual RAG assistant combining agricultural documents, semantic search, and weather data for context-aware farming advice.",
+      "tags": ["AI/ML"],
+      "credit": "Team project"
+    },
+    {
+      "slug": "e-commerce",
+      "name": "E-Commerce Ecosystem",
+      "summary": "Multi-role marketplace (customers, retailers, wholesalers): Next.js 14, TypeScript, Prisma, AI chatbot support. OOP course project.",
+      "tags": ["Web"],
+      "link": "https://github.com/ambvish/OOPS-PROJECT-E-Commerce-Ecosystem",
+      "credit": "Team project"
+    }
+  ]
+}

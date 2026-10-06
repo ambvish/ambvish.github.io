@@ -1,0 +1,12 @@
+<label class="visually-hidden" for="projects-filter">Filter projects by tag</label>
+<span class="select"><select id="projects-filter" data-filter="projects-list" data-filter-mode="tag">
+  <option value="">All</option>
+  {%- for tag in desk.projectFilters %}
+  <option value="{{ tag }}">{{ tag }}</option>
+  {%- endfor %}
+</select></span>
+<label class="visually-hidden" for="projects-view">Project view</label>
+<span class="select"><select id="projects-view" data-view-control="projects-list">
+  <option value="grid">Grid</option>
+  <option value="list">List</option>
+</select></span>

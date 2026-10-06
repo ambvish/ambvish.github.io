@@ -1,0 +1,38 @@
+{% from "macros/window.njk" import window with context %}
+{% from "macros/draft.njk" import badge %}
+{% call window({ id: "experience", title: "Experience", tools: "experience" }) %}
+  <ul class="list" id="experience-list">
+    {%- for role in desk.roles %}
+    <li class="row{% if role.draft %} is-draft{% endif %}" data-filter-item data-tags="{{ role.tags | join('|') }}">
+      <a class="row__link" href="/experience/{{ role.slug }}/" data-open-article="experience-{{ role.slug }}" data-search="{{ role.org }}{% if role.role %} · {{ role.role }}{% endif %}" data-kind="Experience" data-detail="{{ role.headline }}">
+        {% include "icons/doc.njk" %}
+        <span class="row__main">
+          <span class="row__head">
+            <span class="row__title">{{ role.org }} · {{ role.role or role.product }}{{ badge(role, "role") }}</span>
+            {%- if role.dates %}<span class="row__date">{{ role.dates }}{{ badge(role, "dates") }}</span>{% endif %}
+          </span>
+          <span class="row__excerpt"><em>{{ role.headline }}</em> — {{ role.lede or role.details[0] or role.bullets[0].text }}</span>
+        </span>
+      </a>
+    </li>
+    {%- endfor %}
+  </ul>
+  <p class="list__empty" data-filter-empty hidden>Nothing with that tag.</p>
+  <h3 class="list__label">Also</h3>
+  <ul class="list list--compact">
+    {%- for more in desk.moreRoles %}
+    <li class="row" data-search="{{ more.role }}" data-kind="Experience" data-detail="{{ more.org }}">
+      <div class="row__link row__link--static">
+        {% include "icons/dot.njk" %}
+        <span class="row__main">
+          <span class="row__head">
+            <span class="row__title">{{ more.role }}</span>
+            {%- if more.dates %}<span class="row__date">{{ more.dates }}{{ badge(more, "dates") }}</span>{% endif %}
+          </span>
+          <span class="row__excerpt">{{ more.org }}</span>
+        </span>
+      </div>
+    </li>
+    {%- endfor %}
+  </ul>
+{% endcall %}

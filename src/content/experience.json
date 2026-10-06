@@ -1,0 +1,78 @@
+{
+  "roles": [
+    {
+      "slug": "hivemind",
+      "org": "Hivemind",
+      "product": "Iris, portfolio intelligence",
+      "location": "Bengaluru, India (hybrid)",
+      "link": "https://hivemind.inc",
+      "linkLabel": "hivemind.inc",
+      "headline": "Reading the Night So Investors Don't Have To",
+      "lede": "Hivemind's Iris is a portfolio-intelligence product for individual investors. It reads filings, news, and the supply-chain map behind a person's holdings overnight and surfaces the few things that actually reach their portfolio.",
+      "detailsLabel": "What I built",
+      "details": [
+        "LLM-powered research pipelines (retrieval-augmented generation with traceable, source-cited outputs) and the knowledge graph mapping relationships between companies: supply chains, ownership, policy, earnings, and macro events."
+      ],
+      "tags": ["Python", "LLMs", "RAG", "Knowledge Graphs", "Data Pipelines"]
+    },
+    {
+      "slug": "icmr-prism",
+      "org": "ICMR",
+      "product": "PRISM, maternal-health clinical decision support",
+      "role": "Project Engineer (freelance)",
+      "dates": "May 2026 – Jun 2026",
+      "location": "Remote",
+      "headline": "A Second Opinion for High-Risk Pregnancies",
+      "team": true,
+      "details": [
+        "A full-stack clinical dashboard built for a project with the Indian Council of Medical Research, helping Medical Officers manage high-risk pregnancies. It uses a typed, reusable clinical rules engine with risk explainability and role-based access, plus guideline-based workflows across risk assessment, diagnosis, treatment planning, monitoring, and referral."
+      ],
+      "tags": ["React", "TypeScript", "Supabase", "Healthcare"]
+    },
+    {
+      "slug": "drdo-har",
+      "org": "DRDO-funded research",
+      "product": "human activity recognition",
+      "role": "Student Research Assistant",
+      "dates": "Jan 2026 – May 2026",
+      "location": "BITS Pilani, Hyderabad",
+      "funding": "on a project funded by DRDO's Aeronautics Research & Development Board",
+      "headline": "Reading Motion, One Skeleton at a Time",
+      "details": [
+        "Built real-time person detection and tracking with YOLOv11 and a skeleton-based action-recognition module (Temporal Convolutional Network trained on NTU RGB+D 3D-skeleton data: 10K+ sequences, 24 action classes, NVIDIA Tesla T4 GPUs), then integrated the two into an end-to-end activity-recognition system."
+      ],
+      "tags": ["PyTorch", "YOLOv11", "CUDA", "Computer Vision"]
+    },
+    {
+      "slug": "uzox",
+      "org": "Uzox",
+      "role": "Software Engineering Intern",
+      "dates": "Oct 2025 – Feb 2026",
+      "location": "Remote",
+      "headline": "Three Million Songs a Week, Fifty Milliseconds Each",
+      "details": [
+        "Backend services for a distributed Discord music platform serving 200K+ monthly active users and 3M+ weekly audio streams. RESTful microservices in Node.js (Express) on Docker/Kubernetes with service discovery; a WebSocket sharding system with caching and load balancing for sub-50 ms real-time latency."
+      ],
+      "tags": ["Node.js", "MongoDB", "Docker", "Kubernetes", "WebSockets"]
+    }
+  ],
+  "more": [
+    {
+      "slug": "research-fellow",
+      "role": "Undergraduate Research Fellow",
+      "org": "BITS Pilani (with Prof. Aneesh Chivukula)"
+    },
+    {
+      "slug": "ieee",
+      "role": "Machine Learning Specialist",
+      "org": "IEEE Student Branch, BITS Pilani Hyderabad",
+      "dates": "Apr 2026 – Sep 2026"
+    },
+    {
+      "slug": "innovation-cell",
+      "role": "Tech Team Member",
+      "org": "Innovation Cell, BITS Pilani Hyderabad",
+      "dates": "Jul 2025 – Jan 2026"
+    }
+  ]
+}

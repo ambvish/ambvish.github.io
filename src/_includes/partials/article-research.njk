@@ -1,0 +1,15 @@
+{% from "macros/draft.njk" import badge %}
+<article class="article">
+  <p class="article__kicker">{{ item.title }} · {{ item.subtitle }}</p>
+  <h3 class="article__title">{{ item.headline }}</h3>
+  <p class="article__meta"><span>{{ item.context }}</span></p>
+  {% if item.status %}<p><strong>Status:</strong> {{ item.status }}{{ badge(item, "status") }}</p>{% endif %}
+  <p class="article__lede">{{ item.summary }}</p>
+  {% if item.result %}<p><strong>Result:</strong> {{ item.result }}</p>{% endif %}
+  {% if item.numbers %}
+  <p><strong>Numbers that disagree across documents:</strong>{{ badge(item, "numbers") }}</p>
+  <ul>{% for number in item.numbers %}<li>{{ number }}</li>{% endfor %}</ul>
+  {% endif %}
+  {% if item.note %}<p><strong>Honesty note:</strong> {{ item.note }}</p>{% endif %}
+  <ul class="tags" aria-label="Tags">{% for tag in item.tags %}<li>{{ tag }}</li>{% endfor %}</ul>
+</article>

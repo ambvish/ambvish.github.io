@@ -4,12 +4,26 @@
   <meta charset="utf-8">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ title }}</title>
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#10131c">
+  <title>{{ title or site.name }}</title>
   <meta name="description" content="{{ description or site.tagline }}">
   <link rel="canonical" href="{{ site.url }}{{ page.url }}">
-  <link rel="stylesheet" href="/assets/css/placeholder.css">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{ title or site.name }}">
+  <meta property="og:description" content="{{ description or site.tagline }}">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <script src="/assets/js/early.js"></script>
+  <script type="module" src="/assets/js/main.js"></script>
 </head>
 <body>
+  <a class="skip-link" href="#desk">Skip to content</a>
+  {% include "partials/menubar.njk" %}
   {{ content | safe }}
+  {% include "partials/palette.njk" %}
 </body>
 </html>

@@ -1,0 +1,24 @@
+{
+  "schools": [
+    {
+      "slug": "iowa-state",
+      "name": "Iowa State University",
+      "degree": "B.S. Computer Engineering",
+      "note": "Transfer student (2+2 pathway)",
+      "activities": ["IEEE at Iowa State", "Computer Science & Software Engineering Club", "Data Science Club"]
+    },
+    {
+      "slug": "bits",
+      "name": "BITS Pilani, Hyderabad Campus",
+      "degree": "B.E. (Hons.) Computer Science, first two years",
+      "activities": ["E-Cell (Collaborations)", "Department of Technical Arts (Crew)", "Research Chronicles (Outreach)", "BITSMUN Hyderabad (Graphic Designer)", "Esports Club (VFX & Design)", "Traders@BPHC"]
+    }
+  ],
+  "certifications": [
+    { "slug": "mckinsey", "name": "McKinsey.org Forward Program", "issuer": "McKinsey & Company", "date": "Jun 2026" },
+    { "slug": "h2o", "name": "H2O AI Agents: From Theory to Practice", "issuer": "H2O.ai", "date": "Jun 2026" },
+    { "slug": "google-genai", "name": "Gen AI: Beyond the Chatbot", "issuer": "Google", "date": "Oct 2025" },
+    { "slug": "aws-forage", "name": "AWS Solutions Architecture Job Simulation", "issuer": "Forage", "date": "Sep 2025" },
+    { "slug": "jpmorgan-forage", "name": "J.P. Morgan Software Engineering Job Simulation", "issuer": "Forage", "date": "Sep 2025" }
+  ]
+}

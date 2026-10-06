@@ -1,0 +1,25 @@
+{% from "macros/draft.njk" import badge %}
+<aside class="note" id="note" data-window data-drag-handle data-title="Introduction" tabindex="-1" aria-labelledby="note-title">
+  <h2 class="note__title" id="note-title">{{ site.intro.headline }}</h2>
+  <p class="note__tagline">{{ site.tagline }}</p>
+  {%- if desk.intro %}
+  {%- for paragraph in desk.intro.paragraphs %}
+  <p>{{ paragraph }} {{ badge(desk.intro) }}</p>
+  {%- endfor %}
+  {%- endif %}
+  {%- for paragraph in site.intro.paragraphs %}
+  <p>{{ paragraph }}</p>
+  {%- endfor %}
+  {%- if desk.intro %}
+  <p><strong>Currently:</strong> {{ desk.intro.currently }} {{ badge(desk.intro) }}</p>
+  <p><strong>Looking for:</strong> {{ desk.intro.lookingFor }} {{ badge(desk.intro) }}</p>
+  {%- endif %}
+  <p class="note__links">
+    <a href="{{ site.links.github }}" target="_blank" rel="noopener noreferrer">GitHub<span aria-hidden="true"> ↗</span><span class="visually-hidden"> (opens in a new tab)</span></a>
+    <span aria-hidden="true">·</span>
+    <a href="{{ site.links.linkedin }}" target="_blank" rel="noopener noreferrer">LinkedIn<span aria-hidden="true"> ↗</span><span class="visually-hidden"> (opens in a new tab)</span></a>
+    <span aria-hidden="true">·</span>
+    <a href="mailto:{{ site.email }}">Email</a>
+  </p>
+  <p class="note__hint" data-js-only hidden><kbd data-modkey>⌘</kbd> <kbd>K</kbd> searches everything.</p>
+</aside>

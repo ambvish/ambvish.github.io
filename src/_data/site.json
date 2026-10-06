@@ -1,7 +1,6 @@
 {
   "name": "Vishnuteja Ambati",
   "handle": "ambvish",
-  "subtitle": "Systems, Signals & Other Machinery",
   "tagline": "Computer Engineering at Iowa State · AI systems, research & real-time engineering",
   "location": "Ames, Iowa",
   "url": "https://ambvish.github.io",
@@ -9,5 +8,11 @@
   "links": {
     "github": "https://github.com/ambvish",
     "linkedin": "https://www.linkedin.com/in/vishnutejaambati/"
+  },
+  "intro": {
+    "headline": "Engineer. Researcher. Professional problem-hunter.",
+    "paragraphs": [
+      "I like hard problems, honest numbers, and software that survives contact with reality."
+    ]
   }
 }

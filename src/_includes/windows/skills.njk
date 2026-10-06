@@ -1,0 +1,21 @@
+{% from "macros/window.njk" import window with context %}
+{% call window({ id: "skills", title: "Skills", tools: "skills" }) %}
+  <p class="wanted"><strong>{{ desk.skills.wanted }}</strong> {{ desk.skills.lead }}</p>
+  <div class="tree" id="skills-list">
+    {%- for group in desk.skills.groups %}
+    <details class="folder" open data-filter-group>
+      <summary class="folder__head">
+        {% include "icons/chevron.njk" %}{% include "icons/folder.njk" %}
+        <span class="folder__name">{{ group.name }}</span>
+        <span class="folder__count">{{ group.items | length }}</span>
+      </summary>
+      <ul class="folder__items">
+        {%- for skill in group.items %}
+        <li class="folder__item" data-filter-item data-search="{{ skill }}" data-kind="Skill" data-detail="{{ group.name }}">{% include "icons/dot.njk" %}<span>{{ skill }}</span></li>
+        {%- endfor %}
+      </ul>
+    </details>
+    {%- endfor %}
+  </div>
+  <p class="list__empty" data-filter-empty hidden>No matches.</p>
+{% endcall %}

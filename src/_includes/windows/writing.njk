@@ -1,0 +1,7 @@
+{% from "macros/window.njk" import window with context %}
+{% call window({ id: "writing", title: "Writing", startClosed: true }) %}
+  <div class="empty">
+    {% include "icons/doc.njk" %}
+    <p class="empty__title">First edition coming soon</p>
+  </div>
+{% endcall %}

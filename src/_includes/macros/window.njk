@@ -1,0 +1,23 @@
+{#
+  A desktop window. Import with context so toolbars can read site data:
+    {% from "macros/window.njk" import window with context %}
+    {% call window({ id: "experience", title: "Experience", tools: "experience" }) %} ...body... {% endcall %}
+  Options: id, title, tools (a file in _includes/tools/), active, startClosed (closed on the desktop until opened).
+  The traffic-light buttons start disabled; desktop.js enables them when the desktop is running.
+#}
+{% macro window(opts) %}
+<section class="window{% if opts.active %} is-active{% endif %}" id="{{ opts.id }}" data-window data-title="{{ opts.title }}"{% if opts.startClosed %} data-start-closed{% endif %} tabindex="-1" aria-labelledby="{{ opts.id }}-title">
+  <div class="window__bar" data-drag-handle>
+    <div class="window__lights">
+      <button class="light light--close" type="button" data-action="close" aria-label="Close {{ opts.title }}" disabled></button>
+      <button class="light light--minimize" type="button" data-action="minimize" aria-label="Minimize {{ opts.title }}" aria-pressed="false" disabled></button>
+      <button class="light light--zoom" type="button" data-action="zoom" aria-label="Zoom {{ opts.title }}" aria-pressed="false" disabled></button>
+    </div>
+    <h2 class="window__title" id="{{ opts.id }}-title">{{ opts.title }}</h2>
+    {% if opts.tools %}<div class="window__tools">{% include "tools/" + opts.tools + ".njk" %}</div>{% endif %}
+  </div>
+  <div class="window__body">
+    {{ caller() }}
+  </div>
+</section>
+{% endmacro %}

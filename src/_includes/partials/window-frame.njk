@@ -1,0 +1,21 @@
+{# Empty window that desktop.js fills with an article (experience or research) when a row is opened. #}
+<template id="window-frame">
+  <section class="window window--article" data-window data-ephemeral tabindex="-1">
+    <div class="window__bar" data-drag-handle>
+      <div class="window__lights">
+        <button class="light light--close" type="button" data-action="close" data-label="Close"></button>
+        <button class="light light--minimize" type="button" data-action="minimize" data-label="Minimize" aria-pressed="false"></button>
+        <button class="light light--zoom" type="button" data-action="zoom" data-label="Zoom" aria-pressed="false"></button>
+      </div>
+      <h2 class="window__title"></h2>
+      <div class="window__tools"><a class="tool-link" data-page-link href="/">Open as page</a></div>
+    </div>
+    <div class="window__body"></div>
+  </section>
+</template>
+{% for article in desk.articles %}
+{%- set item = article.item %}
+<template id="article-{{ article.kind }}-{{ article.slug }}" data-title="{{ item.org if article.kind == 'experience' else item.title }}" data-href="/{{ article.kind }}/{{ article.slug }}/">
+  {% include "partials/article-" + article.kind + ".njk" %}
+</template>
+{% endfor %}

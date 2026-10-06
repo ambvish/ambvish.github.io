@@ -1,0 +1,30 @@
+{
+  "wanted": "WANTED: HARD PROBLEMS.",
+  "lead": "Applicant offers:",
+  "groups": [
+    {
+      "name": "Languages",
+      "items": ["Python", "C++", "C", "Java", "JavaScript", "TypeScript", "Go", "Rust", "SQL", "Verilog"]
+    },
+    {
+      "name": "Backend & Systems",
+      "items": ["Distributed & real-time systems", "Microservices", "WebSockets", "REST APIs", "Node.js", "Express", "FastAPI", "Docker", "Kubernetes", "PostgreSQL", "MongoDB", "Supabase", "Event sourcing", "Caching", "Load balancing", "CI/CD"]
+    },
+    {
+      "name": "AI / ML",
+      "items": ["PyTorch", "TensorFlow", "ONNX", "scikit-learn", "OpenCV", "PyTorch Geometric", "GNNs", "CNNs", "TCNs", "ST-GCN", "Computer vision", "Adversarial ML", "LLMs", "RAG", "Agentic AI", "Knowledge graphs", "Quantization"]
+    },
+    {
+      "name": "Hardware",
+      "items": ["Verilog/SystemVerilog", "FPGA (Zynq-7020)", "INT8 inference"]
+    },
+    {
+      "name": "Data & Cloud",
+      "items": ["ETL pipelines", "Feature engineering", "Prometheus", "Grafana", "AWS", "Google Cloud", "Git", "Linux", "CUDA"]
+    },
+    {
+      "name": "Also",
+      "items": ["Graphic design & VFX (BITSMUN, Esports Club)"]
+    }
+  ]
+}

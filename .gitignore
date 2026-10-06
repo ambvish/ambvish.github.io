@@ -17,6 +17,9 @@ private/
 reference/
 .claude/
 
+# Unconfirmed site copy: shown on the local dev server only, never committed
+drafts.json
+
 # OS and tool clutter
 .DS_Store
 npm-debug.log*
