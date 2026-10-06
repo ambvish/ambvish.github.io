@@ -27,7 +27,7 @@
     <li class="poster poster--{{ loop.index0 % 5 }}{% if cert.draft %} is-draft{% endif %}" data-search="{{ cert.name }}" data-kind="Certification" data-detail="{{ cert.issuer }}">
       <span class="poster__issuer">{{ cert.issuer }}</span>
       <span class="poster__name">{{ cert.name }}</span>
-      <span class="poster__date">{{ cert.date }}{{ badge(cert) }}</span>
+      {%- if cert.date or cert.draft %}<span class="poster__date">{{ cert.date }}{{ badge(cert) }}</span>{% endif %}
     </li>
     {%- endfor %}
   </ul>

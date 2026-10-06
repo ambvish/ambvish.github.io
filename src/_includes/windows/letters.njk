@@ -1,23 +1,45 @@
 {# Short quotes from letters of recommendation, published with each professor's permission. #}
 {% from "macros/window.njk" import window with context %}
 {% call window({ id: "letters", title: "Recommendations", startClosed: true }) %}
+  <p class="letters__intro">Excerpts from letters of recommendation, quoted with each professor's permission.</p>
   {%- for letter in desk.letters %}
   <section class="letter" aria-labelledby="letter-{{ letter.slug }}">
     <header class="letter__head">
-      <span class="avatar" aria-hidden="true">{{ letter.by | replace("Prof. ", "") | first }}</span>
+      <img class="letter__avatar" src="{{ letter.avatar }}" width="240" height="240" alt="" draggable="false">
       <div>
         <h3 class="letter__name" id="letter-{{ letter.slug }}">{{ letter.by }}</h3>
         <p class="letter__title">{{ letter.title }}</p>
+        <p class="letter__org">{{ letter.org }}</p>
       </div>
     </header>
-    <p class="letter__context">{{ letter.context }}</p>
+    <blockquote class="letter__lead" data-search="{{ letter.quotes[0] }}" data-kind="Recommendation" data-detail="{{ letter.by }}">
+      <p>“{{ letter.quotes[0] }}”</p>
+    </blockquote>
+    {%- if letter.quotes.length > 1 %}
     <ul class="letter__quotes">
-      {%- for quote in letter.quotes %}
+      {%- for quote in letter.quotes.slice(1) %}
       <li data-search="{{ quote }}" data-kind="Recommendation" data-detail="{{ letter.by }}">
-        <blockquote>“{{ quote }}”</blockquote>
+        <blockquote><p>“{{ quote }}”</p></blockquote>
       </li>
       {%- endfor %}
     </ul>
+    {%- endif %}
+    <dl class="letter__facts">
+      <div class="letter__fact">
+        <dt>Context</dt>
+        <dd>{{ letter.context }}</dd>
+      </div>
+      <div class="letter__fact">
+        <dt>Related work</dt>
+        <dd>
+          <ul class="letter__work">
+            {%- for work in letter.work %}
+            <li><a href="{{ work.href }}" data-open-article="{{ work.article }}">{{ work.label }} →</a></li>
+            {%- endfor %}
+          </ul>
+        </dd>
+      </div>
+    </dl>
   </section>
   {%- endfor %}
 {% endcall %}

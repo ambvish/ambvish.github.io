@@ -1,8 +1,19 @@
 {% from "macros/window.njk" import window with context %}
 {% call window({ id: "writing", title: "Writing", startClosed: true }) %}
-  <div class="empty">
-    {% include "icons/doc.njk" %}
-    <p class="empty__title">No posts yet</p>
-    <p>First writing coming soon.</p>
-  </div>
+  <ul class="list">
+    {%- for post in desk.posts %}
+    <li class="row">
+      <a class="row__link" href="/writing/{{ post.slug }}/" data-open-article="writing-{{ post.slug }}" data-search="{{ post.title }}" data-kind="Writing" data-detail="{{ post.summary }}">
+        {% include "icons/doc.njk" %}
+        <span class="row__main">
+          <span class="row__head">
+            <span class="row__title">{{ post.title }}</span>
+            {%- if post.date %}<time class="row__date" datetime="{{ post.dateISO }}">{{ post.date }}</time>{% endif %}
+          </span>
+          <span class="row__excerpt">{{ post.summary }}</span>
+        </span>
+      </a>
+    </li>
+    {%- endfor %}
+  </ul>
 {% endcall %}

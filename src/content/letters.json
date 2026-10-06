@@ -2,21 +2,33 @@
   {
     "slug": "chivukula",
     "by": "Prof. Aneesh S. Chivukula",
-    "title": "Assistant Professor, Computer Science & Information Systems, BITS Pilani Hyderabad",
+    "title": "Assistant Professor, Computer Science & Information Systems",
+    "org": "BITS Pilani, Hyderabad Campus",
+    "avatar": "/assets/img/letters/chivukula.png",
     "context": "Supervised my undergraduate research fellowship, the HAD-Stack paper, and the Hamiltonian solvers & QHNet study project.",
     "quotes": [
       "He belongs to a category of undergraduate I meet perhaps once in a few years.",
       "one who does not wait to be handed a problem but goes looking for a hard one",
       "he found a data-leakage flaw in the pipeline and documented it rather than quietly enjoying the inflated numbers"
+    ],
+    "work": [
+      { "label": "Undergraduate Research Fellow", "href": "/experience/research-fellow/", "article": "experience-research-fellow" },
+      { "label": "HAD-Stack", "href": "/research/had-stack/", "article": "research-had-stack" },
+      { "label": "Hamiltonian solvers & QHNet", "href": "/research/hamiltonian-qhnet/", "article": "research-hamiltonian-qhnet" }
     ]
   },
   {
     "slug": "saxena",
     "by": "Prof. Paresh Saxena",
-    "title": "Associate Professor and Head of Department, Computer Science & Information Systems, BITS Pilani Hyderabad",
+    "title": "Associate Professor and Head of Department, Computer Science & Information Systems",
+    "org": "BITS Pilani, Hyderabad Campus",
+    "avatar": "/assets/img/letters/saxena.png",
     "context": "Wrote about my work on the DRDO-funded human-activity-recognition project at BITS Pilani.",
     "quotes": [
       "he took clear ownership of the work … and followed problems through to working solutions with little supervision"
+    ],
+    "work": [
+      { "label": "Student Research Assistant, DRDO-funded research", "href": "/experience/drdo-har/", "article": "experience-drdo-har" }
     ]
   }
 ]

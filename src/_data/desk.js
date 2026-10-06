@@ -52,6 +52,7 @@ export default function () {
     schools: merge(education.schools, drafts.education),
     certifications: merge(education.certifications, { add: drafts.education?.certifications }),
     letters: read("letters.json"),
+    posts: read("writing.json").posts,
   };
 
   // Tags offered in the Experience window's filter, in first-seen order.
@@ -65,6 +66,8 @@ export default function () {
     ...desk.projects
       .filter((item) => item.sections)
       .map((item) => ({ kind: "projects", slug: item.slug, title: item.name, windowTitle: item.name, wide: true, item })),
+    // Posts open wide too, with room for sidenotes in the margin.
+    ...desk.posts.map((item) => ({ kind: "writing", slug: item.slug, title: item.title, windowTitle: item.title, wide: true, item })),
   ];
 
   return desk;

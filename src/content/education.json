@@ -4,8 +4,8 @@
       "slug": "iowa-state",
       "name": "Iowa State University",
       "degree": "B.S. Computer Engineering",
-      "minor": "Will be pursuing a minor in Artificial Intelligence",
-      "dates": "Aug 2026 – Expected 2028",
+      "minor": "Pursuing a minor in Artificial Intelligence",
+      "dates": "8/2026 – Expected 2028",
       "activities": [
         "IEEE at Iowa State",
         "Computer Science & Software Engineering Club",
@@ -18,7 +18,7 @@
       "slug": "bits",
       "name": "BITS Pilani, Hyderabad Campus",
       "degree": "B.E. (Hons.) Computer Science, first two years",
-      "dates": "Jul 2024 – May 2026",
+      "dates": "7/2024 – 5/2026",
       "activities": [
         "IEEE Student Branch"
       ],
@@ -28,46 +28,57 @@
   ],
   "certifications": [
     {
+      "slug": "cbse-ai",
+      "name": "Artificial Intelligence: 100 / 100 (centum)",
+      "issuer": "CBSE Class 10",
+      "date": "2022"
+    },
+    {
+      "slug": "cbse-10",
+      "name": "Class 10: 96.8%",
+      "issuer": "CBSE",
+      "date": "2022"
+    },
+    {
+      "slug": "cbse-12",
+      "name": "Class 12 (Science): 90.4%",
+      "issuer": "CBSE"
+    },
+    {
       "slug": "mckinsey",
       "name": "McKinsey.org Forward Program",
       "issuer": "McKinsey & Company",
-      "date": "Jun 2026"
+      "date": "6/2026"
     },
     {
       "slug": "h2o",
       "name": "H2O AI Agents: From Theory to Practice",
       "issuer": "H2O.ai",
-      "date": "Jun 2026"
+      "date": "6/2026"
     },
     {
       "slug": "google-genai",
       "name": "Gen AI: Beyond the Chatbot",
       "issuer": "Google",
-      "date": "Oct 2025"
+      "date": "10/2025"
     },
     {
       "slug": "aws-forage",
       "name": "AWS Solutions Architecture Job Simulation",
       "issuer": "Forage",
-      "date": "Sep 2025"
+      "date": "9/2025"
     },
     {
       "slug": "jpmorgan-forage",
       "name": "J.P. Morgan Software Engineering Job Simulation",
       "issuer": "Forage",
-      "date": "Sep 2025"
+      "date": "9/2025"
     },
     {
       "slug": "toefl",
       "name": "TOEFL iBT: 102 / 120",
       "issuer": "ETS",
-      "date": "Jul 2024"
-    },
-    {
-      "slug": "cbse-ai",
-      "name": "Artificial Intelligence: 100 / 100 (centum)",
-      "issuer": "CBSE Class 10",
-      "date": "2022"
+      "date": "7/2024"
     }
   ]
 }

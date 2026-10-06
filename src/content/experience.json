@@ -7,6 +7,7 @@
       "role": "Founding Engineer",
       "dates": "2026 – Present",
       "location": "Bengaluru, India (hybrid)",
+      "image": "/assets/img/experience/hivemind.png",
       "headline": "Reading the Night So Investors Don't Have To",
       "facts": [
         { "label": "Role", "value": "Founding Engineer" },
@@ -53,12 +54,13 @@
       "slug": "apexflo",
       "org": "ApexFlo Labs",
       "role": "Software Engineering Intern",
-      "dates": "May 2026 – Jul 2026",
+      "dates": "5/2026 – 7/2026",
       "location": "Bengaluru, India",
+      "image": "/assets/img/experience/apexflo.png",
       "headline": "Teaching a Laptop to Notice a Fall",
       "facts": [
         { "label": "Role", "value": "Software Engineering Intern" },
-        { "label": "Dates", "value": "May 2026 – Jul 2026" },
+        { "label": "Dates", "value": "5/2026 – 7/2026" },
         { "label": "Location", "value": "Bengaluru, India" },
         { "label": "Built", "value": "Hermathena · Behavior Intelligence Engine" }
       ],
@@ -110,12 +112,13 @@
       "org": "ICMR",
       "product": "PRISM",
       "role": "Project Engineer (freelance)",
-      "dates": "May 2026 – Jun 2026",
+      "dates": "5/2026 – 6/2026",
       "location": "Remote",
+      "image": "/assets/img/experience/icmr-prism.png",
       "headline": "A Second Opinion for High-Risk Pregnancies",
       "facts": [
         { "label": "Role", "value": "Project Engineer (freelance)" },
-        { "label": "Dates", "value": "May 2026 – Jun 2026" },
+        { "label": "Dates", "value": "5/2026 – 6/2026" },
         { "label": "Location", "value": "Remote" },
         { "label": "For", "value": "A project with the Indian Council of Medical Research" },
         { "label": "Credit", "value": "Team project" }
@@ -161,12 +164,13 @@
       "org": "DRDO-funded research",
       "product": "Human activity recognition",
       "role": "Student Research Assistant",
-      "dates": "Jan 2026 – May 2026",
+      "dates": "1/2026 – 5/2026",
       "location": "BITS Pilani, Hyderabad",
+      "image": "/assets/img/experience/drdo-har.png",
       "headline": "Reading Motion, One Skeleton at a Time",
       "facts": [
         { "label": "Role", "value": "Student Research Assistant" },
-        { "label": "Dates", "value": "Jan 2026 – May 2026" },
+        { "label": "Dates", "value": "1/2026 – 5/2026" },
         { "label": "Location", "value": "BITS Pilani, Hyderabad" },
         { "label": "Funding", "value": "DRDO's Aeronautics Research & Development Board" }
       ],
@@ -212,12 +216,13 @@
       "org": "BITS Pilani",
       "product": "Research",
       "role": "Undergraduate Research Fellow",
-      "dates": "Nov 2025 – Present",
+      "dates": "11/2025 – Present",
       "location": "BITS Pilani, Hyderabad",
+      "image": "/assets/img/experience/research-fellow.png",
       "headline": "Where Physics Meets Adversarial ML",
       "facts": [
         { "label": "Role", "value": "Undergraduate Research Fellow" },
-        { "label": "Dates", "value": "Nov 2025 – Present" },
+        { "label": "Dates", "value": "11/2025 – Present" },
         { "label": "Location", "value": "BITS Pilani, Hyderabad" },
         { "label": "Advisor", "value": "Prof. Aneesh S. Chivukula" },
         { "label": "Focus", "value": "Adversarial machine learning · physics-guided models" }
@@ -259,12 +264,13 @@
       "slug": "uzox",
       "org": "Uzox",
       "role": "Software Engineering Intern",
-      "dates": "Oct 2025 – Feb 2026",
+      "dates": "10/2025 – 2/2026",
       "location": "Remote",
+      "image": "/assets/img/experience/uzox.png",
       "headline": "Three Million Songs a Week, Fifty Milliseconds Each",
       "facts": [
         { "label": "Role", "value": "Software Engineering Intern" },
-        { "label": "Dates", "value": "Oct 2025 – Feb 2026" },
+        { "label": "Dates", "value": "10/2025 – 2/2026" },
         { "label": "Location", "value": "Remote" },
         { "label": "Product", "value": "A distributed Discord music platform" }
       ],

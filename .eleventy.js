@@ -21,6 +21,21 @@ export default function (eleventyConfig) {
   // Site content lives in src/content/ and is read by src/_data/desk.js.
   eleventyConfig.addWatchTarget("src/content/");
 
+  // Writing: external links open in a new tab with a ↗, and a [^1] marker becomes a numbered
+  // sidenote (shown in the margin on wide windows, under the line on narrow ones).
+  const externalLinks = (html) =>
+    html.replace(
+      /<a href="(https?:\/\/[^"]+)">([\s\S]*?)<\/a>/g,
+      (_, href, text) =>
+        `<a href="${href}" target="_blank" rel="noopener noreferrer">${text}<span aria-hidden="true"> ↗</span><span class="visually-hidden"> (opens in a new tab)</span></a>`,
+    );
+  eleventyConfig.addFilter("prose", (html, notes = {}) =>
+    externalLinks(html).replace(/\[\^(\d+)\]/g, (_, n) => {
+      if (!notes[n]) throw new Error(`Writing: note [^${n}] has no text`);
+      return `<sup class="fn">${n}</sup><span class="sidenote" role="note"><sup class="sidenote__n">${n}</sup> ${externalLinks(notes[n])}</span>`;
+    }),
+  );
+
   // Production builds start from an empty folder, so nothing left over from `npm run dev` can ship.
   eleventyConfig.on("eleventy.before", async ({ directories, runMode }) => {
     if (runMode === "build") await rm(directories.output, { recursive: true, force: true });

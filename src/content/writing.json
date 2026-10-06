@@ -1,0 +1,127 @@
+{
+  "posts": [
+    {
+      "slug": "keypoints-to-behavior",
+      "title": "From Keypoints to Understanding Human Behavior",
+      "summary": "Detecting a person is rarely the hard part of action recognition. The real challenge is interpreting what their movement means over time.",
+      "notes": {
+        "1": "For a <a href=\"/experience/drdo-har/\" data-open-article=\"experience-drdo-har\">DRDO-funded activity-recognition project</a> at BITS Pilani, I trained a Temporal Convolutional Network on NTU RGB+D: 10K+ 3D-skeleton sequences across 24 action classes.",
+        "2": "An ST-GCN is the fall detector in my <a href=\"/projects/behavior-engine/\" data-open-article=\"projects-behavior-engine\">Behavior Intelligence Engine</a>, which runs at 18.6 FPS on a laptop CPU and scored an F1 of 0.78 on the URFD fall dataset."
+      },
+      "body": [
+        { "p": "Human action recognition is often framed as a simple computer vision task: show a model a video and let it decide whether someone is walking, sitting, sleeping, or falling. In practice, it is much harder than that." },
+        { "p": "Detecting the person is rarely the bottleneck. Modern detectors and pose estimators locate people and extract body keypoints with impressive accuracy. The real challenge is <strong>interpreting what those movements mean over time</strong>." },
+        { "p": "A single frame almost never tells the whole story. A person lying on the floor might be sleeping, resting, or recovering from a fall. A person standing still might be waiting, talking, or loitering. The images can look nearly identical. What separates these behaviors is the sequence of movement before and after the frame you are looking at." },
+        { "h": "Representing people as motion" },
+        { "p": "Rather than working with raw pixels, we can describe a person as a set of keypoints: head, shoulders, elbows, wrists, hips, knees, ankles. Each frame becomes a compact, structured description of pose.[^1]" },
+        { "p": "This abstraction discards a lot of information that has nothing to do with behavior, such as clothing, background texture, and lighting. What remains is the shape of the body and, more importantly, how that shape changes." },
+        { "p": "Consider two sequences:" },
+        { "ul": [
+          "Standing → instability → rapid downward movement → horizontal posture",
+          "Standing → sitting → lying down → stable posture"
+        ] },
+        { "p": "The final frames may be almost indistinguishable, yet the behavioral signatures are completely different. Keypoints in a single frame are not enough. The information emerges when we treat them as a <strong>sequence</strong>." },
+        { "h": "Why spatiotemporal models matter" },
+        { "p": "Skeleton-based models combine two kinds of reasoning:" },
+        { "ul": [
+          "<strong>Spatial:</strong> how are the joints related to one another?",
+          "<strong>Temporal:</strong> how do those relationships evolve over time?"
+        ] },
+        { "p": "A Spatial-Temporal Graph Convolutional Network (ST-GCN) captures both.[^2] It treats the body as a graph, with joints as nodes and anatomical connections as edges, and learns how that graph changes across a sequence. The result is closer to learning <em>motion patterns</em> than image patterns." },
+        { "p": "This reframes how we define the behaviors themselves:" },
+        { "ul": [
+          "A fall is not just a person being horizontal. It is a <strong>transition</strong>.",
+          "Sleep is not just lying down. It is a <strong>state that persists</strong>.",
+          "Loitering is not just standing. It is a pattern of position, movement, and duration."
+        ] },
+        { "p": "None of these are easy to see in one frame, and all of them become clearer with temporal context." },
+        { "h": "The dataset problem" },
+        { "p": "A strong architecture cannot compensate for a weak picture of reality, and this is one of the central challenges in the field." },
+        { "p": "Datasets are limited snapshots of the world, shaped by particular environments, camera angles, subjects, and labeling decisions. A model can score well on a benchmark and still struggle once it is deployed somewhere different." },
+        { "p": "Staged falls tend to be clean and exaggerated, while real falls are messy. They happen partly out of frame, involve furniture, occur at odd angles, and unfold in a fraction of a second. Sleeping data has a similar gap: people demonstrating a sleeping pose look very different from real sleep, which involves blankets, partial occlusion, varied orientations, and long stretches of stillness." },
+        { "pull": "Benchmark accuracy does not necessarily equal real-world understanding." },
+        { "p": "Closing that gap means more diverse datasets, harder negative examples, longer sequences, varied camera perspectives, and, above all, data collected from the environments where the system will actually run." },
+        { "h": "Making keypoint tracking more temporal" },
+        { "p": "Treating each frame's pose as an independent prediction is another limitation. Occlusion, motion blur, crowding, and unusual body positions can cause skeletons to jitter or briefly lose joints." },
+        { "p": "A more robust system maintains <strong>persistent identities and trajectories</strong> over time, tracking:" },
+        { "ul": [
+          "joint positions, velocities, and accelerations",
+          "body orientation and posture changes",
+          "per-keypoint confidence",
+          "how all of the above evolve across longer windows"
+        ] },
+        { "p": "The question shifts from “where is this person's knee?” to “how has this knee been moving over the last several seconds?” That added context makes the representation far more resilient to noisy detections." },
+        { "h": "Beyond keypoints" },
+        { "p": "Keypoints are a clean abstraction of motion, but a person is more than a skeleton. Behavior depends on objects, surroundings, and interactions." },
+        { "p": "A person lying next to a bed means something very different from a person lying in the middle of an airport terminal. Standing at a counter for thirty seconds is ordinary; standing in a restricted area for twenty minutes may not be." },
+        { "p": "This points toward architectures that combine several complementary signals:" },
+        { "formula": "RGB appearance + pose + motion + object context + temporal history" },
+        { "p": "Each signal contributes something different:" },
+        { "ul": [
+          "<strong>Pose</strong> shows how the body moves.",
+          "<strong>Object detection</strong> shows what the person is interacting with.",
+          "<strong>Scene understanding</strong> shows where it is happening.",
+          "<strong>Temporal modeling</strong> shows how the situation develops."
+        ] },
+        { "p": "Together they give a much richer account of behavior than any single representation." },
+        { "h": "Beyond action classification" },
+        { "p": "Perhaps the most exciting direction is moving past fixed labels. Traditional action recognition asks, “Is this a fall?” A more capable system would be able to say:" },
+        { "quote": "“The person moved rapidly from standing to a horizontal position and has remained largely motionless for the past several seconds.”" },
+        { "p": "That shift matters. Instead of emitting a label, the system builds a <strong>temporal understanding of events</strong>. It also opens the door to detecting unfamiliar or unexpected behaviors, not just the ones it was explicitly trained to recognize." },
+        { "p": "The long-term goal is not a better classifier. It is a system that can <strong>observe, track, remember, and reason about behavior over time</strong>." },
+        { "h": "Where this is heading" },
+        { "p": "Skeleton-based datasets and keypoint tracking already provide a strong foundation, and spatiotemporal architectures make that foundation more useful. The next step is reducing our dependence on perfectly curated datasets and predefined action categories. That means:" },
+        { "ul": [
+          "better tracking",
+          "longer temporal context",
+          "more diverse real-world data",
+          "more graceful handling of occlusion and uncertainty",
+          "multimodal representations",
+          "context-aware reasoning"
+        ] },
+        { "hr": true },
+        { "p": "What interests me most in computer vision is not teaching a model one more label. It is teaching a system to understand <strong>change</strong>, because behavior is fundamentally temporal." },
+        { "p": "A single frame tells you what the world looks like. <strong>A sequence of frames tells you what happened.</strong>" }
+      ]
+    },
+    {
+      "slug": "crushed-or-uncrushed",
+      "title": "Crushed or Uncrushed",
+      "dek": "A rhetorical analysis of Apple's and Samsung's visions of creativity",
+      "date": "9/25/2026",
+      "dateISO": "2026-09-25",
+      "context": "Written for ENGL 2500, Iowa State University",
+      "summary": "Apple's “Crush!” ad and Samsung's “UnCrush” reply make the same claim about tablets and creativity. One difference, who acts on whom, decides which company looks like it's on the creator's side.",
+      "notes": {
+        "1": "Peter Adams, <a href=\"https://www.marketingdive.com/news/samsung-apple-controversy-crush-ad-ipad-pro/716431/\">“Samsung Swipes at Apple over Controversial ‘Crush!’ Ad for iPad Pro,”</a> Marketing Dive, 5/17/2024.",
+        "2": "Dani Di Placido, <a href=\"https://www.forbes.com/sites/danidiplacido/2024/05/09/the-backlash-against-apples-new-ipad-pro-ad-explained/\">“Apple's iPad Pro ‘Crush’ Controversy, Explained,”</a> Forbes, 5/9/2024."
+      },
+      "body": [
+        { "p": "Every tech company is selling a story about the person using its product. That pitch gets complicated when the product is aimed at artists, because artists tend to have strong feelings about the tools they work with. In 2024, Apple ran straight into that problem. It released an ad called <a href=\"https://adage.com/video/crush-ipad-pro-apple/\">“Crush!”</a> to introduce a new, extremely thin iPad Pro, and the whole point was to show that a single tablet could hold everything a creative person might need. Its intended audience was creative people such as musicians, painters, and filmmakers, who are one of the biggest audiences for tablets.[^1] To get that across, Apple stacked a pile of creative objects under a giant hydraulic press. Instruments, paint, a camera, sculptures, books: all of it gets flattened. The press lifts, the wreckage is gone, and the iPad is sitting where the pile used to be. People did not react the way Apple wanted them to. Many watched the ad and felt they were seeing technology destroy the physical world of human creativity, and Apple eventually admitted the ad had “missed the mark.”[^2]" },
+        { "p": "What makes this worth analyzing isn't just that the ad flopped. It's that the argument underneath it was actually reasonable: Apple was claiming that the iPad could bring the functions of many creative tools into one device. Apple could have made the same claim in a way that left people feeling the opposite. The problem was the direction of the metaphor. Apple showed creative tools being destroyed in order to become technology, when it could have shown technology producing creative work instead. Samsung caught this and built its entire response, an ad called <a href=\"https://www.youtube.com/watch?v=6eqDLa-nSwg\">“UnCrush”</a>, around flipping that direction. Samsung was speaking to the same creative people, many of whom were now upset with Apple. Both companies want you to believe their device belongs at the center of modern creativity. Apple builds that case out of destruction. Samsung builds it out of survival. That single difference, the question of who acts on whom, decides which company ends up looking like it's on the creator's side." },
+        { "hr": true },
+        { "p": "To understand why Apple's ad backfired, it helps to compare what Apple was trying to say with what the ad actually showed. The claim itself is ordinary. The new iPad Pro runs on the M4 chip; it's powerful, it's thin, and it can handle video editing, music apps, and other creative work that used to require separate equipment. Put simply, it's an argument about consolidation: many tools, one device. This is the ad's logos, an appeal to logic built on facts about what the product can do. Nothing about that is offensive or strange. But an ad can't just say “consolidation,” so Apple turned the idea into an image, and the image is where things went sideways." },
+        { "p": "The objects under the press aren't random. A guitar stands in for music. Paint stands in for visual art. The camera is photography. These things read as symbols before they read as gear, and that's exactly why the ad has any emotional weight at all. Then the press comes down. It doesn't gently fold their functions into the tablet or show the guitar somehow becoming the iPad. It smashes everything. So the metaphor Apple built is not really “all of this fits inside one device.” What you actually watch is closer to “all of this gets destroyed, and the device is what's left.” Consolidation was the intended argument. Replacement is the argument the image makes. That gap between what Apple meant and what viewers saw is the whole story, and it gets worse the closer you look at who Apple is." },
+        { "p": "Ethos isn't only what a company says about itself; a big part of it is what people already think of the company. People see Apple as a company built around creativity and design, and that expectation usually works in its favor. In “Crush!” it becomes a trap. The brand that spent years positioning itself as the friend of the creative person is now showing the tools of creative people being crushed by a machine, and the machine is the thing that survives. Apple's reputation tells you to read the iPad as a creative instrument. The footage tells you to read it as the replacement for the instruments being destroyed. Those two readings can't really coexist, and the ad never resolves the tension." },
+        { "p": "The strange part is what's missing from the frame. There's no musician holding the guitar, no painter at work, nobody taking a photo. The people are gone before the press even drops. With the humans removed, the ad quietly stops being about creators and becomes about objects and the machine that outlasts them. Once you notice that the people are absent, the emotional effect of the ad makes a lot more sense." },
+        { "p": "The pathos in “Crush!” comes mostly from watching familiar creative tools get destroyed. It works because people already understand what those objects represent. You don't need to play guitar to understand why seeing one flattened feels wrong, and you don't have to be a painter to recognize what paint and brushes are for. Apple borrows the emotional attachment people already have to these things, then crushes them on camera. The music makes it stranger. The soundtrack is upbeat and bouncy, which sits oddly against a hydraulic press crushing a pile of art supplies. The destruction isn't framed as sad. It's framed as fun, as if you're supposed to enjoy it, and that mismatch is part of why the ad unsettled so many people. You're being asked to cheer while symbols of human creativity are demolished." },
+        { "hr": true },
+        { "p": "Samsung understood this reaction and made it the foundation of its own ad. The smartest choice in “UnCrush” is that Samsung never bothers to explain Apple's ad or argue against it directly. It just reverses it. The ad opens on the aftermath instead of the setup. A woman stands in the leftover wreckage, finds a damaged guitar, and uses a Galaxy Tab S9 to keep making music anyway. Apple shows creative tools being destroyed and replaced by technology. Samsung starts with what's left behind and shows a person still creating. It's the same basic idea, but the emotional message is completely different." },
+        { "p": "That reversal also flips the logic. In Apple's ad, the machine has all the agency: the press acts, the objects are acted on, and the human isn't there. In Samsung's ad, the woman has the agency. She picks up the guitar, decides to play, and reaches for the tablet as a tool. The tablet isn't the force that ends creativity; it's something a creator uses. The unspoken argument is that creativity lives in the person, not in the object, so a device can help someone make art without taking the artist's place. When the ad ends on “Creativity cannot be crushed,” the line barely has to do any work, because you just watched it happen. The words land because the images have already made the point. Samsung also changes where the audience's attention goes. Apple wants you to admire the product; Samsung wants you to connect with the person using it. That small shift changes the whole message." },
+        { "p": "None of this would have worked without the timing. “UnCrush” had this much impact only because people had just seen “Crush!” and were still talking about it. Samsung didn't start a new conversation. It stepped into one Apple had already started and used the controversy to make its own point. It also shows that a company can't fully control how people interpret its message. Apple may have wanted the hydraulic press to represent technology bringing creative tools together, but it couldn't control what people saw in that image. Once people saw it as technology destroying creativity, Samsung could turn that interpretation against Apple. Apple's apology made the gap even clearer: the company said its goal had been to empower creative expression, which shows how far the message people took from the ad was from what Apple meant to communicate." },
+        { "hr": true },
+        { "p": "So here's the question the whole thing keeps circling back to: could Apple have made the same point without any of the damage? I think it could have, and the fix is almost embarrassingly simple. Run the ad backwards. Start with the iPad. A musician makes a track on it. A painter builds an image. Someone edits a film; someone designs a poster. Instead of creative tools collapsing into the device, the device generates the creative work. The product claim doesn't change at all: one tablet, an enormous range of creative uses. What changes is the relationship. Apple's version goes creativity, then destruction, then technology. The reversed version goes technology, then creation, then human expression. Same claim, completely different feeling. Samsung essentially proved this works, since its tablet is shown as something a creator holds rather than something that replaces her. The irony is that Apple didn't need a different iPad to fix its ad. It needed a different metaphor." },
+        { "p": "That's the lesson buried in this whole mess. The “Crush!” controversy isn't just about whether the ad was in bad taste. It's a good example of how an image can end up saying something its creators never intended. Apple wanted to celebrate everything the iPad could do, but one hydraulic press turned that celebration into a story about technology wiping out creativity. The objects being destroyed made that message stronger, because they already meant something to people. Samsung saw the opening and flipped Apple's idea around: the creator stays at the center, and the technology becomes the tool instead of the replacement. The two ads end up showing two different ideas of progress. Apple suggests that new technology can absorb the old tools; Samsung suggests that technology matters most when it stays connected to the person using it. Neither ad has to spell that argument out, because the images do most of the talking." },
+        { "p": "And maybe that's the most interesting part of “Crush!”: the message could have been completely different with almost the same idea. <strong>Apple only had to point the machine in the other direction.</strong>" },
+        { "hr": true },
+        { "h": "Sources" },
+        { "sources": [
+          "Adams, Peter. <a href=\"https://www.marketingdive.com/news/samsung-apple-controversy-crush-ad-ipad-pro/716431/\">“Samsung Swipes at Apple over Controversial ‘Crush!’ Ad for iPad Pro.”</a> Marketing Dive, 5/17/2024.",
+          "Apple. <a href=\"https://adage.com/video/crush-ipad-pro-apple/\">“Crush!”</a> Ad Age, 5/7/2024.",
+          "Di Placido, Dani. <a href=\"https://www.forbes.com/sites/danidiplacido/2024/05/09/the-backlash-against-apples-new-ipad-pro-ad-explained/\">“Apple's iPad Pro ‘Crush’ Controversy, Explained.”</a> Forbes, 5/9/2024.",
+          "Samsung. <a href=\"https://www.youtube.com/watch?v=6eqDLa-nSwg\">“Samsung UnCrush Video.”</a> YouTube, uploaded by Rob Thubron | RT Tech."
+        ] }
+      ]
+    }
+  ]
+}

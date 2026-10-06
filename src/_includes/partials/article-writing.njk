@@ -1,0 +1,40 @@
+{# A post: title, date, then the body. Blocks and sidenotes come from src/content/writing.json. #}
+<article class="post">
+  <header class="post__head">
+    <h3 class="post__title">{{ item.title }}</h3>
+    {%- if item.dek %}<p class="post__dek">{{ item.dek }}</p>{% endif %}
+    {%- if item.date or item.context %}
+    <p class="post__date">
+      {%- if item.date %}<time datetime="{{ item.dateISO }}">{{ item.date }}</time>{% endif %}
+      {%- if item.date and item.context %} · {% endif %}{{ item.context }}
+    </p>
+    {%- endif %}
+  </header>
+  {%- for block in item.body %}
+  {%- if block.h %}
+  <h4 class="post__h">{{ block.h }}</h4>
+  {%- elif block.hr %}
+  <hr class="post__rule">
+  {%- elif block.ul %}
+  <ul class="post__list">
+    {%- for entry in block.ul %}
+    <li>{{ entry | prose(item.notes) | safe }}</li>
+    {%- endfor %}
+  </ul>
+  {%- elif block.sources %}
+  <ol class="post__sources">
+    {%- for entry in block.sources %}
+    <li>{{ entry | prose | safe }}</li>
+    {%- endfor %}
+  </ol>
+  {%- elif block.pull %}
+  <p class="post__pull">{{ block.pull }}</p>
+  {%- elif block.formula %}
+  <p class="post__formula">{{ block.formula }}</p>
+  {%- elif block.quote %}
+  <blockquote class="post__quote"><p>{{ block.quote }}</p></blockquote>
+  {%- else %}
+  <p>{{ block.p | prose(item.notes) | safe }}</p>
+  {%- endif %}
+  {%- endfor %}
+</article>

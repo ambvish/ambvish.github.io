@@ -243,6 +243,63 @@
         }
       ],
       "stack": ["Next.js 14", "TypeScript", "Prisma"]
+    },
+    {
+      "slug": "facial-expression",
+      "name": "Facial Expression Recognition",
+      "summary": "A CNN that reads seven emotions from 48×48 faces, replicating a published architecture, and a gradient attack that makes it see Happy with 100% confidence.",
+      "tags": ["AI/ML", "Computer Vision"],
+      "credit": "Team project",
+      "quote": "Teaching a network to read faces, then showing how little it takes to fool it.",
+      "sections": [
+        {
+          "heading": "What it is",
+          "paragraphs": [
+            "A five-person team project in two parts. First, we replicated a published convolutional neural network for facial expression recognition and trained it on FER2013. Then we turned the model against itself, using its own gradients to change what it sees."
+          ]
+        },
+        {
+          "heading": "The data",
+          "bullets": [
+            "<strong>FER2013:</strong> 35,887 grayscale face images, 48×48 pixels each, split into 28,709 for training, 3,589 for validation and 3,589 for testing.",
+            "<strong>Seven emotions:</strong> Angry, Disgust, Fear, Happy, Sad, Surprise and Neutral.",
+            "<strong>Unbalanced classes:</strong> Happy makes up 25.0% of the images; Disgust only 1.5%."
+          ]
+        },
+        {
+          "heading": "The model",
+          "bullets": [
+            "<strong>Architecture:</strong> replicated from <a href=\"https://ieeexplore.ieee.org/abstract/document/9031283\" target=\"_blank\" rel=\"noopener noreferrer\">a published IEEE paper<span aria-hidden=\"true\"> ↗</span><span class=\"visually-hidden\"> (opens in a new tab)</span></a>: six convolutional layers with ReLU, a max-pooling layer after every two (3×3 with stride 2 for the first two, 2×2 with stride 2 for the third), two dropout layers at 0.2, then two dense layers ending in softmax. About 1.2 million parameters.",
+            "<strong>A leaner pipeline:</strong> the paper also detects and aligns faces and adds facial-landmark features from dlib. With limited compute, we trained the same layer stack without that preprocessing or feature extraction, in Keras on TensorFlow."
+          ]
+        },
+        {
+          "heading": "Results",
+          "bullets": [
+            "<strong>54% accuracy</strong> on the 3,589 test images, against 61.7% for the paper's full pipeline. The state-of-the-art CNN ensemble reaches 75.2%.",
+            "<strong>Easiest to read:</strong> Happy (F1 0.75) and Surprise (F1 0.70).",
+            "<strong>Hardest:</strong> Fear, caught only 20% of the time (recall 0.20), and Disgust, the rarest class (recall 0.30).",
+            "<strong>Averages:</strong> macro F1 0.49, weighted F1 0.53."
+          ]
+        },
+        {
+          "heading": "How to fool it",
+          "bullets": [
+            "<strong>Pick a target:</strong> the class Happy.",
+            "<strong>Define the loss</strong> as the negative probability the model gives that class, L = −p(Happy), and take its gradient with respect to the input image, normalized by its standard deviation.",
+            "<strong>Climb the gradient:</strong> nudge the image one small step at a time, x ← x + 0.05 · ∇ₓ p(Happy), clipping every pixel to the valid range [0, 1].",
+            "<strong>Result:</strong> neutral faces optimized this way were classified as Happy with 100.00% confidence."
+          ]
+        },
+        {
+          "heading": "Why it matters",
+          "paragraphs": [
+            "The same gradients that train a model can be used to fool it. The project flags three risks: disguising emotions to spoof surveillance, manipulating emotion-based access systems such as educational AI tools and behavioral-monitoring apps, and undermining automated psychological assessments that rely on facial cues."
+          ]
+        }
+      ],
+      "readMore": { "label": "Related: targeted attacks on an MNIST classifier", "article": "research-mnist-pgd", "href": "/research/mnist-pgd/" },
+      "stack": ["Python", "Keras", "TensorFlow", "CNNs", "FER2013", "Adversarial ML"]
     }
   ]
 }

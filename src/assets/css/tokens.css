@@ -6,12 +6,22 @@
 :root {
   color-scheme: dark;
 
-  /* Desktop background (a gradient from night blue to ember) */
-  --desk-1: #0d1526;
-  --desk-2: #1a1b2d;
-  --desk-3: #4a2f1c;
-  --desk-glow-cool: rgb(40 70 130 / 0.55);
-  --desk-glow-warm: rgb(160 98 42 / 0.5);
+  /* Desktop background: a night sky, indigo to violet, with an aurora band and a warm nebula.
+     The layers are drawn in site.css (.sky); the stars are tiled SVG dots. */
+  --sky-top: #080a20;
+  --sky-violet: #1c1550;
+  --sky-low: #12294a;
+  --sky-floor: #060f18;
+  --aurora-core: rgb(160 255 196 / 0.4);
+  --aurora-green: rgb(78 244 158 / 0.5);
+  --aurora-teal: rgb(50 210 184 / 0.3);
+  --aurora-violet: rgb(156 70 204 / 0.36);
+  --aurora-ray: rgb(130 255 185 / 0.12);
+  --nebula-core: rgb(255 234 196 / 0.2);
+  --nebula-gold: rgb(250 200 128 / 0.26);
+  --nebula-red: rgb(232 66 110 / 0.32);
+  --nebula-blue: rgb(98 92 224 / 0.3);
+  --nebula-violet: rgb(170 70 170 / 0.24);
 
   /* Menu bar */
   --menubar: #10131c;
@@ -28,8 +38,11 @@
   --control-hover: #444449;
   --dock: rgb(24 24 28 / 0.88);
   --text: #f2f2f5;
+  --text-soft: #c9c9d0;          /* second line of a row, e.g. the company under a role */
   --text-muted: #a7a7b0;
   --link: #7db3ff;
+  --link-warm: #f2b84b;          /* links in Writing posts */
+  --row-hover: rgb(255 255 255 / 0.07);
   --focus: #7db3ff;
   --select-accent: #3478f6;
   --highlight: #2559c7;
@@ -46,10 +59,9 @@
   --note-text: #23200f;
   --note-link: #1646b0;
 
-  /* Neutral covers (recommendation avatars) and the text on certificate posters */
+  /* Text on certificate posters */
   --cover-text: #f2f2f5;
   --cover-muted: #b9bcc3;
-  --cover-neutral: #2f3036;
 
   /* Projects: Vishnu's navy / plum / mauve / blush palette, mixed with two sage shades.
      Covers take eight of these in turn (see .cover--0 to .cover--7 in site.css). */

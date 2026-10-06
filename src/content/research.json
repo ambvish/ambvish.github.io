@@ -90,8 +90,8 @@
     "group": "Study projects",
     "kind": "Study project",
     "title": "Hamiltonian solvers, Bose–Hubbard dynamics & QHNet",
-    "subtitle": "BITS Pilani study project (CS F266), Mar 2026",
-    "context": "BITS Pilani study project (CS F266), Mar 2026, supervised by Prof. Chivukula",
+    "subtitle": "BITS Pilani study project (CS F266), 3/2026",
+    "context": "BITS Pilani study project (CS F266), 3/2026, supervised by Prof. Chivukula",
     "headline": "Solving Physics That Depends on Its Own Answer",
     "facts": [
       {
@@ -100,7 +100,7 @@
       },
       {
         "label": "Date",
-        "value": "Mar 2026"
+        "value": "3/2026"
       },
       {
         "label": "Supervisor",
@@ -160,8 +160,8 @@
     "group": "Study projects",
     "kind": "Study project",
     "title": "Targeted attacks on an image classifier (MNIST)",
-    "subtitle": "BITS Pilani study project, May 2026",
-    "context": "BITS Pilani study project, May 2026",
+    "subtitle": "BITS Pilani study project, 5/2026",
+    "context": "BITS Pilani study project, 5/2026",
     "headline": "How to Make a 3 Look Like a 4",
     "facts": [
       {
@@ -170,7 +170,7 @@
       },
       {
         "label": "Date",
-        "value": "May 2026"
+        "value": "5/2026"
       },
       {
         "label": "Data",
