@@ -46,17 +46,22 @@
   --note-text: #23200f;
   --note-link: #1646b0;
 
-  /* Project covers: deep, muted tones (one per first tag) */
+  /* Neutral covers (recommendation avatars) and the text on certificate posters */
   --cover-text: #f2f2f5;
   --cover-muted: #b9bcc3;
-  --cover-ai: #24324f;
-  --cover-vision: #1b3a3a;
-  --cover-web: #45292b;
-  --cover-backend: #2d3b4d;
-  --cover-hardware: #463620;
-  --cover-research: #2a3b26;
-  --cover-health: #3d2b26;
   --cover-neutral: #2f3036;
+
+  /* Projects: the sage palette, deepest to lightest (one shade per first tag) */
+  --sage-900: #1b2a24;
+  --sage-600: #4c6b5e;
+  --sage-300: #a3c0b0;
+  --sage-100: #d6e2d8;
+  --sage-50: #f3f6f2;
+  --sage-paper: #f3f6f2;        /* titles on deep sage */
+  --sage-paper-muted: #a3c0b0;  /* summaries on the deepest sage */
+  --sage-mid-muted: #e4ece6;    /* summaries on mid sage */
+  --sage-ink: #1b2a24;          /* titles on light sage */
+  --sage-ink-muted: #2e443a;    /* summaries on light sage */
 
   /* Certificate posters: quieter near-neutrals */
   --poster-1: #2b3242;

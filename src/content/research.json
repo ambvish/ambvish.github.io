@@ -2,15 +2,75 @@
   {
     "slug": "had-stack",
     "group": "Featured",
+    "kind": "Research paper",
     "title": "HAD-Stack",
     "subtitle": "Physics as a referee in an adversarial game",
     "context": "Advisor: Prof. Aneesh S. Chivukula, BITS Pilani",
     "paper": "HAD-Stack: Hamiltonian Stackelberg Game for Robust Fraud Detection",
     "status": "Co-authored; under review at IEEE DSAA 2026.",
     "headline": "Fraudsters Adapt. So Should the Detector.",
+    "facts": [
+      {
+        "label": "Paper",
+        "value": "HAD-Stack: Hamiltonian Stackelberg Game for Robust Fraud Detection"
+      },
+      {
+        "label": "Status",
+        "value": "Co-authored; under review at IEEE DSAA 2026"
+      },
+      {
+        "label": "Advisor",
+        "value": "Prof. Aneesh S. Chivukula, BITS Pilani"
+      },
+      {
+        "label": "Data",
+        "value": "26,393 real UPI transactions"
+      }
+    ],
     "summary": "Fraud detectors get attacked by people who learn their blind spots. Usually \"how strong is the attacker?\" is a number someone hand-picks. In HAD-Stack, the attacker and defender play a leader-follower (Stackelberg) game, and the knobs come from physics instead: one quantum-inspired Hamiltonian sets the attacker's budget, another sets how hard the defender regularizes, and a third decides when the game has settled into equilibrium.",
+    "problem": "Fraud detectors get attacked by people who learn their blind spots. Usually \"how strong is the attacker?\" is a number someone hand-picks.",
+    "metrics": [
+      {
+        "value": "0.9948",
+        "label": "Clean AUC-ROC"
+      },
+      {
+        "value": "42 → 21",
+        "label": "False positives vs. a strong Transformer baseline"
+      },
+      {
+        "value": "0.9988",
+        "label": "AUC under an FGSM evasion attack"
+      }
+    ],
+    "partsHeading": "How it works",
+    "parts": [
+      {
+        "title": "A leader-follower game",
+        "text": "The attacker and defender play a leader-follower (Stackelberg) game."
+      },
+      {
+        "title": "Physics sets the knobs",
+        "text": "Instead of a hand-picked attack strength, one quantum-inspired Hamiltonian sets the attacker's budget and another sets how hard the defender regularizes."
+      },
+      {
+        "title": "Knowing when to stop",
+        "text": "A third Hamiltonian decides when the game has settled into equilibrium."
+      }
+    ],
     "result": "0.9948 clean AUC-ROC on 26,393 real UPI transactions, with false positives halved compared with a strong Transformer baseline (42 → 21), and still robust (AUC 0.9988) under an FGSM evasion attack.",
     "note": "Found and removed data leakage. Features that secretly encoded the label were inflating results, and they were removed before reporting.",
+    "endorsement": {
+      "quote": "he found a data-leakage flaw in the pipeline and documented it rather than quietly enjoying the inflated numbers",
+      "by": "Prof. Aneesh S. Chivukula, from a recommendation letter"
+    },
+    "related": {
+      "heading": "Background",
+      "text": "A study project on targeted attacks against an MNIST classifier, which tracked attacker success and regret over rounds, motivated the adaptive game design.",
+      "label": "Read the MNIST study project",
+      "href": "/research/mnist-pgd/",
+      "article": "research-mnist-pgd"
+    },
     "tags": [
       "Adversarial ML",
       "Game Theory",
@@ -19,16 +79,64 @@
       "Fraud Detection"
     ],
     "short": "HAD-Stack",
-    "image": "/assets/img/research/eagle.png"
+    "image": "/assets/img/research/eagle-emblem.png"
   },
   {
     "slug": "hamiltonian-qhnet",
     "group": "Study projects",
+    "kind": "Study project",
     "title": "Hamiltonian solvers, Bose–Hubbard dynamics & QHNet",
     "subtitle": "BITS Pilani study project (CS F266), Mar 2026",
     "context": "BITS Pilani study project (CS F266), Mar 2026, supervised by Prof. Chivukula",
     "headline": "Solving Physics That Depends on Its Own Answer",
+    "facts": [
+      {
+        "label": "Course",
+        "value": "CS F266 study project, BITS Pilani"
+      },
+      {
+        "label": "Date",
+        "value": "Mar 2026"
+      },
+      {
+        "label": "Supervisor",
+        "value": "Prof. Aneesh S. Chivukula"
+      },
+      {
+        "label": "Methods",
+        "value": "Self-consistent iteration · Trotterized time evolution · Graph neural networks"
+      }
+    ],
     "summary": "Some quantum systems have a catch-22: the equation depends on its own solution. I built iterative \"self-consistent\" solvers that guess, solve, update, and repeat until the answer stops changing, for two-mode bosonic systems and a 4-qubit Pauli system. I also simulated the Bose–Hubbard model (bosons hopping on a 4-site lattice) with Trotterized time evolution, which conserved particle number and showed the expected superfluid oscillations. Finally, I built a graph neural network (QHNet) that learns Hamiltonian matrices from operator graphs while enforcing Hermiticity, so its outputs are physically valid.",
+    "problem": "Some quantum systems have a catch-22: the equation depends on its own solution.",
+    "partsHeading": "What I built",
+    "parts": [
+      {
+        "title": "Self-consistent solvers",
+        "text": "Iterative solvers that guess, solve, update, and repeat until the answer stops changing.",
+        "pointsLabel": "Applied to",
+        "points": [
+          "Two-mode bosonic systems",
+          "A 4-qubit Pauli system"
+        ]
+      },
+      {
+        "title": "Bose–Hubbard dynamics",
+        "text": "A simulation of the Bose–Hubbard model, bosons hopping on a 4-site lattice, using Trotterized time evolution.",
+        "result": "Particle number was conserved, and the expected superfluid oscillations appeared."
+      },
+      {
+        "title": "QHNet",
+        "text": "A graph neural network that learns Hamiltonian matrices from operator graphs.",
+        "result": "Hermiticity is enforced, so its outputs are physically valid."
+      }
+    ],
+    "related": {
+      "text": "Prof. Chivukula also advised HAD-Stack, where quantum-inspired Hamiltonians set the knobs of an adversarial game.",
+      "label": "Read about HAD-Stack",
+      "href": "/research/had-stack/",
+      "article": "research-had-stack"
+    },
     "tags": [
       "Quantum Physics",
       "Numerical Methods",
@@ -36,22 +144,65 @@
       "PyTorch"
     ],
     "short": "Hamiltonian Solvers & QHNet",
-    "image": "/assets/img/research/pegasus.png"
+    "image": "/assets/img/research/pegasus-emblem.png"
   },
   {
     "slug": "mnist-pgd",
     "group": "Study projects",
+    "kind": "Study project",
     "title": "Targeted attacks on an image classifier (MNIST)",
     "subtitle": "BITS Pilani study project, May 2026",
     "context": "BITS Pilani study project, May 2026",
     "headline": "How to Make a 3 Look Like a 4",
+    "facts": [
+      {
+        "label": "Type",
+        "value": "Study project, BITS Pilani"
+      },
+      {
+        "label": "Date",
+        "value": "May 2026"
+      },
+      {
+        "label": "Data",
+        "value": "MNIST handwritten digits"
+      },
+      {
+        "label": "Attack",
+        "value": "Targeted Projected Gradient Descent (PGD)"
+      }
+    ],
     "summary": "Trained a CNN on handwritten digits, then attacked it with targeted Projected Gradient Descent: tiny, nearly invisible pixel changes that push the model toward a chosen wrong answer. Tracked attacker success and \"regret\" over rounds, which motivated the adaptive game design in HAD-Stack.",
+    "problem": "Tiny, nearly invisible pixel changes can push an image classifier toward a chosen wrong answer.",
+    "problemLabel": "The idea",
+    "partsHeading": "How it worked",
+    "parts": [
+      {
+        "title": "Train the classifier",
+        "text": "A CNN trained on handwritten digits (MNIST)."
+      },
+      {
+        "title": "Attack it on purpose",
+        "text": "Targeted Projected Gradient Descent: tiny, nearly invisible pixel changes that push the model toward a chosen wrong answer."
+      },
+      {
+        "title": "Measure the attacker",
+        "text": "Attacker success and \"regret\" tracked over rounds."
+      }
+    ],
+    "related": {
+      "heading": "Where it led",
+      "text": "Watching attacker success and regret over rounds motivated the adaptive game design in HAD-Stack.",
+      "label": "Read about HAD-Stack",
+      "href": "/research/had-stack/",
+      "article": "research-had-stack"
+    },
     "tags": [
       "Adversarial ML",
       "CNNs",
       "PyTorch"
     ],
     "short": "Targeted Attacks on MNIST",
-    "image": "/assets/img/research/leopard.png"
+    "image": "/assets/img/research/leopard-emblem.png"
   }
 ]

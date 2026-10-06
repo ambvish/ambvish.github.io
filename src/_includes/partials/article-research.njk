@@ -1,16 +1,74 @@
 {% from "macros/draft.njk" import badge %}
-<article class="article">
-  <p class="article__kicker">{{ item.title }} · {{ item.subtitle }}</p>
-  <h3 class="article__title">{{ item.headline }}</h3>
-  <p class="article__meta"><span>{{ item.context }}</span></p>
-  {% if item.paper %}<p><strong>Paper:</strong> <cite>{{ item.paper }}</cite></p>{% endif %}
-  {% if item.status %}<p><strong>Status:</strong> {{ item.status }}{{ badge(item, "status") }}</p>{% endif %}
-  <p class="article__lede">{{ item.summary }}</p>
-  {% if item.result %}<p><strong>Result:</strong> {{ item.result }}</p>{% endif %}
-  {% if item.numbers %}
-  <p><strong>Numbers that disagree across documents:</strong>{{ badge(item, "numbers") }}</p>
-  <ul>{% for number in item.numbers %}<li>{{ number }}</li>{% endfor %}</ul>
-  {% endif %}
-  {% if item.note %}<p><strong>Honesty note:</strong> {{ item.note }}</p>{% endif %}
-  <ul class="tags" aria-label="Tags">{% for tag in item.tags %}<li>{{ tag }}</li>{% endfor %}</ul>
+{# Research detail: emblem and title, a fact sheet, then the work step by step. #}
+<article class="paper">
+  <header class="paper__head">
+    <img class="paper__emblem" src="{{ item.image }}" width="240" height="240" alt="" draggable="false">
+    <div class="paper__heading">
+      <p class="paper__kicker">{{ item.kind }}</p>
+      <h3 class="paper__title">{{ item.headline }}</h3>
+      <p class="paper__subtitle">{{ item.title }}{% if item.subtitle and item.kind == "Research paper" %}: {{ item.subtitle | lower }}{% endif %}{{ badge(item, "status") }}</p>
+    </div>
+  </header>
+
+  {%- if item.facts %}
+  <dl class="facts">
+    {%- for fact in item.facts %}
+    <div class="facts__row"><dt>{{ fact.label }}</dt><dd>{{ fact.value }}</dd></div>
+    {%- endfor %}
+  </dl>
+  {%- endif %}
+
+  <section class="paper__section">
+    <h4 class="paper__label">{{ item.problemLabel or "The problem" if item.problem else "Overview" }}</h4>
+    <p class="paper__abstract">{{ item.problem or item.summary }}</p>
+  </section>
+
+  {%- if item.metrics %}
+  <section class="paper__section">
+    <h4 class="paper__label">Results</h4>
+    <ul class="stats">
+      {%- for metric in item.metrics %}
+      <li class="stat"><span class="stat__value">{{ metric.value }}</span><span class="stat__label">{{ metric.label }}</span></li>
+      {%- endfor %}
+    </ul>
+  </section>
+  {%- endif %}
+
+  {%- if item.parts %}
+  <section class="paper__section">
+    <h4 class="paper__label">{{ item.partsHeading }}</h4>
+    <ol class="steps">
+      {%- for part in item.parts %}
+      <li class="step">
+        <h5 class="step__title">{{ part.title }}</h5>
+        <p>{{ part.text }}</p>
+        {%- if part.points %}
+        <p class="step__points"><span class="step__points-label">{{ part.pointsLabel }}:</span> {{ part.points | join(" · ") }}</p>
+        {%- endif %}
+        {%- if part.result %}<p class="step__result"><span class="step__points-label">Result:</span> {{ part.result }}</p>{% endif %}
+      </li>
+      {%- endfor %}
+    </ol>
+  </section>
+  {%- endif %}
+
+  {%- if item.note %}
+  <aside class="callout">
+    <h4 class="paper__label">Honesty note</h4>
+    <p>{{ item.note }}</p>
+    {%- if item.endorsement %}
+    <blockquote class="callout__quote"><p>“{{ item.endorsement.quote }}”</p><footer>{{ item.endorsement.by }}</footer></blockquote>
+    {%- endif %}
+  </aside>
+  {%- endif %}
+
+  {%- if item.related %}
+  <section class="paper__section">
+    <h4 class="paper__label">{{ item.related.heading or "Related research" }}</h4>
+    <p>{{ item.related.text }}</p>
+    <p><a class="paper__next" href="{{ item.related.href }}" data-open-article="{{ item.related.article }}">{{ item.related.label }} →</a></p>
+  </section>
+  {%- endif %}
+
+  <ul class="tags paper__tags" aria-label="Tags">{% for tag in item.tags %}<li>{{ tag }}</li>{% endfor %}</ul>
 </article>

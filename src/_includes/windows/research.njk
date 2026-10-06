@@ -9,7 +9,7 @@
         {%- for item in items %}
         <li data-filter-item data-tags="{{ group }}">
           <a class="person" href="/research/{{ item.slug }}/" data-open-article="research-{{ item.slug }}" data-search="{{ item.title }}" data-kind="Research" data-detail="{{ item.headline }}" title="{{ item.title }}">
-            <img class="person__avatar" src="{{ item.image }}" width="112" height="112" alt="" draggable="false">
+            <img class="person__avatar" src="{{ item.image }}" width="240" height="240" alt="" draggable="false">
             <span class="person__name">{{ item.short }}{{ badge(item, "status") }}</span>
           </a>
         </li>
