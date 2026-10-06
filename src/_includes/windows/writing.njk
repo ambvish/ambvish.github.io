@@ -1,7 +1,44 @@
 {% from "macros/window.njk" import window with context %}
-{% call window({ id: "writing", title: "Writing", startClosed: true }) %}
-  <div class="empty">
-    {% include "icons/doc.njk" %}
-    <p class="empty__title">First edition coming soon</p>
+{% call window({ id: "writing", title: "Writing", tools: "writing" }) %}
+  <div id="writing-list">
+    <div class="list__group" data-filter-group>
+      <h3 class="list__label">Published</h3>
+      <ul class="list">
+        {%- for post in desk.posts %}
+        <li class="row" data-filter-item data-tags="published">
+          <a class="row__link" href="/writing/{{ post.slug }}/" data-open-article="writing-{{ post.slug }}" data-search="{{ post.title }}" data-kind="Writing" data-detail="{{ post.summary }}">
+            <span class="avatar avatar--emoji" aria-hidden="true">{{ post.emoji }}</span>
+            <span class="row__main">
+              <span class="row__head">
+                <span class="row__title">{{ post.title }}</span>
+                <span class="row__date"><time datetime="{{ post.date }}">{{ post.dateLabel }}</time></span>
+              </span>
+              <span class="row__excerpt">{{ post.summary }}</span>
+            </span>
+          </a>
+        </li>
+        {%- endfor %}
+      </ul>
+    </div>
+    <div class="list__group" data-filter-group>
+      <h3 class="list__label">Up next</h3>
+      <ul class="list">
+        {%- for idea in desk.upNext %}
+        <li class="row row--soon" data-filter-item data-tags="up-next">
+          <div class="row__link row__link--static">
+            <span class="avatar avatar--emoji" aria-hidden="true">{{ idea.emoji }}</span>
+            <span class="row__main">
+              <span class="row__head">
+                <span class="row__title">{{ idea.title }}</span>
+                <span class="row__date">Soon</span>
+              </span>
+              <span class="row__excerpt">{{ idea.summary }}</span>
+            </span>
+          </div>
+        </li>
+        {%- endfor %}
+      </ul>
+    </div>
   </div>
+  <p class="list__empty" data-filter-empty hidden>No matches.</p>
 {% endcall %}

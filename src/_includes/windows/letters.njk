@@ -1,20 +1,24 @@
 {# Short quotes from recommendation letters, published with each professor's permission. #}
 {% from "macros/window.njk" import window with context %}
-{% from "macros/draft.njk" import badge %}
-{% if desk.letters.length %}
-{% call window({ id: "letters", title: "Letters", startClosed: true }) %}
-  <ul class="list">
-    {%- for letter in desk.letters %}
-    <li class="row{% if letter.draft %} is-draft{% endif %}" data-search="{{ letter.quote }}" data-kind="Letter" data-detail="{{ letter.by }}">
-      <figure class="row__link row__link--static letter">
+{% call window({ id: "letters", title: "Letters" }) %}
+  {%- for letter in desk.letters %}
+  <section class="letter" aria-labelledby="letter-{{ letter.slug }}">
+    <header class="letter__head">
+      <span class="avatar avatar--emoji" aria-hidden="true">🎓</span>
+      <div>
+        <h3 class="letter__name" id="letter-{{ letter.slug }}">{{ letter.by }}</h3>
+        <p class="letter__title">{{ letter.title }}</p>
+      </div>
+    </header>
+    <p class="letter__context">{{ letter.context }}</p>
+    <ul class="letter__quotes">
+      {%- for quote in letter.quotes %}
+      <li data-search="{{ quote }}" data-kind="Letter" data-detail="{{ letter.by }}">
         {% include "icons/quote.njk" %}
-        <span class="row__main">
-          <blockquote class="quote">“{{ letter.quote }}”</blockquote>
-          <figcaption class="row__excerpt row__excerpt--full">— {{ letter.by }}{% if letter.title %}, {{ letter.title }}{% endif %} {{ badge(letter) }}</figcaption>
-        </span>
-      </figure>
-    </li>
-    {%- endfor %}
-  </ul>
+        <blockquote>“{{ quote }}”</blockquote>
+      </li>
+      {%- endfor %}
+    </ul>
+  </section>
+  {%- endfor %}
 {% endcall %}
-{% endif %}

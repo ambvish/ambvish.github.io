@@ -12,7 +12,14 @@
     "summary": "Fraud detectors get attacked by people who learn their blind spots. Usually \"how strong is the attacker?\" is a number someone hand-picks. In HAD-Stack, the attacker and defender play a leader-follower (Stackelberg) game, and the knobs come from physics instead: one quantum-inspired Hamiltonian sets the attacker's budget, another sets how hard the defender regularizes, and a third decides when the game has settled into equilibrium.",
     "result": "0.9948 clean AUC-ROC on 26,393 real UPI transactions, with false positives halved compared with a strong Transformer baseline (42 → 21), and still robust (AUC 0.9988) under an FGSM evasion attack.",
     "note": "Found and removed data leakage. Features that secretly encoded the label were inflating results, and they were removed before reporting.",
-    "tags": ["Adversarial ML", "Game Theory", "Transformers", "PyTorch", "Fraud Detection"]
+    "tags": [
+      "Adversarial ML",
+      "Game Theory",
+      "Transformers",
+      "PyTorch",
+      "Fraud Detection"
+    ],
+    "emoji": "🛡️"
   },
   {
     "slug": "hamiltonian-qhnet",
@@ -23,7 +30,13 @@
     "context": "BITS Pilani study project (CS F266), Mar 2026, supervised by Prof. Chivukula",
     "headline": "Solving Physics That Depends on Its Own Answer",
     "summary": "Some quantum systems have a catch-22: the equation depends on its own solution. I built iterative \"self-consistent\" solvers that guess, solve, update, and repeat until the answer stops changing, for two-mode bosonic systems and a 4-qubit Pauli system. I also simulated the Bose–Hubbard model (bosons hopping on a 4-site lattice) with Trotterized time evolution, which conserved particle number and showed the expected superfluid oscillations. Finally, I built a graph neural network (QHNet) that learns Hamiltonian matrices from operator graphs while enforcing Hermiticity, so its outputs are physically valid.",
-    "tags": ["Quantum Physics", "Numerical Methods", "GNNs", "PyTorch"]
+    "tags": [
+      "Quantum Physics",
+      "Numerical Methods",
+      "GNNs",
+      "PyTorch"
+    ],
+    "emoji": "⚛️"
   },
   {
     "slug": "mnist-pgd",
@@ -34,6 +47,11 @@
     "context": "BITS Pilani study project, May 2026",
     "headline": "How to Make a 3 Look Like a 4",
     "summary": "Trained a CNN on handwritten digits, then attacked it with targeted Projected Gradient Descent: tiny, nearly invisible pixel changes that push the model toward a chosen wrong answer. Tracked attacker success and \"regret\" over rounds, which motivated the adaptive game design in HAD-Stack.",
-    "tags": ["Adversarial ML", "CNNs", "PyTorch"]
+    "tags": [
+      "Adversarial ML",
+      "CNNs",
+      "PyTorch"
+    ],
+    "emoji": "🔢"
   }
 ]

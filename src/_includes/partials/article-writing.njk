@@ -1,0 +1,6 @@
+<article class="article article--post">
+  <p class="article__kicker"><span aria-hidden="true">{{ item.emoji }} </span>Writing · <time datetime="{{ item.date }}">{{ item.dateLabel }}</time> · {{ item.readTime }}</p>
+  <h3 class="article__title">{{ item.title }}</h3>
+  {% include item.body %}
+  <ul class="tags" aria-label="Tags">{% for tag in item.tags %}<li>{{ tag }}</li>{% endfor %}</ul>
+</article>

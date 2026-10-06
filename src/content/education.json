@@ -4,14 +4,16 @@
       "slug": "iowa-state",
       "name": "Iowa State University",
       "degree": "B.S. Computer Engineering",
-      "note": "Transfer student (2+2 pathway)",
+      "minor": "Will be pursuing a minor in Artificial Intelligence",
+      "note": "Transfer student (2+2 pathway) from BITS Pilani",
       "dates": "Aug 2026 – Expected 2028",
       "activities": ["IEEE at Iowa State", "Computer Science & Software Engineering Club", "Data Science Club"]
     },
     {
       "slug": "bits",
       "name": "BITS Pilani, Hyderabad Campus",
-      "degree": "B.E. (Hons.) Computer Science, first two years",
+      "degree": "B.E. (Hons.) Computer Science, first two years, then transferred",
+      "note": "Admission through BITSAT: about 3,000 seats across BITS's three campuses for close to two lakh applicants, roughly a 2% admit rate. BITS Pilani is one of India's Institutions of Eminence.",
       "dates": "Jul 2024 – May 2026",
       "activities": ["E-Cell (Collaborations)", "Department of Technical Arts (Crew)", "Research Chronicles (Outreach)", "BITSMUN Hyderabad (Graphic Designer)", "Esports Club (VFX & Design)", "Traders@BPHC"]
     }
@@ -21,6 +23,8 @@
     { "slug": "h2o", "name": "H2O AI Agents: From Theory to Practice", "issuer": "H2O.ai", "date": "Jun 2026" },
     { "slug": "google-genai", "name": "Gen AI: Beyond the Chatbot", "issuer": "Google", "date": "Oct 2025" },
     { "slug": "aws-forage", "name": "AWS Solutions Architecture Job Simulation", "issuer": "Forage", "date": "Sep 2025" },
-    { "slug": "jpmorgan-forage", "name": "J.P. Morgan Software Engineering Job Simulation", "issuer": "Forage", "date": "Sep 2025" }
+    { "slug": "jpmorgan-forage", "name": "J.P. Morgan Software Engineering Job Simulation", "issuer": "Forage", "date": "Sep 2025" },
+    { "slug": "toefl", "name": "TOEFL iBT: 102 / 120", "issuer": "ETS", "date": "Jul 2024" },
+    { "slug": "cbse-ai", "name": "Artificial Intelligence: 100 / 100 (centum)", "issuer": "CBSE Class 10", "date": "2022" }
   ]
 }

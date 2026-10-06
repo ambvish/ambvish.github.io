@@ -1,0 +1,15 @@
+{# Off-the-clock detail: poster on the left, the piece on the right (stacks on narrow windows). #}
+<article class="media">
+  <figure class="media__side">
+    <img class="media__poster" src="{{ item.poster }}" width="400" height="600" alt="" draggable="false">
+    <figcaption class="media__caption">{{ item.caption }}</figcaption>
+  </figure>
+  <div class="media__text">
+    <h3 class="media__title">{{ item.title }}</h3>
+    <p class="media__meta">{{ item.category }}</p>
+    <blockquote class="media__quote"><p>{{ item.quote }}</p></blockquote>
+    {%- for paragraph in item.paragraphs %}
+    <p>{{ paragraph }}</p>
+    {%- endfor %}
+  </div>
+</article>

@@ -5,7 +5,7 @@
 const LIMIT = 12;
 
 // When two results match equally well, prefer the one that opens the most useful view.
-const KIND_WEIGHT = { Window: 0.6, PDF: 0.55, Link: 0.55, Experience: 0.5, Research: 0.5, Letter: 0.45, Project: 0.4, Education: 0.3, Certification: 0.2, Skill: 0.1 };
+const KIND_WEIGHT = { Window: 0.6, PDF: 0.55, Link: 0.55, Experience: 0.5, Research: 0.5, Writing: 0.5, Letter: 0.45, Project: 0.45, "Off the clock": 0.35, Education: 0.3, Certification: 0.2, Skill: 0.1 };
 
 export function initPalette(desktop) {
   const dialog = document.querySelector("[data-palette]");

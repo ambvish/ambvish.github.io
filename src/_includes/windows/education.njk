@@ -8,16 +8,20 @@
       <div class="row__link row__link--static">
         {% include "icons/cap.njk" %}
         <span class="row__main">
-          <span class="row__title">{{ school.name }}</span>
-          <span class="row__excerpt row__excerpt--full">{{ school.degree }}{% if school.note %} · {{ school.note }}{% endif %}</span>
-          {%- if school.dates %}<span class="row__excerpt row__excerpt--full">{{ school.dates }}{{ badge(school, "dates") }}</span>{% endif %}
+          <span class="row__head">
+            <span class="row__title">{{ school.name }}</span>
+            {%- if school.dates %}<span class="row__date">{{ school.dates }}{{ badge(school, "dates") }}</span>{% endif %}
+          </span>
+          <span class="row__excerpt row__excerpt--full row__excerpt--strong">{{ school.degree }}</span>
+          {%- if school.minor %}<span class="row__excerpt row__excerpt--full row__excerpt--strong">{{ school.minor }}</span>{% endif %}
+          {%- if school.note %}<span class="row__excerpt row__excerpt--full">{{ school.note }}</span>{% endif %}
           <span class="chips">{% for activity in school.activities %}<span class="chip">{{ activity }}</span>{% endfor %}</span>
         </span>
       </div>
     </li>
     {%- endfor %}
   </ul>
-  <h3 class="list__label">Certifications</h3>
+  <h3 class="list__label">Certifications &amp; scores</h3>
   <ul class="posters">
     {%- for cert in desk.certifications %}
     <li class="poster poster--{{ loop.index0 % 5 }}{% if cert.draft %} is-draft{% endif %}" data-search="{{ cert.name }}" data-kind="Certification" data-detail="{{ cert.issuer }}">

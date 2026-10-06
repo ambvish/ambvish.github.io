@@ -1,20 +1,22 @@
 [
   {
-    "quote": "He belongs to a category of undergraduate I meet perhaps once in a few years.",
+    "slug": "chivukula",
     "by": "Prof. Aneesh S. Chivukula",
-    "title": "Assistant Professor, CS & IS, BITS Pilani Hyderabad"
+    "title": "Assistant Professor, Computer Science & Information Systems, BITS Pilani Hyderabad",
+    "context": "Supervised my undergraduate research fellowship, the HAD-Stack paper, and the Hamiltonian solvers & QHNet study project.",
+    "quotes": [
+      "He belongs to a category of undergraduate I meet perhaps once in a few years.",
+      "one who does not wait to be handed a problem but goes looking for a hard one",
+      "he found a data-leakage flaw in the pipeline and documented it rather than quietly enjoying the inflated numbers"
+    ]
   },
   {
-    "quote": "he found a data-leakage flaw in the pipeline and documented it rather than quietly enjoying the inflated numbers",
-    "by": "Prof. Aneesh S. Chivukula"
-  },
-  {
-    "quote": "he took clear ownership of the work … and followed problems through to working solutions with little supervision",
+    "slug": "saxena",
     "by": "Prof. Paresh Saxena",
-    "title": "Associate Professor, CS & IS, BITS Pilani Hyderabad"
-  },
-  {
-    "quote": "one who does not wait to be handed a problem but goes looking for a hard one",
-    "by": "Prof. Aneesh S. Chivukula, BITS Pilani"
+    "title": "Associate Professor and Head of Department, Computer Science & Information Systems, BITS Pilani Hyderabad",
+    "context": "Wrote about my work on the DRDO-funded human-activity-recognition project at BITS Pilani.",
+    "quotes": [
+      "he took clear ownership of the work … and followed problems through to working solutions with little supervision"
+    ]
   }
 ]

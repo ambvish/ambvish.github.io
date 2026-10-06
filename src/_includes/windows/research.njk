@@ -9,7 +9,7 @@
         {%- for item in items %}
         <li class="row" data-filter-item>
           <a class="row__link" href="/research/{{ item.slug }}/" data-open-article="research-{{ item.slug }}" data-search="{{ item.title }}" data-kind="Research" data-detail="{{ item.headline }}">
-            <span class="avatar avatar--{{ item.initial | lower }}" aria-hidden="true">{{ item.initial }}</span>
+            <span class="avatar avatar--emoji avatar--{{ item.initial | lower }}" aria-hidden="true">{{ item.emoji }}</span>
             <span class="row__main">
               <span class="row__title">{{ item.title }}{{ badge(item, "status") }}</span>
               <span class="row__excerpt">{{ item.subtitle }}</span>

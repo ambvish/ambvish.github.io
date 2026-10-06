@@ -1,7 +1,10 @@
 {% from "macros/draft.njk" import badge %}
-<aside class="note" id="note" data-window data-drag-handle data-title="Introduction" tabindex="-1" aria-labelledby="note-title">
+<aside class="note" id="note" data-window data-drag-handle data-title="About me" tabindex="-1" aria-labelledby="note-title">
+  <figure class="note__photo">
+    <img src="{{ site.photo }}" width="400" height="500" alt="{{ site.name }}" draggable="false">
+    <figcaption>Vishnu</figcaption>
+  </figure>
   <h2 class="note__title" id="note-title">{{ site.intro.headline }}</h2>
-  <p class="note__tagline">{{ site.tagline }}</p>
   {%- for paragraph in site.intro.paragraphs %}
   <p>{{ paragraph }}</p>
   {%- endfor %}
@@ -17,10 +20,8 @@
     <a href="{{ site.links.linkedin }}" target="_blank" rel="noopener noreferrer" data-search="LinkedIn" data-kind="Link">LinkedIn<span aria-hidden="true"> ↗</span><span class="visually-hidden"> (opens in a new tab)</span></a>
     <span aria-hidden="true">·</span>
     <a href="mailto:{{ site.email }}" data-search="Email" data-kind="Link">Email</a>
-    {%- if site.resume %}
     <span aria-hidden="true">·</span>
     <a href="{{ site.resume }}" data-search="Résumé" data-kind="PDF">Résumé<span class="visually-hidden"> (PDF)</span></a>
-    {%- endif %}
   </p>
-  <p class="note__hint" data-js-only hidden><kbd data-modkey>⌘</kbd> <kbd>K</kbd> searches everything.</p>
+  <p class="note__hint" data-js-only hidden><kbd data-modkey>⌘</kbd> <kbd>K</kbd> to search or open any window.</p>
 </aside>

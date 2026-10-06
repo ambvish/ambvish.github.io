@@ -7,13 +7,13 @@ pagination:
 permalink: "/{{ article.kind }}/{{ article.slug }}/"
 eleventyComputed:
   title: "{{ article.title }} · Vishnuteja Ambati"
-  description: "{{ (article.item.lede or article.item.summary or article.item.details[0] or article.item.headline) | truncate(155) }}"
+  description: "{{ (article.item.lede or article.item.summary or article.item.details[0] or article.item.quote or article.item.headline) | truncate(155) }}"
 ---
 {% from "macros/window.njk" import window with context %}
 {% set item = article.item %}
-<main class="desk desk--single" id="desk" data-desk>
+<main class="desk desk--single{% if article.wide %} desk--wide{% endif %}" id="desk" data-desk>
   <h1 class="visually-hidden">{{ article.title }}</h1>
-  {% call window({ id: "article", title: (item.org if article.kind == "experience" else item.title), active: true }) %}
+  {% call window({ id: "article", title: article.windowTitle, active: true }) %}
     {% include "partials/article-" + article.kind + ".njk" %}
     <p class="article__back"><a href="/#{{ article.kind }}">← Back to the desktop</a></p>
   {% endcall %}

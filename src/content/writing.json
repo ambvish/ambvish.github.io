@@ -1,0 +1,37 @@
+{
+  "posts": [
+    {
+      "slug": "faster-multimodal-inference",
+      "emoji": "⚡",
+      "title": "Making Multimodal AI Fast: Where the Time Goes",
+      "date": "2026-10-06",
+      "dateLabel": "Oct 6, 2026",
+      "readTime": "4 min read",
+      "summary": "Multimodal inference is slow for reasons you can measure: where the latency actually lives (pixels turned into tokens, prefill, decode) and the techniques that win it back.",
+      "tags": [
+        "Inference",
+        "Multimodal AI",
+        "Quantization",
+        "LLMs"
+      ],
+      "body": "posts/faster-multimodal-inference.njk"
+    }
+  ],
+  "upNext": [
+    {
+      "emoji": "🧹",
+      "title": "Why I deleted my best numbers",
+      "summary": "The data-leakage story behind HAD-Stack."
+    },
+    {
+      "emoji": "🧍",
+      "title": "Fall detection on a laptop CPU: what I learned",
+      "summary": "Notes from building a real-time behavior engine without a GPU."
+    },
+    {
+      "emoji": "⚛️",
+      "title": "A quantum physics problem that turned into a fraud detector",
+      "summary": "How Hamiltonians ended up refereeing an adversarial game."
+    }
+  ]
+}

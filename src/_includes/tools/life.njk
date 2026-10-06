@@ -1,0 +1,7 @@
+<label class="visually-hidden" for="life-filter">Show</label>
+<span class="select"><select id="life-filter" data-filter="life-list" data-filter-mode="tag">
+  <option value="">All</option>
+  {%- for category in desk.lifeFilters %}
+  <option value="{{ category }}">{{ category }}</option>
+  {%- endfor %}
+</select></span>

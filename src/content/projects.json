@@ -1,94 +1,248 @@
 {
-  "filters": [
-    "AI/ML",
-    "Computer Vision",
-    "Web",
-    "Backend",
-    "Hardware",
-    "Research",
-    "Healthcare"
-  ],
+  "filters": ["AI/ML", "Computer Vision", "Web", "Backend", "Hardware", "Research", "Healthcare"],
   "items": [
     {
       "slug": "smart-hospital",
       "name": "Smart Hospital Edge AI on FPGA",
       "summary": "Real-time ECG anomaly detection: a 1D CNN trained on MIT-BIH, quantized to INT8 (4× smaller), and run as Verilog RTL on a Xilinx Zynq-7020 with an FSM-based inference engine at 100 MHz. Fully on-device and privacy-focused.",
-      "tags": [
-        "Hardware",
-        "AI/ML",
-        "Healthcare"
+      "tags": ["Hardware", "AI/ML", "Healthcare"],
+      "credit": "Solo project",
+      "quote": "Heart monitoring that never leaves the device: a neural network small enough to live in silicon, and fast enough to keep pace with every heartbeat.",
+      "sections": [
+        {
+          "heading": "What it is",
+          "paragraphs": [
+            "A real-time ECG anomaly detector that runs entirely on an FPGA. Instead of streaming a patient's heartbeat to a server, the signal is analyzed right where it's captured, so it keeps working without a network connection and sensitive health data never has to leave the device."
+          ]
+        },
+        {
+          "heading": "How it works",
+          "bullets": [
+            "<strong>The model:</strong> a 1D convolutional neural network trained on MIT-BIH, the standard collection of annotated ECG recordings used to benchmark heartbeat classification.",
+            "<strong>The squeeze:</strong> a custom PyTorch → INT8 quantization pipeline turns 32-bit floating-point weights into 8-bit integers, making the model 4× smaller and turning expensive floating-point math into cheap integer multiplies.",
+            "<strong>The silicon:</strong> the network runs as Verilog RTL on a Xilinx Zynq-7020, driven by a deterministic, state-machine-based multiply-accumulate (MAC) inference engine clocked at 100 MHz."
+          ]
+        },
+        {
+          "heading": "Why it matters",
+          "paragraphs": [
+            "A deterministic hardware engine has predictable timing: every inference walks through the same sequence of steps, which is exactly what you want from a device that's watching for anomalies in real time. Running on-device means no cloud bill, no network latency, and no patient data in transit."
+          ]
+        }
       ],
-      "link": "https://github.com/ambvish/AMD-IEEE-Smart-Hospital-Edge-AI",
-      "credit": "Solo project"
+      "stack": ["PyTorch", "INT8 quantization", "Verilog", "Xilinx Zynq-7020", "MIT-BIH"]
     },
     {
       "slug": "behavior-engine",
       "name": "Behavior Intelligence Engine",
       "summary": "Skeleton-based fall, person-down, and loitering detection at 18.6 FPS on a laptop CPU. (Built at ApexFlo.)",
-      "tags": [
-        "Computer Vision",
-        "AI/ML"
-      ]
+      "tags": ["Computer Vision", "AI/ML"],
+      "credit": "Built at ApexFlo Labs",
+      "quote": "Real-time behavior recognition on an ordinary laptop CPU, reading posture instead of faces.",
+      "sections": [
+        {
+          "heading": "What it is",
+          "paragraphs": [
+            "A privacy-first, real-time engine that recognizes human behavior in video: someone falling, a person down, and loitering. It runs at 18.6 frames per second on a laptop CPU, with no GPU at all."
+          ]
+        },
+        {
+          "heading": "How it works",
+          "bullets": [
+            "<strong>Skeletons, not pixels:</strong> the engine works from body-pose skeletons, which keeps the signal small, fast to process, and focused on how a person moves.",
+            "<strong>Fall detection:</strong> an ST-GCN (spatial-temporal graph convolutional network) treats the skeleton as a graph of joints moving through time. It scored an F1 of 0.78 on the URFD fall dataset.",
+            "<strong>One backbone, many behaviors:</strong> person-down and loitering detection are rule-based and share the same skeleton backbone, so adding a behavior doesn't mean adding another heavy model.",
+            "<strong>Deployment:</strong> exported to ONNX for fast CPU inference, and checked to agree with the original model on 100% of predictions."
+          ]
+        },
+        {
+          "heading": "Why it matters",
+          "paragraphs": [
+            "Most real-world cameras aren't attached to a GPU. An engine that keeps up in real time on commodity hardware, and that reasons about posture rather than identity, is one that can actually be deployed where it's needed."
+          ]
+        }
+      ],
+      "stack": ["PyTorch", "ST-GCN", "ONNX", "Computer vision", "Python"]
     },
     {
       "slug": "hermathena",
       "name": "Hermathena",
       "summary": "LLM-driven IT service management with an event-sourced backend. (Built at ApexFlo.)",
-      "tags": [
-        "AI/ML",
-        "Backend",
-        "Web"
-      ]
+      "tags": ["AI/ML", "Backend", "Web"],
+      "credit": "Built at ApexFlo Labs",
+      "quote": "IT support that starts with a conversation, not a form.",
+      "sections": [
+        {
+          "heading": "What it is",
+          "paragraphs": [
+            "An AI-powered IT service management platform. Instead of making people hunt through static ticket forms, a natural-language, LLM-driven intake assistant takes the request in plain words."
+          ]
+        },
+        {
+          "heading": "How it works",
+          "bullets": [
+            "<strong>Conversational intake:</strong> the assistant replaces the ticket form, and each request then flows through classification, SLA tracking and closure.",
+            "<strong>A backend that never forgets:</strong> an append-only, event-sourced Python/FastAPI service on PostgreSQL, so every change to a ticket is recorded as an event and history is never overwritten.",
+            "<strong>Permissions where they count:</strong> a role-based React + TypeScript single-page app (Vite), with permissions enforced on the server across four roles.",
+            "<strong>Guardrails:</strong> every model output is validated before it reaches production."
+          ]
+        },
+        {
+          "heading": "Why it matters",
+          "paragraphs": [
+            "When an AI is in the loop, trust comes from structure. Event sourcing gives a complete audit trail of every ticket, server-side permissions mean the interface can never grant what the backend won't allow, and validated outputs keep the model honest."
+          ]
+        }
+      ],
+      "stack": ["Python", "FastAPI", "PostgreSQL", "Event sourcing", "React", "TypeScript", "Vite", "LLMs"]
     },
     {
       "slug": "prism",
       "name": "PRISM",
       "summary": "Maternal-health clinical decision support for an ICMR project.",
-      "tags": [
-        "Web",
-        "Healthcare"
+      "tags": ["Web", "Healthcare"],
+      "credit": "Team project",
+      "quote": "A second opinion for high-risk pregnancies, built for the Medical Officers on the front line.",
+      "sections": [
+        {
+          "heading": "What it is",
+          "paragraphs": [
+            "A full-stack clinical decision support dashboard built for a project with the Indian Council of Medical Research (ICMR), India's apex biomedical research body. It helps Medical Officers manage high-risk pregnancies."
+          ]
+        },
+        {
+          "heading": "How it works",
+          "bullets": [
+            "<strong>A clinical rules engine:</strong> typed and reusable, so guidance is consistent and every rule can be checked.",
+            "<strong>Explainable risk:</strong> the system shows why a pregnancy was flagged, not just that it was.",
+            "<strong>The whole journey:</strong> guideline-based workflows for risk assessment, diagnosis, treatment planning, monitoring and referral.",
+            "<strong>Role-based access</strong> controls who can see and do what."
+          ]
+        },
+        {
+          "heading": "Why it matters",
+          "paragraphs": [
+            "In clinical tools, an unexplained alert is an easy one to ignore. Explainable, guideline-based rules put the system's reasoning in front of the person who has to act on it."
+          ]
+        }
       ],
-      "credit": "Team project"
+      "stack": ["React", "TypeScript", "Supabase", "Clinical decision support"]
     },
     {
       "slug": "agri",
       "name": "Multimodal Agricultural Intelligence",
       "summary": "Multilingual RAG assistant combining agricultural documents, semantic search, and weather data for context-aware farming advice.",
-      "tags": [
-        "AI/ML"
+      "tags": ["AI/ML"],
+      "credit": "Team project",
+      "quote": "Farming advice that reads the manual, checks the sky, and answers in your language.",
+      "sections": [
+        {
+          "heading": "What it is",
+          "paragraphs": [
+            "An AI assistant that gives context-aware farming advice by bringing together agricultural documents, semantic search and weather data, in more than one language."
+          ]
+        },
+        {
+          "heading": "How it works",
+          "bullets": [
+            "<strong>A library it can actually read:</strong> agricultural PDFs are indexed so the assistant retrieves the right passage instead of guessing.",
+            "<strong>Grounded answers:</strong> retrieval-augmented generation (RAG) with semantic vector search ties each answer back to real sources.",
+            "<strong>Weather-aware:</strong> weather data adds the local context that turns general guidance into today's advice.",
+            "<strong>Multilingual,</strong> so people can ask in the language they actually speak."
+          ]
+        },
+        {
+          "heading": "Why it matters",
+          "paragraphs": [
+            "Good agricultural knowledge often sits in documents that are hard to search and written in a single language. Grounding answers in real sources, and adapting them to the weather, makes the advice both trustworthy and timely."
+          ]
+        }
       ],
-      "credit": "Team project"
+      "stack": ["Python", "RAG", "LLMs", "Multilingual AI", "Vector search", "Weather APIs"]
     },
     {
       "slug": "had-stack",
       "name": "HAD-Stack",
       "summary": "Physics-guided adversarial training for fraud detection.",
-      "tags": [
-        "Research",
-        "AI/ML"
+      "tags": ["Research", "AI/ML"],
+      "credit": "With Prof. Chivukula",
+      "quote": "Fraudsters adapt. So should the detector.",
+      "sections": [
+        {
+          "heading": "What it is",
+          "paragraphs": [
+            "A research framework for fraud detection that holds up against attackers who learn its blind spots. The attacker and the defender play a leader-follower (Stackelberg) game, and instead of hand-picked settings, quantum-inspired Hamiltonians decide the attacker's budget, how hard the defender regularizes, and when the game has settled."
+          ]
+        },
+        {
+          "heading": "Results",
+          "paragraphs": [
+            "0.9948 clean AUC-ROC on 26,393 real UPI transactions, with false positives halved compared with a strong Transformer baseline (42 → 21), and still robust (AUC 0.9988) under an FGSM evasion attack. Co-authored; under review at IEEE DSAA 2026."
+          ]
+        }
       ],
-      "credit": "With Prof. Chivukula"
+      "readMore": { "label": "Read the full research write-up", "article": "research-had-stack", "href": "/research/had-stack/" },
+      "stack": ["Adversarial ML", "Game theory", "Transformers", "PyTorch"]
     },
     {
       "slug": "heart-disease",
       "name": "Heart Disease Predictor",
       "summary": "Logistic Regression, SVM, and Random Forest compared on the UCI dataset, with an interactive Streamlit app.",
-      "tags": [
-        "AI/ML",
-        "Healthcare"
+      "tags": ["AI/ML", "Healthcare"],
+      "credit": "Solo project",
+      "quote": "Three classic models, one honest comparison, and an app to explore it.",
+      "sections": [
+        {
+          "heading": "What it is",
+          "paragraphs": [
+            "A machine-learning project that compares Logistic Regression, Support Vector Machines and Random Forests for predicting heart disease on the UCI heart disease dataset, wrapped in an interactive Streamlit app."
+          ]
+        },
+        {
+          "heading": "How it works",
+          "bullets": [
+            "<strong>Same data, three model families:</strong> a simple, interpretable baseline next to more flexible models, so the trade-offs are visible instead of assumed.",
+            "<strong>An interactive app:</strong> Streamlit turns the trained models into a web app where you can enter values and see a prediction."
+          ]
+        },
+        {
+          "heading": "Why it matters",
+          "paragraphs": [
+            "Comparing models side by side, instead of reaching for one by default, is the habit that keeps machine-learning work honest."
+          ]
+        }
       ],
-      "link": "https://github.com/ambvish/heartdisease-predictor-app",
-      "credit": "Solo project"
+      "stack": ["Python", "scikit-learn", "Streamlit"]
     },
     {
       "slug": "e-commerce",
       "name": "E-Commerce Ecosystem",
       "summary": "Multi-role marketplace (customers, retailers, wholesalers): Next.js 14, TypeScript, Prisma, AI chatbot support. OOP course project.",
-      "tags": [
-        "Web"
+      "tags": ["Web"],
+      "credit": "Team project",
+      "quote": "One marketplace, three kinds of users: customers, retailers and wholesalers.",
+      "sections": [
+        {
+          "heading": "What it is",
+          "paragraphs": [
+            "A multi-role marketplace with separate experiences for customers, retailers and wholesalers, built for an object-oriented programming course."
+          ]
+        },
+        {
+          "heading": "How it works",
+          "bullets": [
+            "<strong>Full-stack TypeScript:</strong> Next.js 14 for the app, with Prisma for type-safe database access.",
+            "<strong>AI chatbot support</strong> built into the experience."
+          ]
+        },
+        {
+          "heading": "Why it matters",
+          "paragraphs": [
+            "Multi-role systems are where design shows: each role sees different data and has different powers, and the code has to keep those boundaries clean."
+          ]
+        }
       ],
-      "link": "https://github.com/ambvish/OOPS-PROJECT-E-Commerce-Ecosystem",
-      "credit": "Team project"
+      "stack": ["Next.js 14", "TypeScript", "Prisma"]
     }
   ]
 }

@@ -3,22 +3,20 @@
 {% call window({ id: "projects", title: "Projects", tools: "projects" }) %}
   <ul class="cards" id="projects-list" data-view="grid">
     {%- for project in desk.projects %}
-    <li class="card card--{{ project.tags[0] | tone }}{% if project.draft %} is-draft{% endif %}" data-filter-item data-tags="{{ project.tags | join('|') }}" data-search="{{ project.name }}" data-kind="Project" data-detail="{{ project.summary }}">
-      <div class="card__cover" aria-hidden="true">
-        <span class="card__cover-name">{{ project.name }}</span>
-        <span class="card__cover-summary">{{ project.summary }}</span>
-        <span class="card__cover-tags">{{ project.tags | join(" · ") }}</span>
-        <span class="card__initial">{{ project.name | first }}</span>
-      </div>
-      <div class="card__body">
-        <h3 class="card__name">{{ project.name }}</h3>
-        <p class="card__summary">{{ project.summary }}</p>
-        <p class="card__meta">
-          {%- if project.credit %}<span>{{ project.credit }}</span>{% endif -%}
-          {%- if project.link %}<a href="{{ project.link }}" target="_blank" rel="noopener noreferrer">GitHub<span aria-hidden="true"> ↗</span><span class="visually-hidden"> (opens in a new tab)</span></a>{% endif -%}
-          {{ badge(project) }}
-        </p>
-      </div>
+    <li class="card card--{{ project.tags[0] | tone }}{% if project.draft %} is-draft{% endif %}" data-filter-item data-tags="{{ project.tags | join('|') }}">
+      <a class="card__link" href="/projects/{{ project.slug }}/" data-open-article="projects-{{ project.slug }}" data-search="{{ project.name }}" data-kind="Project" data-detail="{{ project.summary }}">
+        <span class="card__cover" aria-hidden="true">
+          <span class="card__cover-name">{{ project.name }}</span>
+          <span class="card__cover-summary">{{ project.summary }}</span>
+          <span class="card__cover-tags">{{ project.tags | join(" · ") }}</span>
+          <span class="card__initial">{{ project.name | first }}</span>
+        </span>
+        <span class="card__body">
+          <span class="card__name">{{ project.name }}</span>
+          <span class="card__summary">{{ project.summary }}</span>
+          {%- if project.credit %}<span class="card__meta">{{ project.credit }}{{ badge(project) }}</span>{% endif %}
+        </span>
+      </a>
     </li>
     {%- endfor %}
   </ul>

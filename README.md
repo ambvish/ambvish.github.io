@@ -2,13 +2,11 @@
 
 **Engineer. Researcher. Professional problem-hunter.**
 
-Hi, I'm Vishnu. I'm a Computer Engineering student at Iowa State University, having started at
-BITS Pilani, Hyderabad, and I build AI systems that have to work outside the notebook: knowledge
-graphs for investors, behavior recognition that runs on a laptop CPU, and adversarial-ML research
-where physics keeps the attacker honest.
+I study Computer Engineering at Iowa State University, where I'll also pursue a minor in AI, after
+two years of Computer Science at BITS Pilani. I build AI systems that work outside the notebook:
+LLM pipelines and knowledge graphs, real-time computer vision, adversarial ML, INT8 models on FPGAs,
+and fast distributed backends.
 
-I like hard problems, honest numbers, and software that survives contact with reality.
-
-**Currently:** building Iris at Hivemind.
+**Currently:** Founding Engineer at Hivemind, building Iris.
 
 [Website](https://ambvish.github.io) · [Résumé](https://ambvish.github.io/resume.pdf) · [LinkedIn](https://www.linkedin.com/in/vishnutejaambati/) · [Email](mailto:ambativishnuteja@gmail.com)

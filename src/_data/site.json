@@ -6,16 +6,18 @@
   "url": "https://ambvish.github.io",
   "email": "ambativishnuteja@gmail.com",
   "resume": "/resume.pdf",
+  "photo": "/assets/img/vishnu.jpg",
   "links": {
     "github": "https://github.com/ambvish",
     "linkedin": "https://www.linkedin.com/in/vishnutejaambati/"
   },
   "intro": {
-    "headline": "Engineer. Researcher. Professional problem-hunter.",
+    "headline": "Engineer. Researcher. Professional problem‑hunter.",
     "paragraphs": [
-      "Hi, I'm Vishnu. I'm a Computer Engineering student at Iowa State University, having started at BITS Pilani, Hyderabad, and I build AI systems that have to work outside the notebook: knowledge graphs for investors, behavior recognition that runs on a laptop CPU, and adversarial-ML research where physics keeps the attacker honest.",
+      "Hi, I'm Vishnu. I study Computer Engineering at Iowa State University, where I'll also pursue a minor in AI, after two years of Computer Science at BITS Pilani, one of India's most selective engineering schools.",
+      "I build AI systems that work outside the notebook: LLM pipelines and knowledge graphs, real-time computer vision, adversarial ML, INT8 models on FPGAs, and fast distributed backends.",
       "I like hard problems, honest numbers, and software that survives contact with reality."
     ],
-    "currently": "building Iris at Hivemind."
+    "currently": "Founding Engineer at Hivemind, building Iris."
   }
 }

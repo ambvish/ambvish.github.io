@@ -36,6 +36,8 @@ export default function () {
   const experience = read("experience.json");
   const projects = read("projects.json");
   const education = read("education.json");
+  const writing = read("writing.json");
+  const life = read("life.json");
 
   const roles = merge(experience.roles, drafts.experience);
   const research = merge(read("research.json"), drafts.research);
@@ -51,7 +53,11 @@ export default function () {
     skills: read("skills.json"),
     schools: merge(education.schools, drafts.education),
     certifications: merge(education.certifications, { add: drafts.education?.certifications }),
-    letters: [...read("letters.json"), ...(drafts.letters || []).map((letter) => ({ ...letter, draft: true }))],
+    letters: read("letters.json"),
+    posts: writing.posts,
+    upNext: writing.upNext,
+    life: life.items,
+    lifeFilters: life.filters,
   };
 
   // Tags offered in the Experience window's filter, in first-seen order.
@@ -59,8 +65,14 @@ export default function () {
 
   // Pages that get their own shareable URL (and open as windows on the desktop).
   desk.articles = [
-    ...roles.map((item) => ({ kind: "experience", slug: item.slug, title: item.headline, item })),
-    ...research.map((item) => ({ kind: "research", slug: item.slug, title: item.headline, item })),
+    ...roles.map((item) => ({ kind: "experience", slug: item.slug, title: item.headline, windowTitle: item.org, item })),
+    ...research.map((item) => ({ kind: "research", slug: item.slug, title: item.headline, windowTitle: item.title, item })),
+    ...desk.posts.map((item) => ({ kind: "writing", slug: item.slug, title: item.title, windowTitle: "Writing", item })),
+    // Projects and off-the-clock pieces open in a wider window, cover on the left.
+    ...desk.projects
+      .filter((item) => item.sections)
+      .map((item) => ({ kind: "projects", slug: item.slug, title: item.name, windowTitle: item.name, wide: true, item })),
+    ...desk.life.map((item) => ({ kind: "life", slug: item.slug, title: item.title, windowTitle: item.title, wide: true, item })),
   ];
 
   return desk;

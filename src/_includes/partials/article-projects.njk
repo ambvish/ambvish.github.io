@@ -1,0 +1,35 @@
+{# Project detail: cover on the left, the story on the right (stacks on narrow windows). #}
+<article class="media">
+  <figure class="media__side">
+    <span class="media__cover card--{{ item.tags[0] | tone }}" aria-hidden="true">
+      <span class="card__cover">
+        <span class="card__cover-name">{{ item.name }}</span>
+        <span class="card__cover-summary">{{ item.summary }}</span>
+        <span class="card__cover-tags">{{ item.tags | join(" · ") }}</span>
+      </span>
+    </span>
+    <figcaption class="media__caption">{{ item.credit }}{% if item.credit %} · {% endif %}{{ item.tags | join(" · ") }}</figcaption>
+  </figure>
+  <div class="media__text">
+    <h3 class="media__title">{{ item.name }}</h3>
+    <p class="media__meta">{{ item.credit }}</p>
+    <blockquote class="media__quote"><p>{{ item.quote }}</p></blockquote>
+    {%- for section in item.sections %}
+    <h4 class="media__heading">{{ section.heading }}</h4>
+    {%- for paragraph in section.paragraphs %}
+    <p>{{ paragraph }}</p>
+    {%- endfor %}
+    {%- if section.bullets %}
+    <ul>
+      {%- for bullet in section.bullets %}
+      <li>{{ bullet | safe }}</li>
+      {%- endfor %}
+    </ul>
+    {%- endif %}
+    {%- endfor %}
+    {%- if item.readMore %}
+    <p><a href="{{ item.readMore.href }}" data-open-article="{{ item.readMore.article }}">{{ item.readMore.label }} →</a></p>
+    {%- endif %}
+    <ul class="tags" aria-label="Built with">{% for tool in item.stack %}<li>{{ tool }}</li>{% endfor %}</ul>
+  </div>
+</article>

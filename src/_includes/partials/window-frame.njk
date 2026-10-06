@@ -15,7 +15,7 @@
 </template>
 {% for article in desk.articles %}
 {%- set item = article.item %}
-<template id="article-{{ article.kind }}-{{ article.slug }}" data-title="{{ item.org if article.kind == 'experience' else item.title }}" data-href="/{{ article.kind }}/{{ article.slug }}/">
+<template id="article-{{ article.kind }}-{{ article.slug }}" data-title="{{ article.windowTitle }}" data-href="/{{ article.kind }}/{{ article.slug }}/"{% if article.wide %} data-wide{% endif %}>
   {% include "partials/article-" + article.kind + ".njk" %}
 </template>
 {% endfor %}

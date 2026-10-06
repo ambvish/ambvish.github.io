@@ -1,0 +1,84 @@
+{
+  "filters": ["Roads", "Sports", "Music & dance"],
+  "items": [
+    {
+      "slug": "long-rides",
+      "title": "The Long Road",
+      "category": "Roads",
+      "poster": "/assets/img/posters/long-rides.svg",
+      "caption": "Royal Enfield · Leather coat",
+      "quote": "Some roads aren't on the map until you ride them.",
+      "paragraphs": [
+        "There's a sound a Royal Enfield makes when it settles into a long road: a slow, steady thump, like a heartbeat that has finally stopped hurrying. That's usually when I button up the leather coat, let the city shrink in the mirrors, and start riding toward somewhere I haven't been.",
+        "I like the roads that thin out. Highways that turn into village lanes, lanes that turn into gravel, gravel that turns into a place nobody told me about. The point was never the destination. It's the unexplored parts in between, the bend you take just to see what's after it.",
+        "Most rides end up chasing the sun. There's a window just before it sets, when everything goes gold and the shadow of the bike stretches twice its length across the road, and I'll ride a long way to be somewhere wide and open when it happens.",
+        "And then there's the food. Every long ride is secretly a search for a new spot: a roadside stall pouring the best chai for fifty kilometres, a kitchen with no signboard, a dish I can't pronounce and will absolutely order again. Half the map in my head is roads. The other half is places to eat."
+      ]
+    },
+    {
+      "slug": "basketball",
+      "title": "Ten Years on the Court",
+      "category": "Sports",
+      "poster": "/assets/img/posters/basketball.svg",
+      "caption": "Basketball · 10 years · Club tournament winner",
+      "quote": "Ten years of the same lesson: the next possession is the only one that matters.",
+      "paragraphs": [
+        "I've played basketball for ten years, long enough that the sounds of a court still feel like home: the squeak of shoes, the clang off the rim, the half-second of silence before a good shot drops through.",
+        "Basketball taught me to think fast and stay calm while doing it. Every possession is a small problem with a shot clock: read the defence, find the open teammate, commit. When it goes wrong, you sprint back, defend, and earn the next one.",
+        "The highlight was winning a tournament with my club. The kind of win that isn't about one player, but about five people who've learned, over hundreds of practices, to trust exactly where the others will be."
+      ]
+    },
+    {
+      "slug": "football",
+      "title": "The Last Line",
+      "category": "Sports",
+      "poster": "/assets/img/posters/football.svg",
+      "caption": "Football · Goalkeeper · Tournaments",
+      "quote": "The loneliest position on the pitch, and my favourite.",
+      "paragraphs": [
+        "In football I played in goal, through tournament after tournament. It's a strange and wonderful job: a whole match of reading the game from the back, and then one second where everything depends on you.",
+        "A goalkeeper learns to watch everything at once: the angle of the run, the shape of the striker's hips, the ball before it's even struck. You organise the defence in front of you with your voice, and you learn that the best saves are often the ones you never have to make, because you were already in the right place.",
+        "And when the shot comes, there's no time to think. There's only what you've trained, a dive, and the sound of the ball hitting your gloves instead of the net."
+      ]
+    },
+    {
+      "slug": "volleyball",
+      "title": "Above the Net",
+      "category": "Sports",
+      "poster": "/assets/img/posters/volleyball.svg",
+      "caption": "Volleyball · Spiker",
+      "quote": "Three touches, one jump, and the best sound in sport.",
+      "paragraphs": [
+        "I've played a lot of volleyball, almost always as a spiker. The whole rally builds toward one moment: the pass, the set hanging in the air at exactly the right height, the approach, and the jump.",
+        "At the top of that jump everything slows down. You see the block forming, you see the gap, and you swing. When it lands clean, the sound of the ball hitting the floor on the other side is the best sound in sport.",
+        "It's also the most trusting game I know. You can't hit what nobody sets, so every point belongs to the whole court."
+      ]
+    },
+    {
+      "slug": "guitar",
+      "title": "Six Strings",
+      "category": "Music & dance",
+      "poster": "/assets/img/posters/guitar.svg",
+      "caption": "Guitar · School stages",
+      "quote": "Six strings, and a way to say what doesn't fit into words.",
+      "paragraphs": [
+        "I play guitar, and it's the one thing I do with no goal at all. Some nights it's chords strummed until a song shows up; other nights it's the same riff, slower and slower, until it finally sits right under my fingers.",
+        "I've played at school events, which taught me what no practice room can: the nerves just before you start, the moment the first chord rings out across a hall, and the way a room that was talking goes quiet to listen.",
+        "Engineering is about getting the right answer. Music is about getting the right feeling. I'd rather not choose between them."
+      ]
+    },
+    {
+      "slug": "dance",
+      "title": "A Count of Eight",
+      "category": "Music & dance",
+      "poster": "/assets/img/posters/dance.svg",
+      "caption": "Dance · School lead · College fests",
+      "quote": "Stage lights, a count of eight, and the whole room moving with you.",
+      "paragraphs": [
+        "I've danced for about as long as I've been on stages: as my school's lead dancer, and later as a main dancer at college fests, where the lights are hotter, the crowds are louder, and the bass hits you in the chest.",
+        "Dance is rehearsal disguised as fun. Hours of counting eights, fixing a single transition, drilling a formation until a whole team moves like one. Then the music starts, the practice disappears, and all that's left is the performance.",
+        "Leading taught me something I use far away from any stage: when the person setting the tempo is sure of it, everyone around them dances bigger."
+      ]
+    }
+  ]
+}

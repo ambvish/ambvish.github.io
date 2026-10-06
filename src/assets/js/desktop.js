@@ -40,28 +40,24 @@ export function initDesktop() {
     makeRoomForNote();
   }
 
-  // The sticky note grows with its text. Keep the window below it (Skills) from covering the
-  // note's links: move that window down if there's room, otherwise put the note on top.
-  // Once a visitor drags that window, it stays where they put it.
+  // The sticky note grows with its text. Keep the window below it (Skills) clear of the note:
+  // move it down if there's room; on short screens, tuck it underneath the middle windows
+  // instead (closing one reveals it). Once a visitor drags it, it stays where they put it.
   function makeRoomForNote() {
     const note = document.getElementById("note");
     const below = document.getElementById("skills");
     if (!WIDE.matches || !note || !below || "moved" in below.dataset) return;
-    below.style.removeProperty("top");
-    below.style.removeProperty("height");
-    if ("lifted" in note.dataset) {
-      note.style.removeProperty("z-index");
-      delete note.dataset.lifted;
-    }
+    for (const property of ["top", "left", "height", "z-index"]) below.style.removeProperty(property);
     const clearance = note.offsetTop + note.offsetHeight + 16;
     if (below.offsetTop >= clearance) return;
     const room = desk.clientHeight - clearance - 16;
-    if (room >= 220) {
+    if (room >= 180) {
       below.style.top = `${clearance}px`;
       below.style.height = `${room}px`;
-    } else if (!note.style.zIndex) {
-      note.style.zIndex = String((Number(getComputedStyle(below).zIndex) || 0) + 1);
-      note.dataset.lifted = "";
+    } else {
+      below.style.top = "38%";
+      below.style.left = "38%";
+      below.style.zIndex = "1";
     }
   }
 
@@ -122,16 +118,22 @@ export function initDesktop() {
       const startY = event.clientY;
       const startLeft = win.offsetLeft;
       const startTop = win.offsetTop;
-      place(win, startLeft, startTop);
-      win.dataset.moved = "";
+      let dragged = false;
       handle.setPointerCapture(event.pointerId);
-      win.classList.add("is-dragging");
       event.preventDefault();
 
       const move = (moveEvent) => {
+        const dx = moveEvent.clientX - startX;
+        const dy = moveEvent.clientY - startY;
+        if (!dragged && Math.hypot(dx, dy) < 3) return;
+        if (!dragged) {
+          dragged = true;
+          win.dataset.moved = "";
+          win.classList.add("is-dragging");
+        }
         // Keep at least part of the window, including its title bar, on the desk.
-        const left = clamp(startLeft + moveEvent.clientX - startX, 80 - win.offsetWidth, desk.clientWidth - 80);
-        const top = clamp(startTop + moveEvent.clientY - startY, 0, desk.clientHeight - 48);
+        const left = clamp(startLeft + dx, 80 - win.offsetWidth, desk.clientWidth - 80);
+        const top = clamp(startTop + dy, 0, desk.clientHeight - 48);
         place(win, left, top);
       };
       const stop = () => {
@@ -139,6 +141,8 @@ export function initDesktop() {
         handle.removeEventListener("pointerup", stop);
         handle.removeEventListener("pointercancel", stop);
         win.classList.remove("is-dragging");
+        // A plain click on a window that's mostly below the edge brings it up.
+        if (!dragged && win.offsetTop > desk.clientHeight - win.offsetHeight / 2) bringIntoView(win);
       };
       handle.addEventListener("pointermove", move);
       handle.addEventListener("pointerup", stop);
@@ -150,6 +154,12 @@ export function initDesktop() {
     win.style.left = `${left}px`;
     win.style.top = `${top}px`;
     win.style.right = "auto";
+  }
+
+  // A window tucked mostly below the bottom edge slides up so all of it can be seen.
+  function bringIntoView(win) {
+    const maxTop = desk.clientHeight - win.offsetHeight - 16;
+    if (win.offsetTop > maxTop) place(win, win.offsetLeft, Math.max(16, maxTop));
   }
 
   function focusWindow(win) {
@@ -170,6 +180,7 @@ export function initDesktop() {
     win.classList.remove("is-shaded");
     win.querySelector('[data-action="minimize"]')?.setAttribute("aria-pressed", "false");
     if (WIDE.matches) {
+      bringIntoView(win);
       focusWindow(win);
       win.focus({ preventScroll: true });
     } else {
@@ -223,9 +234,11 @@ export function initDesktop() {
     prepare(win);
 
     // Open near the middle, each new one a little further down and to the right.
+    // Projects and off-the-clock pieces get a wider window for their cover-and-story layout.
     const step = articlesOpened++ % 6;
-    const width = Math.min(640, desk.clientWidth * 0.52);
-    const height = Math.min(620, desk.clientHeight * 0.74);
+    const wide = "wide" in source.dataset;
+    const width = Math.min(wide ? 960 : 640, desk.clientWidth * (wide ? 0.74 : 0.52));
+    const height = Math.min(wide ? 700 : 620, desk.clientHeight * (wide ? 0.86 : 0.74));
     win.style.width = `${width}px`;
     win.style.height = `${height}px`;
     place(win, Math.max(16, (desk.clientWidth - width) / 2 + step * 28), 36 + step * 28);
@@ -244,7 +257,8 @@ export function initDesktop() {
 
     // A plain click on an article row opens it as a window; modified clicks follow the link.
     const row = event.target.closest("[data-open-article]");
-    if (row && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey) {
+    const canOpen = row && document.getElementById(`article-${row.dataset.openArticle}`);
+    if (canOpen && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey) {
       event.preventDefault();
       openArticle(row.dataset.openArticle);
     }
