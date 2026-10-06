@@ -46,7 +46,8 @@ export default function () {
     roles,
     research,
     projectFilters: projects.filters,
-    projects: merge(projects.items, drafts.projects),
+    // Each project takes the next of eight cover colors (.cover--0 to .cover--7 in site.css).
+    projects: merge(projects.items, drafts.projects).map((item, i) => ({ ...item, cover: i % 8 })),
     skills: read("skills.json"),
     schools: merge(education.schools, drafts.education),
     certifications: merge(education.certifications, { add: drafts.education?.certifications }),

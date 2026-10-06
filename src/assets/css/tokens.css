@@ -51,17 +51,20 @@
   --cover-muted: #b9bcc3;
   --cover-neutral: #2f3036;
 
-  /* Projects: the sage palette, deepest to lightest (one shade per first tag) */
-  --sage-900: #1b2a24;
-  --sage-600: #4c6b5e;
-  --sage-300: #a3c0b0;
-  --sage-100: #d6e2d8;
-  --sage-50: #f3f6f2;
-  --sage-paper: #f3f6f2;        /* titles on deep sage */
-  --sage-paper-muted: #a3c0b0;  /* summaries on the deepest sage */
-  --sage-mid-muted: #e4ece6;    /* summaries on mid sage */
-  --sage-ink: #1b2a24;          /* titles on light sage */
-  --sage-ink-muted: #2e443a;    /* summaries on light sage */
+  /* Projects: Vishnu's navy / plum / mauve / blush palette, mixed with two sage shades.
+     Covers take eight of these in turn (see .cover--0 to .cover--7 in site.css). */
+  --project-navy: #1d3a4d;
+  --project-navy-deep: #162939;
+  --project-plum: #6a2153;
+  --project-plum-deep: #3f122f;
+  --project-mauve: #b4a7af;
+  --project-blush: #f5e2de;
+  --project-blush-deep: #dfccc5;
+  --project-sage: #4c6b5e;
+  --project-sage-light: #a3c0b0;
+  --project-mist: #f3f6f2;       /* titles on sage */
+  --project-ink: #3f122f;        /* titles on light covers */
+  --project-ink-muted: #4a2a3e;  /* summaries on light covers */
 
   /* Certificate posters: quieter near-neutrals */
   --poster-1: #2b3242;

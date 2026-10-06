@@ -4,17 +4,6 @@ import path from "node:path";
 // Text that must never reach the live site: unconfirmed copy, notes to self, draft labels.
 const FORBIDDEN = [/\[CONFIRM/, /\bTODO\b/, /\bDRAFT\b/];
 
-// Project-card color, picked from a project's first tag.
-const TONES = {
-  "AI/ML": "ai",
-  "Computer Vision": "vision",
-  Web: "web",
-  Backend: "backend",
-  Hardware: "hardware",
-  Research: "research",
-  Healthcare: "health",
-};
-
 async function builtTextFiles(dir) {
   const entries = await readdir(dir, { withFileTypes: true, recursive: true });
   return entries
@@ -31,8 +20,6 @@ export default function (eleventyConfig) {
 
   // Site content lives in src/content/ and is read by src/_data/desk.js.
   eleventyConfig.addWatchTarget("src/content/");
-
-  eleventyConfig.addFilter("tone", (tag) => TONES[tag] || "neutral");
 
   // Production builds start from an empty folder, so nothing left over from `npm run dev` can ship.
   eleventyConfig.on("eleventy.before", async ({ directories, runMode }) => {

@@ -3,7 +3,7 @@
 {% call window({ id: "projects", title: "Projects", tools: "projects" }) %}
   <ul class="cards" id="projects-list" data-view="grid">
     {%- for project in desk.projects %}
-    <li class="card card--{{ project.tags[0] | tone }}{% if project.draft %} is-draft{% endif %}" data-filter-item data-tags="{{ project.tags | join('|') }}">
+    <li class="card cover--{{ project.cover }}{% if project.draft %} is-draft{% endif %}" data-filter-item data-tags="{{ project.tags | join('|') }}">
       <a class="card__link" href="/projects/{{ project.slug }}/" data-open-article="projects-{{ project.slug }}" data-search="{{ project.name }}" data-kind="Project" data-detail="{{ project.summary }}">
         <span class="card__cover" aria-hidden="true">
           <span class="card__cover-name">{{ project.name }}</span>

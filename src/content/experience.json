@@ -3,19 +3,44 @@
     {
       "slug": "hivemind",
       "org": "Hivemind",
-      "product": "Iris, portfolio intelligence",
+      "product": "Iris",
       "role": "Founding Engineer",
       "dates": "2026 – Present",
       "location": "Bengaluru, India (hybrid)",
-      "link": "https://hivemind.inc",
-      "linkLabel": "hivemind.inc",
       "headline": "Reading the Night So Investors Don't Have To",
-      "lede": "Hivemind's Iris is a portfolio-intelligence product for individual investors. It reads filings, news, and the supply-chain map behind a person's holdings overnight and surfaces the few things that actually reach their portfolio.",
-      "detailsLabel": "What I built",
-      "details": [
-        "LLM-powered research pipelines (retrieval-augmented generation with traceable, source-cited outputs) and the knowledge graph mapping relationships between companies: supply chains, ownership, policy, earnings, and macro events."
+      "facts": [
+        { "label": "Role", "value": "Founding Engineer" },
+        { "label": "Dates", "value": "2026 – Present" },
+        { "label": "Location", "value": "Bengaluru, India (hybrid)" },
+        { "label": "Product", "value": "Iris, portfolio intelligence for individual investors" },
+        { "label": "Website", "value": "hivemind.inc", "href": "https://hivemind.inc" }
       ],
-      "scale": "11,000+ companies, 27,000+ links; 96+ sources and 1.2M+ data points per day feeding daily briefs.",
+      "lede": "Hivemind's Iris is a portfolio-intelligence product for individual investors. It reads filings, news, and the supply-chain map behind a person's holdings overnight and surfaces the few things that actually reach their portfolio.",
+      "metricsHeading": "Scale",
+      "metrics": [
+        { "value": "11,000+", "label": "Companies" },
+        { "value": "27,000+", "label": "Links" },
+        { "value": "96+", "label": "Sources" },
+        { "value": "1.2M+", "label": "Data points per day, feeding daily briefs" }
+      ],
+      "partsHeading": "What I built",
+      "parts": [
+        {
+          "title": "LLM research pipelines",
+          "text": "LLM-powered research pipelines built on retrieval-augmented generation.",
+          "rows": [
+            { "label": "Approach", "text": "Retrieval-augmented generation (RAG)" },
+            { "label": "Output", "text": "Traceable, source-cited outputs" }
+          ]
+        },
+        {
+          "title": "Company knowledge graph",
+          "text": "The knowledge graph that maps relationships between companies.",
+          "rows": [
+            { "label": "Relationships", "text": "Supply chains · ownership · policy · earnings · macro events" }
+          ]
+        }
+      ],
       "tags": [
         "Python",
         "LLMs",
@@ -31,14 +56,42 @@
       "dates": "May 2026 – Jul 2026",
       "location": "Bengaluru, India",
       "headline": "Teaching a Laptop to Notice a Fall",
-      "bullets": [
+      "facts": [
+        { "label": "Role", "value": "Software Engineering Intern" },
+        { "label": "Dates", "value": "May 2026 – Jul 2026" },
+        { "label": "Location", "value": "Bengaluru, India" },
+        { "label": "Built", "value": "Hermathena · Behavior Intelligence Engine" }
+      ],
+      "lede": "Two systems: Hermathena, an AI-powered IT service management platform, and a privacy-first, real-time human-behavior recognition engine that runs at 18.6 FPS on a laptop CPU (no GPU).",
+      "metricsHeading": "At a glance",
+      "metrics": [
+        { "value": "18.6 FPS", "label": "Behavior recognition on a laptop CPU, no GPU" },
+        { "value": "0.78", "label": "Fall-detection F1 on the URFD dataset" },
+        { "value": "100%", "label": "Prediction agreement after ONNX export" },
+        { "value": "4", "label": "Roles with server-enforced permissions" }
+      ],
+      "partsHeading": "What I built",
+      "parts": [
         {
-          "name": "Hermathena",
-          "text": "an AI-powered IT service management platform. A natural-language, LLM-driven intake assistant replaces static ticket forms, then requests flow through classification, SLA tracking, and closure on an append-only, event-sourced Python/FastAPI + PostgreSQL backend. Role-based React + TypeScript (Vite) app with server-enforced permissions across four roles."
+          "title": "Hermathena",
+          "text": "An AI-powered IT service management platform.",
+          "rows": [
+            { "label": "Intake", "text": "A natural-language, LLM-driven assistant replaces static ticket forms" },
+            { "label": "Workflow", "text": "Requests flow through classification, SLA tracking, and closure" },
+            { "label": "Backend", "text": "Append-only, event-sourced Python/FastAPI + PostgreSQL" },
+            { "label": "App", "text": "Role-based React + TypeScript (Vite), with server-enforced permissions across four roles" }
+          ],
+          "link": { "label": "Read the Hermathena write-up", "href": "/projects/hermathena/", "article": "projects-hermathena" }
         },
         {
-          "name": "Behavior engine",
-          "text": "a privacy-first, real-time human-behavior recognition engine running at 18.6 FPS on a laptop CPU (no GPU). Skeleton-based: fall detection via an ST-GCN (F1 0.78 on the URFD dataset), plus rule-based person-down and loitering detection on one shared backbone; exported to ONNX with 100% prediction agreement."
+          "title": "Behavior engine",
+          "text": "A privacy-first, real-time human-behavior recognition engine running at 18.6 FPS on a laptop CPU (no GPU).",
+          "rows": [
+            { "label": "Fall detection", "text": "Skeleton-based ST-GCN, F1 0.78 on the URFD dataset" },
+            { "label": "Person-down, loitering", "text": "Rule-based detection on one shared backbone" },
+            { "label": "Deployment", "text": "Exported to ONNX with 100% prediction agreement" }
+          ],
+          "link": { "label": "Read the Behavior Intelligence Engine write-up", "href": "/projects/behavior-engine/", "article": "projects-behavior-engine" }
         }
       ],
       "tags": [
@@ -55,15 +108,47 @@
     {
       "slug": "icmr-prism",
       "org": "ICMR",
-      "product": "PRISM, maternal-health clinical decision support",
+      "product": "PRISM",
       "role": "Project Engineer (freelance)",
       "dates": "May 2026 – Jun 2026",
       "location": "Remote",
       "headline": "A Second Opinion for High-Risk Pregnancies",
-      "team": true,
-      "details": [
-        "A full-stack clinical dashboard built for a project with the Indian Council of Medical Research, helping Medical Officers manage high-risk pregnancies. It uses a typed, reusable clinical rules engine with risk explainability and role-based access, plus guideline-based workflows across risk assessment, diagnosis, treatment planning, monitoring, and referral."
+      "facts": [
+        { "label": "Role", "value": "Project Engineer (freelance)" },
+        { "label": "Dates", "value": "May 2026 – Jun 2026" },
+        { "label": "Location", "value": "Remote" },
+        { "label": "For", "value": "A project with the Indian Council of Medical Research" },
+        { "label": "Credit", "value": "Team project" }
       ],
+      "lede": "A full-stack clinical dashboard built for a project with the Indian Council of Medical Research, helping Medical Officers manage high-risk pregnancies.",
+      "partsHeading": "What we built",
+      "parts": [
+        {
+          "title": "Clinical rules engine",
+          "text": "A typed, reusable clinical rules engine with risk explainability and role-based access."
+        },
+        {
+          "title": "Guideline-based workflows",
+          "text": "Workflows that follow clinical guidelines across five stages.",
+          "pointsLabel": "Stages",
+          "points": ["Risk assessment", "Diagnosis", "Treatment planning", "Monitoring", "Referral"]
+        },
+        {
+          "title": "Full-stack dashboard",
+          "text": "The dashboard Medical Officers use to manage high-risk pregnancies.",
+          "rows": [
+            { "label": "Stack", "text": "React · TypeScript · Supabase" }
+          ]
+        }
+      ],
+      "noteHeading": "Team credit",
+      "note": "PRISM is a team project. This page describes the team's work.",
+      "related": {
+        "heading": "Related",
+        "links": [
+          { "label": "Read the PRISM write-up", "href": "/projects/prism/", "article": "projects-prism" }
+        ]
+      },
       "tags": [
         "React",
         "TypeScript",
@@ -74,15 +159,47 @@
     {
       "slug": "drdo-har",
       "org": "DRDO-funded research",
-      "product": "human activity recognition",
+      "product": "Human activity recognition",
       "role": "Student Research Assistant",
       "dates": "Jan 2026 – May 2026",
       "location": "BITS Pilani, Hyderabad",
-      "funding": "on a project funded by DRDO's Aeronautics Research & Development Board",
       "headline": "Reading Motion, One Skeleton at a Time",
-      "details": [
-        "Built real-time person detection and tracking with YOLOv11 and a skeleton-based action-recognition module (Temporal Convolutional Network trained on NTU RGB+D 3D-skeleton data: 10K+ sequences, 24 action classes, NVIDIA Tesla T4 GPUs), then integrated the two into an end-to-end activity-recognition system."
+      "facts": [
+        { "label": "Role", "value": "Student Research Assistant" },
+        { "label": "Dates", "value": "Jan 2026 – May 2026" },
+        { "label": "Location", "value": "BITS Pilani, Hyderabad" },
+        { "label": "Funding", "value": "DRDO's Aeronautics Research & Development Board" }
       ],
+      "lede": "An end-to-end activity-recognition system, built on a project funded by DRDO's Aeronautics Research & Development Board: real-time person detection and tracking, plus skeleton-based action recognition.",
+      "metricsHeading": "At a glance",
+      "metrics": [
+        { "value": "10K+", "label": "NTU RGB+D 3D-skeleton sequences" },
+        { "value": "24", "label": "Action classes" },
+        { "value": "Tesla T4", "label": "NVIDIA GPUs used for training" }
+      ],
+      "partsHeading": "What I built",
+      "parts": [
+        {
+          "title": "Detection and tracking",
+          "text": "Real-time person detection and tracking with YOLOv11."
+        },
+        {
+          "title": "Skeleton-based action recognition",
+          "text": "A Temporal Convolutional Network (TCN) trained on NTU RGB+D 3D-skeleton data.",
+          "rows": [
+            { "label": "Data", "text": "10K+ sequences, 24 action classes" },
+            { "label": "Compute", "text": "NVIDIA Tesla T4 GPUs" }
+          ]
+        },
+        {
+          "title": "End-to-end system",
+          "text": "The two modules integrated into one end-to-end activity-recognition system."
+        }
+      ],
+      "endorsement": {
+        "quote": "he took clear ownership of the work … and followed problems through to working solutions with little supervision",
+        "by": "Prof. Paresh Saxena, Head of Department, CS & IS, BITS Pilani Hyderabad"
+      },
       "tags": [
         "PyTorch",
         "YOLOv11",
@@ -93,14 +210,45 @@
     {
       "slug": "research-fellow",
       "org": "BITS Pilani",
+      "product": "Research",
       "role": "Undergraduate Research Fellow",
       "dates": "Nov 2025 – Present",
       "location": "BITS Pilani, Hyderabad",
       "headline": "Where Physics Meets Adversarial ML",
-      "lede": "Undergraduate research with Prof. Aneesh S. Chivukula on adversarial machine learning and physics-guided models.",
-      "details": [
-        "Prof. Chivukula advised HAD-Stack, a physics-guided adversarial training framework for fraud detection (co-authored; under review at IEEE DSAA 2026), and supervised my Hamiltonian solvers & QHNet study project."
+      "facts": [
+        { "label": "Role", "value": "Undergraduate Research Fellow" },
+        { "label": "Dates", "value": "Nov 2025 – Present" },
+        { "label": "Location", "value": "BITS Pilani, Hyderabad" },
+        { "label": "Advisor", "value": "Prof. Aneesh S. Chivukula" },
+        { "label": "Focus", "value": "Adversarial machine learning · physics-guided models" }
       ],
+      "lede": "Undergraduate research with Prof. Aneesh S. Chivukula on adversarial machine learning and physics-guided models.",
+      "metricsHeading": "HAD-Stack results",
+      "metrics": [
+        { "value": "0.9948", "label": "Clean AUC-ROC on 26,393 real UPI transactions" },
+        { "value": "42 → 21", "label": "False positives vs. a strong Transformer baseline" },
+        { "value": "0.9988", "label": "AUC under an FGSM evasion attack" }
+      ],
+      "partsHeading": "Work with Prof. Chivukula",
+      "parts": [
+        {
+          "title": "HAD-Stack",
+          "text": "A physics-guided adversarial training framework for fraud detection.",
+          "rows": [
+            { "label": "Status", "text": "Co-authored; under review at IEEE DSAA 2026" }
+          ],
+          "link": { "label": "Read about HAD-Stack", "href": "/research/had-stack/", "article": "research-had-stack" }
+        },
+        {
+          "title": "Hamiltonian solvers & QHNet",
+          "text": "A study project on self-consistent solvers, Bose–Hubbard dynamics, and a graph neural network that learns Hamiltonians, supervised by Prof. Chivukula.",
+          "link": { "label": "Read the study project", "href": "/research/hamiltonian-qhnet/", "article": "research-hamiltonian-qhnet" }
+        }
+      ],
+      "endorsement": {
+        "quote": "He belongs to a category of undergraduate I meet perhaps once in a few years.",
+        "by": "Prof. Aneesh S. Chivukula, from a recommendation letter"
+      },
       "tags": [
         "Adversarial ML",
         "Research",
@@ -114,8 +262,33 @@
       "dates": "Oct 2025 – Feb 2026",
       "location": "Remote",
       "headline": "Three Million Songs a Week, Fifty Milliseconds Each",
-      "details": [
-        "Backend services for a distributed Discord music platform serving 200K+ monthly active users and 3M+ weekly audio streams. RESTful microservices in Node.js (Express) on Docker/Kubernetes with service discovery; a WebSocket sharding system with caching and load balancing for sub-50 ms real-time latency."
+      "facts": [
+        { "label": "Role", "value": "Software Engineering Intern" },
+        { "label": "Dates", "value": "Oct 2025 – Feb 2026" },
+        { "label": "Location", "value": "Remote" },
+        { "label": "Product", "value": "A distributed Discord music platform" }
+      ],
+      "lede": "Backend services for a distributed Discord music platform serving 200K+ monthly active users and 3M+ weekly audio streams.",
+      "metricsHeading": "Scale",
+      "metrics": [
+        { "value": "200K+", "label": "Monthly active users" },
+        { "value": "3M+", "label": "Weekly audio streams" },
+        { "value": "Sub-50 ms", "label": "Real-time latency" }
+      ],
+      "partsHeading": "What I built",
+      "parts": [
+        {
+          "title": "Microservices",
+          "text": "RESTful microservices in Node.js (Express).",
+          "rows": [
+            { "label": "Platform", "text": "Docker and Kubernetes, with service discovery" }
+          ]
+        },
+        {
+          "title": "Real-time layer",
+          "text": "A WebSocket sharding system with caching and load balancing.",
+          "result": "Sub-50 ms real-time latency."
+        }
       ],
       "tags": [
         "Node.js",

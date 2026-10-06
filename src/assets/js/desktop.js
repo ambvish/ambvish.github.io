@@ -270,8 +270,8 @@ export function initDesktop() {
     // Projects get a wider window for their cover-and-story layout.
     const step = articlesOpened++ % 6;
     const wide = "wide" in source.dataset;
-    const width = Math.min(wide ? 960 : 640, desk.clientWidth * (wide ? 0.74 : 0.52));
-    const height = Math.min(wide ? 700 : 620, desk.clientHeight * (wide ? 0.86 : 0.74));
+    const width = Math.min(wide ? 960 : 760, desk.clientWidth * (wide ? 0.74 : 0.58));
+    const height = Math.min(wide ? 700 : 680, desk.clientHeight * (wide ? 0.86 : 0.8));
     win.style.width = `${width}px`;
     win.style.height = `${height}px`;
     place(win, Math.max(16, (desk.clientWidth - width) / 2 + step * 28), 36 + step * 28);

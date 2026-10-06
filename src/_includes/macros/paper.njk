@@ -1,0 +1,106 @@
+{% from "macros/draft.njk" import badge %}
+{#
+  Write-up layout shared by experience and research pages: heading, fact sheet, overview,
+  key figures, numbered parts, a callout (note and/or quote), links onward, and tags.
+  Every field is optional except the headline; the content lives in src/content/*.json.
+#}
+{% macro onward(link) -%}
+<a class="paper__next" href="{{ link.href }}" data-open-article="{{ link.article }}">{{ link.label }} →</a>
+{%- endmacro %}
+
+{% macro paper(item, kicker, subtitle) %}
+<article class="paper{% if item.draft %} is-draft{% endif %}">
+  <header class="paper__head">
+    {%- if item.image %}
+    <img class="paper__emblem" src="{{ item.image }}" width="240" height="240" alt="" draggable="false">
+    {%- endif %}
+    <div class="paper__heading">
+      <p class="paper__kicker">{{ kicker }}</p>
+      <h3 class="paper__title">{{ item.headline }}</h3>
+      <p class="paper__subtitle">{{ subtitle }}{{ badge(item) }}</p>
+    </div>
+  </header>
+
+  {%- if item.facts %}
+  <dl class="facts">
+    {%- for fact in item.facts %}
+    <div class="facts__row">
+      <dt>{{ fact.label }}</dt>
+      <dd>{% if fact.href %}<a href="{{ fact.href }}" target="_blank" rel="noopener noreferrer">{{ fact.value }}<span aria-hidden="true"> ↗</span><span class="visually-hidden"> (opens in a new tab)</span></a>{% else %}{{ fact.value }}{% endif %}</dd>
+    </div>
+    {%- endfor %}
+  </dl>
+  {%- endif %}
+
+  {%- set overview = item.problem or item.lede or item.summary %}
+  {%- if overview %}
+  <section class="paper__section">
+    <h4 class="paper__label">{{ item.problemLabel or ("The problem" if item.problem else "Overview") }}</h4>
+    <p class="paper__abstract">{{ overview }}</p>
+  </section>
+  {%- endif %}
+
+  {%- if item.metrics %}
+  <section class="paper__section">
+    <h4 class="paper__label">{{ item.metricsHeading or "Results" }}</h4>
+    <ul class="stats">
+      {%- for metric in item.metrics %}
+      <li class="stat"><span class="stat__value">{{ metric.value }}</span><span class="stat__label">{{ metric.label }}</span></li>
+      {%- endfor %}
+    </ul>
+  </section>
+  {%- endif %}
+
+  {%- if item.parts %}
+  <section class="paper__section">
+    <h4 class="paper__label">{{ item.partsHeading or "What I built" }}</h4>
+    <ol class="steps">
+      {%- for part in item.parts %}
+      <li class="step">
+        <h5 class="step__title">{{ part.title }}</h5>
+        <p>{{ part.text }}</p>
+        {%- if part.rows %}
+        <dl class="step__rows">
+          {%- for row in part.rows %}
+          <div><dt>{{ row.label }}</dt><dd>{{ row.text }}</dd></div>
+          {%- endfor %}
+        </dl>
+        {%- endif %}
+        {%- if part.points %}
+        <p class="step__points"><span class="step__points-label">{{ part.pointsLabel }}:</span> {{ part.points | join(" · ") }}</p>
+        {%- endif %}
+        {%- if part.result %}<p class="step__result"><span class="step__points-label">Result:</span> {{ part.result }}</p>{% endif %}
+        {%- if part.link %}<p class="step__link">{{ onward(part.link) }}</p>{% endif %}
+      </li>
+      {%- endfor %}
+    </ol>
+  </section>
+  {%- endif %}
+
+  {%- if item.note or item.endorsement %}
+  <aside class="callout">
+    <h4 class="paper__label">{{ item.noteHeading or ("Honesty note" if item.note else "Recommendation") }}</h4>
+    {%- if item.note %}<p>{{ item.note }}</p>{% endif %}
+    {%- if item.endorsement %}
+    <blockquote class="callout__quote"><p>“{{ item.endorsement.quote }}”</p><footer>{{ item.endorsement.by }}</footer></blockquote>
+    {%- endif %}
+  </aside>
+  {%- endif %}
+
+  {%- if item.related %}
+  <section class="paper__section">
+    <h4 class="paper__label">{{ item.related.heading or "Related" }}</h4>
+    {%- if item.related.text %}<p>{{ item.related.text }}</p>{% endif %}
+    <ul class="paper__links">
+      {%- for link in item.related.links %}
+      <li>{{ onward(link) }}</li>
+      {%- endfor %}
+    </ul>
+  </section>
+  {%- endif %}
+
+  {%- if item.tags %}
+  <ul class="tags paper__tags" aria-label="Tags">{% for tag in item.tags %}<li>{{ tag }}</li>{% endfor %}</ul>
+  {%- endif %}
+</article>
+{% endmacro %}

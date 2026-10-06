@@ -1,7 +1,7 @@
 {# Project detail: cover on the left, the story on the right (stacks on narrow windows). #}
-<article class="media">
+<article class="media cover--{{ item.cover }}">
   <figure class="media__side">
-    <span class="media__cover card--{{ item.tags[0] | tone }}" aria-hidden="true">
+    <span class="media__cover" aria-hidden="true">
       <span class="card__cover">
         <span class="card__cover-name">{{ item.name }}</span>
         <span class="card__cover-summary">{{ item.summary }}</span>

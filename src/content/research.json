@@ -67,9 +67,13 @@
     "related": {
       "heading": "Background",
       "text": "A study project on targeted attacks against an MNIST classifier, which tracked attacker success and regret over rounds, motivated the adaptive game design.",
-      "label": "Read the MNIST study project",
-      "href": "/research/mnist-pgd/",
-      "article": "research-mnist-pgd"
+      "links": [
+        {
+          "label": "Read the MNIST study project",
+          "href": "/research/mnist-pgd/",
+          "article": "research-mnist-pgd"
+        }
+      ]
     },
     "tags": [
       "Adversarial ML",
@@ -132,10 +136,15 @@
       }
     ],
     "related": {
+      "heading": "Related research",
       "text": "Prof. Chivukula also advised HAD-Stack, where quantum-inspired Hamiltonians set the knobs of an adversarial game.",
-      "label": "Read about HAD-Stack",
-      "href": "/research/had-stack/",
-      "article": "research-had-stack"
+      "links": [
+        {
+          "label": "Read about HAD-Stack",
+          "href": "/research/had-stack/",
+          "article": "research-had-stack"
+        }
+      ]
     },
     "tags": [
       "Quantum Physics",
@@ -193,9 +202,13 @@
     "related": {
       "heading": "Where it led",
       "text": "Watching attacker success and regret over rounds motivated the adaptive game design in HAD-Stack.",
-      "label": "Read about HAD-Stack",
-      "href": "/research/had-stack/",
-      "article": "research-had-stack"
+      "links": [
+        {
+          "label": "Read about HAD-Stack",
+          "href": "/research/had-stack/",
+          "article": "research-had-stack"
+        }
+      ]
     },
     "tags": [
       "Adversarial ML",

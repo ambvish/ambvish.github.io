@@ -11,7 +11,7 @@
             <span class="row__title">{{ role.org }} · {{ role.role or role.product }}{{ badge(role, "role") }}</span>
             {%- if role.dates %}<span class="row__date">{{ role.dates }}{{ badge(role, "dates") }}</span>{% endif %}
           </span>
-          <span class="row__excerpt"><em>{{ role.headline }}</em> — {{ role.lede or role.details[0] or role.bullets[0].text }}</span>
+          <span class="row__excerpt"><em>{{ role.headline }}</em> — {{ role.lede }}</span>
         </span>
       </a>
     </li>
