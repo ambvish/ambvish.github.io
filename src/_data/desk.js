@@ -51,7 +51,7 @@ export default function () {
     skills: read("skills.json"),
     schools: merge(education.schools, drafts.education),
     certifications: merge(education.certifications, { add: drafts.education?.certifications }),
-    letters: (drafts.letters || []).map((letter) => ({ ...letter, draft: true })),
+    letters: [...read("letters.json"), ...(drafts.letters || []).map((letter) => ({ ...letter, draft: true }))],
   };
 
   // Tags offered in the Experience window's filter, in first-seen order.

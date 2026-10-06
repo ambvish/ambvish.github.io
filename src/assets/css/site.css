@@ -202,8 +202,8 @@ kbd {
 #research { order: 3; }
 #skills { order: 4; }
 #education { order: 5; }
-#writing { order: 6; }
-#letters { order: 7; }
+#letters { order: 6; }
+#writing { order: 7; }
 
 /* ---------- Window ---------- */
 
@@ -533,8 +533,13 @@ a.row__link:focus-visible {
 }
 
 .quote {
+  margin: 0;
   color: var(--text);
   font-size: var(--text-lg);
+}
+
+.letter {
+  margin: 0;
 }
 
 /* ---------- Project cards ---------- */

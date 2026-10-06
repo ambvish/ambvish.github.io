@@ -16,7 +16,13 @@
         "LLM-powered research pipelines (retrieval-augmented generation with traceable, source-cited outputs) and the knowledge graph mapping relationships between companies: supply chains, ownership, policy, earnings, and macro events."
       ],
       "scale": "11,000+ companies, 27,000+ links; 96+ sources and 1.2M+ data points per day feeding daily briefs.",
-      "tags": ["Python", "LLMs", "RAG", "Knowledge Graphs", "Data Pipelines"]
+      "tags": [
+        "Python",
+        "LLMs",
+        "RAG",
+        "Knowledge Graphs",
+        "Data Pipelines"
+      ]
     },
     {
       "slug": "apexflo",
@@ -26,10 +32,25 @@
       "location": "Bengaluru, India",
       "headline": "Teaching a Laptop to Notice a Fall",
       "bullets": [
-        { "name": "Hermathena", "text": "an AI-powered IT service management platform. A natural-language, LLM-driven intake assistant replaces static ticket forms, then requests flow through classification, SLA tracking, and closure on an append-only, event-sourced Python/FastAPI + PostgreSQL backend. Role-based React + TypeScript (Vite) app with server-enforced permissions across four roles." },
-        { "name": "Behavior engine", "text": "a privacy-first, real-time human-behavior recognition engine running at 18.6 FPS on a laptop CPU (no GPU). Skeleton-based: fall detection via an ST-GCN (F1 0.78 on the URFD dataset), plus rule-based person-down and loitering detection on one shared backbone; exported to ONNX with 100% prediction agreement." }
+        {
+          "name": "Hermathena",
+          "text": "an AI-powered IT service management platform. A natural-language, LLM-driven intake assistant replaces static ticket forms, then requests flow through classification, SLA tracking, and closure on an append-only, event-sourced Python/FastAPI + PostgreSQL backend. Role-based React + TypeScript (Vite) app with server-enforced permissions across four roles."
+        },
+        {
+          "name": "Behavior engine",
+          "text": "a privacy-first, real-time human-behavior recognition engine running at 18.6 FPS on a laptop CPU (no GPU). Skeleton-based: fall detection via an ST-GCN (F1 0.78 on the URFD dataset), plus rule-based person-down and loitering detection on one shared backbone; exported to ONNX with 100% prediction agreement."
+        }
       ],
-      "tags": ["Python", "FastAPI", "PostgreSQL", "React", "TypeScript", "PyTorch", "ONNX", "Computer Vision"]
+      "tags": [
+        "Python",
+        "FastAPI",
+        "PostgreSQL",
+        "React",
+        "TypeScript",
+        "PyTorch",
+        "ONNX",
+        "Computer Vision"
+      ]
     },
     {
       "slug": "icmr-prism",
@@ -43,7 +64,12 @@
       "details": [
         "A full-stack clinical dashboard built for a project with the Indian Council of Medical Research, helping Medical Officers manage high-risk pregnancies. It uses a typed, reusable clinical rules engine with risk explainability and role-based access, plus guideline-based workflows across risk assessment, diagnosis, treatment planning, monitoring, and referral."
       ],
-      "tags": ["React", "TypeScript", "Supabase", "Healthcare"]
+      "tags": [
+        "React",
+        "TypeScript",
+        "Supabase",
+        "Healthcare"
+      ]
     },
     {
       "slug": "drdo-har",
@@ -57,7 +83,12 @@
       "details": [
         "Built real-time person detection and tracking with YOLOv11 and a skeleton-based action-recognition module (Temporal Convolutional Network trained on NTU RGB+D 3D-skeleton data: 10K+ sequences, 24 action classes, NVIDIA Tesla T4 GPUs), then integrated the two into an end-to-end activity-recognition system."
       ],
-      "tags": ["PyTorch", "YOLOv11", "CUDA", "Computer Vision"]
+      "tags": [
+        "PyTorch",
+        "YOLOv11",
+        "CUDA",
+        "Computer Vision"
+      ]
     },
     {
       "slug": "uzox",
@@ -69,14 +100,21 @@
       "details": [
         "Backend services for a distributed Discord music platform serving 200K+ monthly active users and 3M+ weekly audio streams. RESTful microservices in Node.js (Express) on Docker/Kubernetes with service discovery; a WebSocket sharding system with caching and load balancing for sub-50 ms real-time latency."
       ],
-      "tags": ["Node.js", "MongoDB", "Docker", "Kubernetes", "WebSockets"]
+      "tags": [
+        "Node.js",
+        "MongoDB",
+        "Docker",
+        "Kubernetes",
+        "WebSockets"
+      ]
     }
   ],
   "more": [
     {
       "slug": "research-fellow",
       "role": "Undergraduate Research Fellow",
-      "org": "BITS Pilani (with Prof. Aneesh Chivukula)"
+      "org": "BITS Pilani (with Prof. Aneesh Chivukula)",
+      "dates": "Nov 2025 – Present"
     },
     {
       "slug": "ieee",

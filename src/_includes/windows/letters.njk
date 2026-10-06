@@ -1,18 +1,18 @@
-{# Only exists on the local dev server: every quote is waiting for the professor's permission. #}
+{# Short quotes from recommendation letters, published with each professor's permission. #}
 {% from "macros/window.njk" import window with context %}
 {% from "macros/draft.njk" import badge %}
 {% if desk.letters.length %}
 {% call window({ id: "letters", title: "Letters", startClosed: true }) %}
   <ul class="list">
     {%- for letter in desk.letters %}
-    <li class="row is-draft">
-      <div class="row__link row__link--static">
+    <li class="row{% if letter.draft %} is-draft{% endif %}" data-search="{{ letter.quote }}" data-kind="Letter" data-detail="{{ letter.by }}">
+      <figure class="row__link row__link--static letter">
         {% include "icons/quote.njk" %}
         <span class="row__main">
-          <span class="quote">“{{ letter.quote }}”</span>
-          <span class="row__excerpt row__excerpt--full">— {{ letter.by }}{% if letter.title %}, {{ letter.title }}{% endif %} {{ badge(letter) }}</span>
+          <blockquote class="quote">“{{ letter.quote }}”</blockquote>
+          <figcaption class="row__excerpt row__excerpt--full">— {{ letter.by }}{% if letter.title %}, {{ letter.title }}{% endif %} {{ badge(letter) }}</figcaption>
         </span>
-      </div>
+      </figure>
     </li>
     {%- endfor %}
   </ul>

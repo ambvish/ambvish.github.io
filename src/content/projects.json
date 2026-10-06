@@ -1,11 +1,23 @@
 {
-  "filters": ["AI/ML", "Computer Vision", "Web", "Backend", "Hardware", "Research", "Healthcare"],
+  "filters": [
+    "AI/ML",
+    "Computer Vision",
+    "Web",
+    "Backend",
+    "Hardware",
+    "Research",
+    "Healthcare"
+  ],
   "items": [
     {
       "slug": "smart-hospital",
       "name": "Smart Hospital Edge AI on FPGA",
       "summary": "Real-time ECG anomaly detection: a 1D CNN trained on MIT-BIH, quantized to INT8 (4× smaller), and run as Verilog RTL on a Xilinx Zynq-7020 with an FSM-based inference engine at 100 MHz. Fully on-device and privacy-focused.",
-      "tags": ["Hardware", "AI/ML", "Healthcare"],
+      "tags": [
+        "Hardware",
+        "AI/ML",
+        "Healthcare"
+      ],
       "link": "https://github.com/ambvish/AMD-IEEE-Smart-Hospital-Edge-AI",
       "credit": "Solo project"
     },
@@ -13,40 +25,68 @@
       "slug": "behavior-engine",
       "name": "Behavior Intelligence Engine",
       "summary": "Skeleton-based fall, person-down, and loitering detection at 18.6 FPS on a laptop CPU. (Built at ApexFlo.)",
-      "tags": ["Computer Vision", "AI/ML"]
+      "tags": [
+        "Computer Vision",
+        "AI/ML"
+      ]
     },
     {
       "slug": "hermathena",
       "name": "Hermathena",
       "summary": "LLM-driven IT service management with an event-sourced backend. (Built at ApexFlo.)",
-      "tags": ["AI/ML", "Backend", "Web"]
+      "tags": [
+        "AI/ML",
+        "Backend",
+        "Web"
+      ]
     },
     {
       "slug": "prism",
       "name": "PRISM",
       "summary": "Maternal-health clinical decision support for an ICMR project.",
-      "tags": ["Web", "Healthcare"],
+      "tags": [
+        "Web",
+        "Healthcare"
+      ],
       "credit": "Team project"
     },
     {
       "slug": "agri",
       "name": "Multimodal Agricultural Intelligence",
       "summary": "Multilingual RAG assistant combining agricultural documents, semantic search, and weather data for context-aware farming advice.",
-      "tags": ["AI/ML"],
+      "tags": [
+        "AI/ML"
+      ],
       "credit": "Team project"
     },
     {
       "slug": "had-stack",
       "name": "HAD-Stack",
       "summary": "Physics-guided adversarial training for fraud detection.",
-      "tags": ["Research", "AI/ML"],
+      "tags": [
+        "Research",
+        "AI/ML"
+      ],
       "credit": "With Prof. Chivukula"
+    },
+    {
+      "slug": "heart-disease",
+      "name": "Heart Disease Predictor",
+      "summary": "Logistic Regression, SVM, and Random Forest compared on the UCI dataset, with an interactive Streamlit app.",
+      "tags": [
+        "AI/ML",
+        "Healthcare"
+      ],
+      "link": "https://github.com/ambvish/heartdisease-predictor-app",
+      "credit": "Solo project"
     },
     {
       "slug": "e-commerce",
       "name": "E-Commerce Ecosystem",
       "summary": "Multi-role marketplace (customers, retailers, wholesalers): Next.js 14, TypeScript, Prisma, AI chatbot support. OOP course project.",
-      "tags": ["Web"],
+      "tags": [
+        "Web"
+      ],
       "link": "https://github.com/ambvish/OOPS-PROJECT-E-Commerce-Ecosystem",
       "credit": "Team project"
     }
