@@ -1,0 +1,22 @@
+# Dependencies and build output
+node_modules/
+_site/
+
+# Secrets: never commit
+.env*
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Private working files: planning notes, unconfirmed copy, source documents
+CONTENT.md
+PLAN.md
+CLAUDE.md
+private/
+reference/
+.claude/
+
+# OS and tool clutter
+.DS_Store
+npm-debug.log*
