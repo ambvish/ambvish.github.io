@@ -2,7 +2,6 @@
   {
     "slug": "had-stack",
     "group": "Featured",
-    "initial": "H",
     "title": "HAD-Stack",
     "subtitle": "Physics as a referee in an adversarial game",
     "context": "Advisor: Prof. Aneesh S. Chivukula, BITS Pilani",
@@ -18,13 +17,11 @@
       "Transformers",
       "PyTorch",
       "Fraud Detection"
-    ],
-    "emoji": "🛡️"
+    ]
   },
   {
     "slug": "hamiltonian-qhnet",
     "group": "Study projects",
-    "initial": "Q",
     "title": "Hamiltonian solvers, Bose–Hubbard dynamics & QHNet",
     "subtitle": "BITS Pilani study project (CS F266), Mar 2026",
     "context": "BITS Pilani study project (CS F266), Mar 2026, supervised by Prof. Chivukula",
@@ -35,13 +32,11 @@
       "Numerical Methods",
       "GNNs",
       "PyTorch"
-    ],
-    "emoji": "⚛️"
+    ]
   },
   {
     "slug": "mnist-pgd",
     "group": "Study projects",
-    "initial": "M",
     "title": "Targeted attacks on an image classifier (MNIST)",
     "subtitle": "BITS Pilani study project, May 2026",
     "context": "BITS Pilani study project, May 2026",
@@ -51,7 +46,6 @@
       "Adversarial ML",
       "CNNs",
       "PyTorch"
-    ],
-    "emoji": "🔢"
+    ]
   }
 ]

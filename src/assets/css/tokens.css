@@ -25,6 +25,8 @@
   --quote-bar: #5a5a62;
   --control: #38383d;
   --control-border: #48484e;
+  --control-hover: #444449;
+  --dock: rgb(24 24 28 / 0.88);
   --text: #f2f2f5;
   --text-muted: #a7a7b0;
   --link: #7db3ff;
@@ -57,21 +59,7 @@
 
   /* Photo on the sticky note */
   --photo-frame: #ffffff;
-  --photo-caption: #3a3a3a;
 
-  /* Minesweeper */
-  --cell: #3a3a40;
-  --cell-hover: #46464d;
-  --cell-open: #26262a;
-  --cell-hit: #a8261e;
-  --lcd: #0d0d10;
-  --lcd-text: #ff6b5e;
-  --mine-1: #7db3ff;
-  --mine-2: #6fd18a;
-  --mine-3: #ff8a80;
-  --mine-4: #c6a2ff;
-  --mine-5: #ffb86b;
-  --mine-6: #5fd3d3;
 
   /* Labels for unconfirmed content (local dev server only) */
   --draft: #ffd23f;

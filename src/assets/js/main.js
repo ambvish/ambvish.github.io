@@ -2,7 +2,7 @@ import { initDesktop } from "./desktop.js";
 import { initFilters } from "./filters.js";
 import { initClock } from "./clock.js";
 import { initPalette } from "./palette.js";
-import { initGame } from "./game.js";
+import { initEmail } from "./email.js";
 
 // Things that only make sense with JavaScript stay hidden until now.
 for (const element of document.querySelectorAll("[data-js-only]")) element.hidden = false;
@@ -17,4 +17,4 @@ const desktop = initDesktop();
 initFilters();
 initClock();
 initPalette(desktop);
-initGame();
+initEmail();

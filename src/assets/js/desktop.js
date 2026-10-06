@@ -1,6 +1,7 @@
 // The desktop: windows come to the front when clicked, drag by their title bar (the sticky note
 // drags from anywhere), and the traffic lights close, minimize (roll up) and zoom them.
-// Menu-bar links open windows; experience and research rows open as their own windows.
+// Closed windows wait in the dock at the bottom; click one to bring it back.
+// Experience, research and project items open as their own windows.
 // Under 900px wide none of this runs: windows simply stack and links go to real pages.
 
 const WIDE = window.matchMedia("(min-width: 900px)");
@@ -14,6 +15,7 @@ const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
 export function initDesktop() {
   const desk = document.querySelector("[data-desk]");
   if (!desk) return null;
+  const dock = document.querySelector("[data-dock]");
 
   for (const win of desk.querySelectorAll("[data-window]")) setUp(win);
   applyMode();
@@ -21,7 +23,10 @@ export function initDesktop() {
   let resizeTimer;
   window.addEventListener("resize", () => {
     clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(makeRoomForNote, 150);
+    resizeTimer = setTimeout(() => {
+      makeRoomForNote();
+      renderDock();
+    }, 150);
   });
   document.addEventListener("click", onClick);
   document.addEventListener("keydown", onKeydown);
@@ -38,16 +43,43 @@ export function initDesktop() {
   function applyMode() {
     for (const win of desk.querySelectorAll("[data-window]")) prepare(win);
     makeRoomForNote();
+    renderDock();
+  }
+
+  // One button per closed window, in page order.
+  function renderDock() {
+    if (!dock) return;
+    const closed = WIDE.matches
+      ? [...desk.querySelectorAll("[data-window]:not([data-ephemeral])")].filter(
+          (win) => win.hidden && win.querySelector('[data-action="close"]'),
+        )
+      : [];
+    dock.replaceChildren(
+      ...closed.map((win) => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "dock__item";
+        button.dataset.openWindow = win.id;
+        button.textContent = win.dataset.title;
+        return button;
+      }),
+    );
+    dock.hidden = closed.length === 0;
   }
 
   // The sticky note grows with its text. Keep the window below it (Skills) clear of the note:
-  // move it down if there's room; on short screens, tuck it underneath the middle windows
-  // instead (closing one reveals it). Once a visitor drags it, it stays where they put it.
+  // move it down if there's room; on short screens, put it in the dock instead.
+  // Once a visitor moves, closes or opens it themselves, it's left alone.
   function makeRoomForNote() {
     const note = document.getElementById("note");
     const below = document.getElementById("skills");
-    if (!WIDE.matches || !note || !below || "moved" in below.dataset) return;
-    for (const property of ["top", "left", "height", "z-index"]) below.style.removeProperty(property);
+    if (!WIDE.matches || !note || !below || "moved" in below.dataset || "opened" in below.dataset) return;
+    if ("autoClosed" in below.dataset) {
+      below.hidden = false;
+      delete below.dataset.autoClosed;
+    }
+    if (below.hidden) return;
+    for (const property of ["top", "height"]) below.style.removeProperty(property);
     const clearance = note.offsetTop + note.offsetHeight + 16;
     if (below.offsetTop >= clearance) return;
     const room = desk.clientHeight - clearance - 16;
@@ -55,9 +87,8 @@ export function initDesktop() {
       below.style.top = `${clearance}px`;
       below.style.height = `${room}px`;
     } else {
-      below.style.top = "38%";
-      below.style.left = "38%";
-      below.style.zIndex = "1";
+      below.hidden = true;
+      below.dataset.autoClosed = "";
     }
   }
 
@@ -187,6 +218,7 @@ export function initDesktop() {
       win.scrollIntoView({ block: "start" });
       win.focus({ preventScroll: true });
     }
+    renderDock();
     return true;
   }
 
@@ -194,6 +226,7 @@ export function initDesktop() {
     win.classList.remove("is-active");
     if ("ephemeral" in win.dataset) win.remove();
     else win.hidden = true;
+    renderDock();
 
     // Hand focus to whichever window is now on top.
     const next = [...desk.querySelectorAll("[data-window]:not([hidden])")].sort(
@@ -234,7 +267,7 @@ export function initDesktop() {
     prepare(win);
 
     // Open near the middle, each new one a little further down and to the right.
-    // Projects and off-the-clock pieces get a wider window for their cover-and-story layout.
+    // Projects get a wider window for their cover-and-story layout.
     const step = articlesOpened++ % 6;
     const wide = "wide" in source.dataset;
     const width = Math.min(wide ? 960 : 640, desk.clientWidth * (wide ? 0.74 : 0.52));

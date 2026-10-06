@@ -1,10 +1,10 @@
-{# Short quotes from recommendation letters, published with each professor's permission. #}
+{# Short quotes from letters of recommendation, published with each professor's permission. #}
 {% from "macros/window.njk" import window with context %}
-{% call window({ id: "letters", title: "Letters" }) %}
+{% call window({ id: "letters", title: "Recommendations", startClosed: true }) %}
   {%- for letter in desk.letters %}
   <section class="letter" aria-labelledby="letter-{{ letter.slug }}">
     <header class="letter__head">
-      <span class="avatar avatar--emoji" aria-hidden="true">🎓</span>
+      <span class="avatar" aria-hidden="true">{{ letter.by | replace("Prof. ", "") | first }}</span>
       <div>
         <h3 class="letter__name" id="letter-{{ letter.slug }}">{{ letter.by }}</h3>
         <p class="letter__title">{{ letter.title }}</p>
@@ -13,8 +13,7 @@
     <p class="letter__context">{{ letter.context }}</p>
     <ul class="letter__quotes">
       {%- for quote in letter.quotes %}
-      <li data-search="{{ quote }}" data-kind="Letter" data-detail="{{ letter.by }}">
-        {% include "icons/quote.njk" %}
+      <li data-search="{{ quote }}" data-kind="Recommendation" data-detail="{{ letter.by }}">
         <blockquote>“{{ quote }}”</blockquote>
       </li>
       {%- endfor %}

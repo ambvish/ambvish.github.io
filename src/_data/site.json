@@ -12,12 +12,9 @@
     "linkedin": "https://www.linkedin.com/in/vishnutejaambati/"
   },
   "intro": {
-    "headline": "Engineer. Researcher. Professional problem‑hunter.",
     "paragraphs": [
-      "Hi, I'm Vishnu. I study Computer Engineering at Iowa State University, where I'll also pursue a minor in AI, after two years of Computer Science at BITS Pilani, one of India's most selective engineering schools.",
-      "I build AI systems that work outside the notebook: LLM pipelines and knowledge graphs, real-time computer vision, adversarial ML, INT8 models on FPGAs, and fast distributed backends.",
-      "I like hard problems, honest numbers, and software that survives contact with reality."
-    ],
-    "currently": "Founding Engineer at Hivemind, building Iris."
+      "I'm Vishnu, an AI and systems engineer. I'm a Founding Engineer at <a href=\"https://hivemind.inc\" target=\"_blank\" rel=\"noopener noreferrer\">Hivemind<span aria-hidden=\"true\"> ↗</span><span class=\"visually-hidden\"> (opens in a new tab)</span></a>, building Iris, an AI portfolio-intelligence platform.",
+      "I study Computer Engineering at Iowa State, where I'll also minor in AI, after two years of Computer Science at BITS Pilani. I build AI that holds up in production: LLM pipelines, knowledge graphs, real-time vision, and the systems underneath them."
+    ]
   }
 }

@@ -6,7 +6,7 @@
     {%- for school in desk.schools %}
     <li class="row" data-search="{{ school.name }}" data-kind="Education" data-detail="{{ school.degree }}">
       <div class="row__link row__link--static">
-        {% include "icons/cap.njk" %}
+        <img class="school-logo" src="{{ school.logo }}" width="128" height="128" alt="" draggable="false">
         <span class="row__main">
           <span class="row__head">
             <span class="row__title">{{ school.name }}</span>
