@@ -83,7 +83,7 @@
       "Fraud Detection"
     ],
     "short": "HAD-Stack",
-    "image": "/assets/img/research/eagle-emblem.png"
+    "image": "/assets/img/research/phoenix-emblem.png"
   },
   {
     "slug": "hamiltonian-qhnet",
@@ -153,7 +153,7 @@
       "PyTorch"
     ],
     "short": "Hamiltonian Solvers & QHNet",
-    "image": "/assets/img/research/pegasus-emblem.png"
+    "image": "/assets/img/research/eagle-emblem.png"
   },
   {
     "slug": "mnist-pgd",
