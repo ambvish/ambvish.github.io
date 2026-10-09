@@ -163,7 +163,8 @@ kbd {
     radial-gradient(34% 30% at 48% 40%, var(--sky-shade), transparent 72%),
     radial-gradient(26% 24% at 80% 72%, var(--sky-shade), transparent 72%),
     radial-gradient(24% 26% at 5% 84%, var(--sky-shade-soft), transparent 72%),
-    radial-gradient(22% 18% at 30% 8%, var(--sky-shade-soft), transparent 72%);
+    radial-gradient(22% 18% at 30% 8%, var(--sky-shade-soft), transparent 72%),
+    radial-gradient(36% 26% at 52% 2%, var(--sky-shade-deep), transparent 74%);
 }
 
 @keyframes aurora {
@@ -1848,6 +1849,8 @@ a.row__link:focus-visible {
   color: var(--note-text);
   font-size: var(--text-lg);
   line-height: 1.55;
+  -webkit-font-smoothing: auto;
+  -moz-osx-font-smoothing: auto;
 }
 
 .note:focus {
@@ -1911,8 +1914,10 @@ a.row__link:focus-visible {
 }
 
 .note kbd {
-  border-color: rgb(0 0 0 / 0.3);
-  background: rgb(255 255 255 / 0.55);
+  border-color: var(--note-key-edge);
+  background: var(--note-key);
+  box-shadow: 0 2px 0 var(--note-key-edge);
+  color: var(--note-key-text);
 }
 
 /* ---------- Search palette ---------- */

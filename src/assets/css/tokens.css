@@ -24,6 +24,7 @@
   --nebula-violet: rgb(170 70 170 / 0.24);
   --sky-shade: rgb(6 6 12 / 0.55);       /* soft pockets of near-black between the colours */
   --sky-shade-soft: rgb(6 6 12 / 0.4);
+  --sky-shade-deep: rgb(4 4 10 / 0.65);
 
   /* Menu bar: tinted glass over the sky. --menubar is its colour over the top of the sky, used for
      contrast checks and the browser theme colour; --menubar-glass is what the page actually paints. */
@@ -64,7 +65,10 @@
   /* Sticky note */
   --note: #f8e8a2;              /* warm butter yellow */
   --note-band: #edd885;         /* the darker strip across the top of the note */
-  --note-text: #23200f;
+  --note-key: #fffbe4;          /* the ⌘ K key caps: cream face, gold edge, olive glyph */
+  --note-key-edge: #c9af57;
+  --note-key-text: #5c4f14;
+  --note-text: #1b1807;          /* near-black, a touch warm */
   --note-link: #1646b0;
 
   /* Text on certificate posters */
