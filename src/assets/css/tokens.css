@@ -22,6 +22,8 @@
   --nebula-red: rgb(232 66 110 / 0.32);
   --nebula-blue: rgb(98 92 224 / 0.3);
   --nebula-violet: rgb(170 70 170 / 0.24);
+  --sky-shade: rgb(6 6 12 / 0.55);       /* soft pockets of near-black between the colours */
+  --sky-shade-soft: rgb(6 6 12 / 0.4);
 
   /* Menu bar: tinted glass over the sky. --menubar is its colour over the top of the sky, used for
      contrast checks and the browser theme colour; --menubar-glass is what the page actually paints. */
@@ -38,7 +40,10 @@
   --control: #38383d;
   --control-border: #48484e;
   --control-hover: #444449;
-  --dock: rgb(24 24 28 / 0.88);
+  --dock: rgb(44 40 36 / 0.55);       /* tinted glass the desk shows through */
+  --dock-border: rgb(255 255 255 / 0.1);
+  --dock-item-border: #46464c;
+  --dock-text: #93939b;                /* muted button labels, brighter on hover */
   --text: #f2f2f5;
   --text-soft: #c9c9d0;          /* second line of a row, e.g. the company under a role */
   --text-muted: #a7a7b0;
@@ -57,7 +62,8 @@
   --light-idle: #4c4c52;
 
   /* Sticky note */
-  --note: #f6e7bd;              /* warm cream, a pinch of yellow beige */
+  --note: #f8e8a2;              /* warm butter yellow */
+  --note-band: #edd885;         /* the darker strip across the top of the note */
   --note-text: #23200f;
   --note-link: #1646b0;
 

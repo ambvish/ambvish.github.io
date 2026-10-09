@@ -155,6 +155,17 @@ kbd {
   mask-image: radial-gradient(22% 34% at 19% 44%, #000, transparent 72%), radial-gradient(26% 16% at 52% 52%, #000, transparent 72%);
 }
 
+/* Soft pockets of near-black here and there, so the colours have room to breathe. */
+.sky__shade {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(34% 30% at 48% 40%, var(--sky-shade), transparent 72%),
+    radial-gradient(26% 24% at 80% 72%, var(--sky-shade), transparent 72%),
+    radial-gradient(24% 26% at 5% 84%, var(--sky-shade-soft), transparent 72%),
+    radial-gradient(22% 18% at 30% 8%, var(--sky-shade-soft), transparent 72%);
+}
+
 @keyframes aurora {
   from { transform: translate3d(-2%, 1%, 0) scale(1); opacity: 0.85; }
   to { transform: translate3d(2.5%, -1.5%, 0) scale(1.05); opacity: 1; }
@@ -812,25 +823,28 @@ a.row__link:focus-visible {
   padding: 0.4rem;
   transform: translateX(-50%);
   background: var(--dock);
-  border: 1px solid var(--window-border);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--dock-border);
   border-radius: 12px;
-  box-shadow: var(--shadow-window);
+  box-shadow: 0 10px 30px rgb(0 0 0 / 0.35);
 }
 
 .dock__item {
   padding: 0.45rem 0.95rem;
-  border: 0;
+  border: 1px solid var(--dock-item-border);
   border-radius: 8px;
-  background: var(--control);
-  color: var(--text);
+  background: var(--window);
+  color: var(--dock-text);
   font: inherit;
   font-size: var(--text-md);
-  font-weight: 600;
+  font-weight: 650;
   cursor: pointer;
 }
 
 .dock__item:hover {
-  background: var(--control-hover);
+  border-color: var(--control-hover);
+  color: var(--text);
 }
 
 /* ---------- Project cards ---------- */
@@ -1824,9 +1838,11 @@ a.row__link:focus-visible {
 /* ---------- Sticky note ---------- */
 
 .note {
-  padding: 1.35rem 1.45rem 1.1rem;
+  --note-band-h: 1.1rem;
+  padding: calc(var(--note-band-h) + 1.25rem) 1.45rem 1.1rem;
   background: var(--note);
-  background-image: linear-gradient(180deg, rgb(255 255 255 / 0.35), transparent 30%);
+  /* The strip across the top, with a faint line under it. */
+  background-image: linear-gradient(180deg, var(--note-band) 0 var(--note-band-h), rgb(0 0 0 / 0.06) var(--note-band-h) calc(var(--note-band-h) + 1px), transparent calc(var(--note-band-h) + 1px));
   border-radius: 3px;
   box-shadow: var(--shadow-note);
   color: var(--note-text);
