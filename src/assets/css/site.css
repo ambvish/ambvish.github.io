@@ -121,8 +121,8 @@ kbd {
 }
 
 .sky::before {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Ccircle cx='0' cy='107.3' r='0.5' fill='%23ffeccc' opacity='0.3'/%3E%3Ccircle cx='98.1' cy='124.2' r='0.5' fill='white' opacity='0.4'/%3E%3Ccircle cx='52.4' cy='171.3' r='0.4' fill='white' opacity='0.4'/%3E%3Ccircle cx='198.4' cy='91.8' r='0.4' fill='%23d6e4ff' opacity='0.3'/%3E%3Ccircle cx='142.2' cy='133.1' r='0.5' fill='white' opacity='0.3'/%3E%3Ccircle cx='191.1' cy='2.8' r='0.4' fill='%23d6e4ff' opacity='0.5'/%3E%3Ccircle cx='3.2' cy='92.2' r='0.7' fill='white' opacity='0.5'/%3E%3Ccircle cx='146.5' cy='230.2' r='0.5' fill='white' opacity='0.6'/%3E%3Ccircle cx='172.2' cy='193.9' r='0.7' fill='white' opacity='0.4'/%3E%3Ccircle cx='191.9' cy='227.5' r='0.6' fill='%23d6e4ff' opacity='0.6'/%3E%3Ccircle cx='103.5' cy='61.2' r='0.6' fill='%23ffeccc' opacity='0.3'/%3E%3Ccircle cx='199.6' cy='84.4' r='0.7' fill='white' opacity='0.3'/%3E%3Ccircle cx='228.3' cy='131.9' r='0.6' fill='%23ffeccc' opacity='0.5'/%3E%3Ccircle cx='104.1' cy='222.6' r='0.7' fill='%23d6e4ff' opacity='0.4'/%3E%3Ccircle cx='121.9' cy='54.1' r='0.4' fill='%23d6e4ff' opacity='0.3'/%3E%3Ccircle cx='26.1' cy='84.2' r='0.5' fill='white' opacity='0.4'/%3E%3Ccircle cx='25.4' cy='91' r='0.4' fill='white' opacity='0.5'/%3E%3Ccircle cx='222' cy='23.6' r='0.7' fill='%23d6e4ff' opacity='0.6'/%3E%3Ccircle cx='135.6' cy='88.7' r='0.7' fill='white' opacity='0.5'/%3E%3Ccircle cx='73.4' cy='127.9' r='0.4' fill='white' opacity='0.6'/%3E%3Ccircle cx='218.5' cy='35.3' r='0.4' fill='%23d6e4ff' opacity='0.6'/%3E%3Ccircle cx='69.2' cy='198.4' r='0.5' fill='white' opacity='0.6'/%3E%3Ccircle cx='122.2' cy='55.5' r='0.4' fill='%23ffeccc' opacity='0.6'/%3E%3Ccircle cx='63' cy='181.8' r='0.5' fill='white' opacity='0.6'/%3E%3Ccircle cx='0.2' cy='4.9' r='0.4' fill='white' opacity='0.5'/%3E%3Ccircle cx='193.9' cy='76' r='0.6' fill='white' opacity='0.6'/%3E%3Ccircle cx='181.7' cy='41.4' r='0.6' fill='white' opacity='0.4'/%3E%3Ccircle cx='63.6' cy='119.3' r='0.6' fill='white' opacity='0.4'/%3E%3Ccircle cx='117.9' cy='122.3' r='0.4' fill='%23d6e4ff' opacity='0.5'/%3E%3Ccircle cx='119.1' cy='134.4' r='0.4' fill='white' opacity='0.6'/%3E%3C/svg%3E");
-  opacity: 0.7;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Ccircle cx='0' cy='6.6' r='0.5' fill='white' opacity='0.4'/%3E%3Ccircle cx='9.4' cy='21.3' r='0.5' fill='white' opacity='0.5'/%3E%3Ccircle cx='213.3' cy='246.1' r='0.4' fill='white' opacity='0.5'/%3E%3Ccircle cx='47.6' cy='113.5' r='0.4' fill='white' opacity='0.5'/%3E%3Ccircle cx='156.6' cy='206.9' r='0.5' fill='white' opacity='0.4'/%3E%3Ccircle cx='31' cy='30' r='0.4' fill='white' opacity='0.4'/%3E%3Ccircle cx='243.7' cy='137.9' r='0.4' fill='%23ffeccc' opacity='0.3'/%3E%3Ccircle cx='142.8' cy='143.2' r='0.5' fill='white' opacity='0.5'/%3E%3Ccircle cx='177.3' cy='155.7' r='0.5' fill='%23ffeccc' opacity='0.4'/%3E%3Ccircle cx='174.7' cy='137.2' r='0.5' fill='white' opacity='0.3'/%3E%3Ccircle cx='163.6' cy='256.8' r='0.5' fill='white' opacity='0.4'/%3E%3Ccircle cx='215.7' cy='49.4' r='0.5' fill='white' opacity='0.6'/%3E%3Ccircle cx='209.8' cy='157' r='0.6' fill='%23d6e4ff' opacity='0.4'/%3E%3Ccircle cx='94' cy='31.5' r='0.4' fill='%23d6e4ff' opacity='0.5'/%3E%3Ccircle cx='134.2' cy='217.2' r='0.5' fill='white' opacity='0.3'/%3E%3Ccircle cx='177.4' cy='167.1' r='0.4' fill='%23d6e4ff' opacity='0.4'/%3E%3C/svg%3E");
+  opacity: 0.6;
 }
 
 .sky::after {
@@ -164,7 +164,10 @@ kbd {
     radial-gradient(26% 24% at 80% 72%, var(--sky-shade), transparent 72%),
     radial-gradient(24% 26% at 5% 84%, var(--sky-shade-soft), transparent 72%),
     radial-gradient(22% 18% at 30% 8%, var(--sky-shade-soft), transparent 72%),
-    radial-gradient(36% 26% at 52% 2%, var(--sky-shade-deep), transparent 74%);
+    radial-gradient(36% 26% at 52% 2%, var(--sky-shade-deep), transparent 74%),
+    radial-gradient(28% 22% at 68% 28%, var(--sky-shade-soft), transparent 72%),
+    radial-gradient(24% 28% at 26% 40%, var(--sky-shade-soft), transparent 72%),
+    radial-gradient(30% 22% at 58% 88%, var(--sky-shade-soft), transparent 72%);
 }
 
 @keyframes aurora {
@@ -2155,6 +2158,15 @@ a.row__link:focus-visible {
     overscroll-behavior: contain;
     scrollbar-color: var(--light-idle) transparent;
     scrollbar-width: thin;
+  }
+
+  /* The edge of the window under the pointer lights up. */
+  .has-js .window {
+    transition: border-color 120ms ease;
+  }
+
+  .has-js .window:hover {
+    border-color: var(--window-border-hover);
   }
 
   /* Background windows go gray, and light up again while the pointer is over them. */

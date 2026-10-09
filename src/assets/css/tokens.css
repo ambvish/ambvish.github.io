@@ -36,6 +36,7 @@
   --window: #1d1d20;
   --window-bar: #262629;
   --window-border: #3b3b41;
+  --window-border-hover: #8a8a90;   /* window edge while the pointer is over it */
   --separator: #2f2f34;
   --quote-bar: #5a5a62;
   --control: #38383d;
