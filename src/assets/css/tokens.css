@@ -50,7 +50,7 @@
   --text-muted: #a7a7b0;
   --link: #7db3ff;
   --link-warm: #f2b84b;          /* links in Writing posts */
-  --row-hover: rgb(255 255 255 / 0.07);
+  --row-hover: rgb(255 255 255 / 0.045);   /* a quiet highlight, inset from the window edges */
   --focus: #7db3ff;
   --select-accent: #3478f6;
   --highlight: #2559c7;
