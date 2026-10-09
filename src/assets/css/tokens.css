@@ -6,25 +6,19 @@
 :root {
   color-scheme: dark;
 
-  /* Desktop background: a night sky, indigo to violet, with an aurora band and a warm nebula.
-     The layers are drawn in site.css (.sky); the stars are tiled SVG dots. */
-  --sky-top: #080a20;
-  --sky-violet: #1c1550;
-  --sky-low: #12294a;
-  --sky-floor: #060f18;
-  --aurora-core: rgb(160 255 196 / 0.4);
-  --aurora-green: rgb(78 244 158 / 0.5);
-  --aurora-teal: rgb(50 210 184 / 0.3);
-  --aurora-violet: rgb(156 70 204 / 0.36);
-  --aurora-ray: rgb(130 255 185 / 0.12);
-  --nebula-core: rgb(255 234 196 / 0.2);
-  --nebula-gold: rgb(250 200 128 / 0.26);
-  --nebula-red: rgb(232 66 110 / 0.32);
-  --nebula-blue: rgb(98 92 224 / 0.3);
-  --nebula-violet: rgb(170 70 170 / 0.24);
+  /* Desktop background: a quiet, dark gradient. Navy in the upper left, a muted ember in the upper
+     right, a low bronze glow along the bottom. Drawn in site.css (.sky). */
+  --desk-1: #151b2d;
+  --desk-2: #1b1b25;
+  --desk-3: #241d19;
+  --desk-glow-navy: rgb(38 56 98 / 0.45);
+  --desk-glow-ember: rgb(94 52 38 / 0.5);
+  --desk-glow-bronze: rgb(132 108 64 / 0.62);
 
-  /* Menu bar */
-  --menubar: #10131c;
+  /* Menu bar: tinted glass over the desk. --menubar is its colour over the desk, used for contrast checks
+     and the browser theme colour; --menubar-glass is what the page actually paints. */
+  --menubar: #161c2c;
+  --menubar-glass: rgb(16 21 36 / 0.66);
   --menubar-text: #eef0f5;
 
   /* Windows */

@@ -5,7 +5,7 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="dark">
-  <meta name="theme-color" content="#10131c">
+  <meta name="theme-color" content="#161c2c">
   <title>{{ title or site.name }}</title>
   <meta name="description" content="{{ description or site.tagline }}">
   <link rel="canonical" href="{{ site.url }}{{ page.url }}">
@@ -21,12 +21,7 @@
   <script type="module" src="/assets/js/main.js"></script>
 </head>
 <body>
-  <div class="sky" aria-hidden="true">
-    <div class="sky__aurora"></div>
-    <div class="sky__stars sky__stars--slow"></div>
-    <div class="sky__stars sky__stars--blink"></div>
-    <div class="sky__flares"><span class="sky__flare"></span><span class="sky__flare"></span><span class="sky__flare"></span><span class="sky__flare"></span><span class="sky__flare"></span><span class="sky__flare"></span></div>
-  </div>
+  <div class="sky" aria-hidden="true"></div>
   <a class="skip-link" href="#desk">Skip to content</a>
   {% include "partials/menubar.njk" %}
   {{ content | safe }}
