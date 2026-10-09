@@ -10,7 +10,7 @@
       </summary>
       <ul class="folder__items">
         {%- for skill in group.items %}
-        <li class="folder__item" data-filter-item data-search="{{ skill }}" data-kind="Skill" data-detail="{{ group.name }}">{% include "icons/dot.njk" %}<span>{{ skill }}</span></li>
+        <li class="folder__item" data-filter-item data-search="{{ skill }}" data-kind="Skill" data-detail="{{ group.name }}">{% include "icons/skill.njk" %}<span>{{ skill }}</span></li>
         {%- endfor %}
       </ul>
     </details>

@@ -844,11 +844,13 @@ a.row__link:focus-visible {
   font-size: var(--text-md);
   font-weight: 650;
   cursor: pointer;
+  transition: transform 140ms ease, color 140ms ease, border-color 140ms ease;
 }
 
 .dock__item:hover {
   border-color: var(--control-hover);
   color: var(--text);
+  transform: translateY(-3px);
 }
 
 /* ---------- Project cards ---------- */
@@ -1275,10 +1277,11 @@ a.row__link:focus-visible {
   font-size: var(--text-md);
 }
 
-.folder__item .icon--dot {
-  width: 0.95rem;
-  height: 0.95rem;
-  color: var(--text-muted);
+/* Each skill gets a small rounded gray badge with a white tick. */
+.folder__item .icon--skill {
+  width: 1rem;
+  height: 1rem;
+  color: var(--badge);
 }
 
 /* ---------- Certificate posters ---------- */
@@ -2167,6 +2170,15 @@ a.row__link:focus-visible {
 
   .has-js .window:hover {
     border-color: var(--window-border-hover);
+  }
+
+  /* The resize grip in the bottom-right corner only shows on hover. */
+  .has-js .window::-webkit-resizer {
+    background: transparent;
+  }
+
+  .has-js .window:hover::-webkit-resizer {
+    background: url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 12 12%27%3E%3Cpath d=%27M11 3L3 11M11 7.5L7.5 11%27 stroke=%27%238a8a90%27 stroke-width=%271.3%27 stroke-linecap=%27round%27/%3E%3C/svg%3E") right 2px bottom 2px / 10px no-repeat;
   }
 
   /* Background windows go gray, and light up again while the pointer is over them. */
